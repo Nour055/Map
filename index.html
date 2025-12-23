@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Discover the magic of Tunisia" />
+  <title>Tunisia through our eyes</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+<header>
+  <a href="index.html">
+    <img src="img/LOGO.png" alt="logo Tunisia" />
+  </a>
+
+  <div class="title">
+    <h1>Explore Tunisia</h1>
+    <h3>Click a governorate to discover culture, vibes, and hidden gems.</h3>
+  </div>
+  <ul>
+    <li><a href="#general-info">General Info</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</header>
+
+<!-- ====================== CARTE INTERACTIVE ====================== -->
+<section class="map-container" id="mapView">
+  <div class="map-intro">
+    <h2>Carte interactive de la Tunisie</h2>
+    <p>Cliquez sur un gouvernorat pour découvrir ses merveilles</p>
+  </div>
+
+  <img id="real-map" src="img/map.png" alt="Carte de la Tunisie" usemap="#tunisia-map" />
+
+  <map name="tunisia-map" id="tunisia-map">
+    <!-- Ajuste les coords selon ton image -->
+
+    <!-- Grand Tunis -->
+    <area shape="rect" coords="160,50,200,70"
+          href="#"
+          class="governorate"
+          data-gov="tunis"
+          alt="Tunis" />
+
+    <area shape="rect" coords="150,80,190,100"
+          href="#"
+          class="governorate"
+          data-gov="ariana"
+          alt="Ariana" />
+
+    <area shape="rect" coords="150,110,190,130"
+          href="#"
+          class="governorate"
+          data-gov="manouba"
+          alt="Manouba" />
+
+    <area shape="rect" coords="150,140,190,160"
+          href="#"
+          class="governorate"
+          data-gov="benarous"
+          alt="Ben Arous" />
+
+    <!-- Sahel / Centre-Est -->
+    <area shape="poly"
+          coords="260,180,285,175,290,195,270,200"
+          href="#"
+          class="governorate"
+          data-gov="sousse"
+          alt="Sousse" />
+
+    <area shape="poly"
+          coords="255,205,285,210,290,230,260,235"
+          href="#"
+          class="governorate"
+          data-gov="monastir"
+          alt="Monastir" />
+
+    <area shape="poly"
+          coords="250,240,280,250,285,290,255,295"
+          href="#"
+          class="governorate"
+          data-gov="sfax"
+          alt="Sfax" />
+
+    <!-- Tu peux rajouter d'autres <area> pour les autres gouvernorats -->
+  </map>
+</section>
+
+<!-- ========== INFOS GOUVERNORATS EN HTML (CACHÉES) ========== -->
+<section id="gov-data">
+  <!-- TUNIS -->
+  <article id="gov-tunis" class="gov-details">
+    <h2 class="gov-name">Tunis</h2>
+    <p class="gov-subtitle">La capitale vibrante</p>
+
+    <div class="gov-images" data-images="3">
+         <img src="img/Tunis/medina.jpg" alt="Vue de la médina de Tunis">
+         <img src="img/Tunis/Sidi_boujpg.jpg" alt="Sidi Bousaid Tunis">
+         <img src="img/Tunis/tunis.jpg" alt="Musée du Bardo à Tunis">
+    </div>
+
+    <div class="gov-description">
+      Centre politique, économique et culturel de la Tunisie.
+    </div>
+
+    <div class="gov-population">1,056,247 habitants</div>
+    <div class="gov-superficie">346 km²</div>
+
+    <ul class="gov-attractions">
+      <li>Médina de Tunis (UNESCO)</li>
+      <li>Musée du Bardo</li>
+      <li>Cathédrale Saint-Vincent-de-Paul</li>
+      <li>Avenue Habib Bourguiba</li>
+    </ul>
+
+    <ul class="gov-cuisine">
+      <li>Lablabi</li>
+      <li>Brik à l'œuf</li>
+      <li>Couscous tunisois</li>
+    </ul>
+  </article>
+
+  <!-- ARIANA -->
+  <article id="gov-ariana" class="gov-details">
+    <h2 class="gov-name">Ariana</h2>
+    <p class="gov-subtitle">La ville de la rose</p>
+
+    <div class="gov-images" data-images="3">
+         <img src="img/Tunis/medina.jpg" alt="Vue de la médina de Tunis">
+         <img src="img/Tunis/Sidi_boujpg.jpg" alt="Sidi Bousaid Tunis">
+         <img src="img/Tunis/tunis.jpg" alt="Musée du Bardo à Tunis">
+    </div>
+
+    <div class="gov-description">
+      Proche de Tunis, connue pour son artisanat et ses espaces verts.
+    </div>
+
+    <div class="gov-population">576,088 habitants</div>
+    <div class="gov-superficie">482 km²</div>
+
+    <ul class="gov-attractions">
+      <li>Parc du Belvédère</li>
+      <li>Marché artisanal</li>
+      <li>Mosquée El Khadra</li>
+    </ul>
+
+    <ul class="gov-cuisine">
+      <li>Mloukhiya</li>
+      <li>Makroudh</li>
+      <li>Tajine tunisien</li>
+    </ul>
+  </article>
+
+  <!-- BEN AROUS -->
+  <article id="gov-benarous" class="gov-details">
+    <h2 class="gov-name">Ben Arous</h2>
+    <p class="gov-subtitle">La porte du sud</p>
+
+    <div class="gov-images" data-images="2"></div>
+
+    <div class="gov-description">
+      Zone industrielle importante et patrimoine historique.
+    </div>
+
+    <div class="gov-population">631,842 habitants</div>
+    <div class="gov-superficie">761 km²</div>
+
+    <ul class="gov-attractions">
+      <li>Borj Cedria</li>
+      <li>Hammam Lif</li>
+      <li>Radès</li>
+    </ul>
+
+    <ul class="gov-cuisine">
+      <li>Poissons grillés</li>
+      <li>Harissa maison</li>
+      <li>Slata mechouia</li>
+    </ul>
+  </article>
+
+  <!-- BIZERTE -->
+  <article id="gov-bizerte" class="gov-details">
+    <h2 class="gov-name">Bizerte</h2>
+    <p class="gov-subtitle">La perle du Nord</p>
+
+    <div class="gov-images" data-images="3"></div>
+
+    <div class="gov-description">
+      Ville portuaire méditerranéenne aux plages magnifiques.
+    </div>
+
+    <div class="gov-population">568,219 habitants</div>
+    <div class="gov-superficie">3,750 km²</div>
+
+    <ul class="gov-attractions">
+      <li>Vieux Port</li>
+      <li>Fort d'Espagne</li>
+      <li>Plage de Remel</li>
+      <li>Lac de Bizerte</li>
+    </ul>
+
+    <ul class="gov-cuisine">
+      <li>Poisson frais</li>
+      <li>Couscous au poisson</li>
+      <li>Chakchouka</li>
+    </ul>
+  </article>
+
+  <!-- NABEUL -->
+  <article id="gov-nabeul" class="gov-details">
+    <h2 class="gov-name">Nabeul</h2>
+    <p class="gov-subtitle">La capitale de la poterie</p>
+
+    <div class="gov-images" data-images="3"></div>
+
+    <div class="gov-description">
+      Artisanat traditionnel et stations balnéaires prisées.
+    </div>
+
+    <div class="gov-population">787,920 habitants</div>
+    <div class="gov-superficie">2,788 km²</div>
+
+    <ul class="gov-attractions">
+      <li>Marché du vendredi</li>
+      <li>Hammamet</li>
+      <li>Kelibia</li>
+      <li>Kerkouane (UNESCO)</li>
+    </ul>
+
+    <ul class="gov-cuisine">
+      <li>Harissa de Nabeul</li>
+      <li>Poissons et fruits de mer</li>
+      <li>Pâtisseries</li>
+    </ul>
+  </article>
+
+  <!-- KAIROUAN -->
+  <article id="gov-kairouan" class="gov-details">
+    <h2 class="gov-name">Kairouan</h2>
+    <p class="gov-subtitle">La ville sainte</p>
+
+    <div class="gov-images" data-images="3"></div>
+
+    <div class="gov-description">
+      Quatrième ville sainte de l'Islam, riche patrimoine.
+    </div>
+
+    <div class="gov-population">570,559 habitants</div>
+    <div class="gov-superficie">6,712 km²</div>
+
+    <ul class="gov-attractions">
+      <li>Grande Mosquée</li>
+      <li>Bassins des Aghlabides</li>
+      <li>Mausolée de Sidi Sahbi</li>
+      <li>Médina (UNESCO)</li>
+    </ul>
+
+    <ul class="gov-cuisine">
+      <li>Makroudh</li>
+      <li>Kaak Warka</li>
+      <li>Couscous de Kairouan</li>
+    </ul>
+  </article>
+
+  <!-- SOUSSE -->
+  <article id="gov-sousse" class="gov-details">
+    <h2 class="gov-name">Sousse</h2>
+    <p class="gov-subtitle">La perle du Sahel</p>
+
+    <div class="gov-images" data-images="3"></div>
+
+    <div class="gov-description">
+      Station balnéaire majeure et patrimoine méditerranéen.
+    </div>
+
+    <div class="gov-population">674,971 habitants</div>
+    <div class="gov-superficie">2,669 km²</div>
+
+    <ul class="gov-attractions">
+      <li>Médina (UNESCO)</li>
+      <li>Ribat</li>
+      <li>Port El Kantaoui</li>
+      <li>Musée archéologique</li>
+    </ul>
+
+    <ul class="gov-cuisine">
+      <li>Poisson à la charmoula</li>
+      <li>Brik</li>
+      <li>Ftayer</li>
+    </ul>
+  </article>
+
+  <!-- MONASTIR -->
+  <article id="gov-monastir" class="gov-details">
+    <h2 class="gov-name">Monastir</h2>
+    <p class="gov-subtitle">La ville de Bourguiba</p>
+
+    <div class="gov-images" data-images="3"></div>
+
+    <div class="gov-description">
+      Ville historique et destination touristique élégante.
+    </div>
+
+    <div class="gov-population">548,828 habitants</div>
+    <div class="gov-superficie">1,024 km²</div>
+
+    <ul class="gov-attractions">
+      <li>Ribat de Monastir</li>
+      <li>Mausolée de Bourguiba</li>
+      <li>Marina</li>
+      <li>Îles Kuriat</li>
+    </ul>
+
+    <ul class="gov-cuisine">
+      <li>Poissons grillés</li>
+      <li>Masfouf</li>
+      <li>Zrir</li>
+    </ul>
+  </article>
+
+  <!-- MAHDIA -->
+  <article id="gov-mahdia" class="gov-details">
+    <h2 class="gov-name">Mahdia</h2>
+    <p class="gov-subtitle">Cité antique des Fatimides</p>
+
+    <div class="gov-images" data-images="3"></div>
+
+    <div class="gov-description">
+      Authenticité méditerranéenne et histoire millénaire.
+    </div>
+
+    <div class="gov-population">410,812 habitants</div>
+    <div class="gov-superficie">2,966 km²</div>
+
+    <ul class="gov-attractions">
+      <li>Cap Africa</li>
+      <li>Grande Mosquée</li>
+      <li>El Jem (UNESCO)</li>
+      <li>Port de pêche</li>
+    </ul>
+
+    <ul class="gov-cuisine">
+      <li>Couscous au poisson</li>
+      <li>Sardines farcies</li>
+      <li>Charmoula</li>
+    </ul>
+  </article>
+
+  <!-- SFAX -->
+  <article id="gov-sfax" class="gov-details">
+    <h2 class="gov-name">Sfax</h2>
+    <p class="gov-subtitle">Capitale économique du Sud</p>
+
+    <div class="gov-images" data-images="3"></div>
+
+    <div class="gov-description">
+      Centre industriel et commercial dynamique.
+    </div>
+
+    <div class="gov-population">955,421 habitants</div>
+    <div class="gov-superficie">7,545 km²</div>
+
+    <ul class="gov-attractions">
+      <li>Médina fortifiée</li>
+      <li>Îles Kerkennah</li>
+      <li>Musée de Sfax</li>
+      <li>Souk traditionnel</li>
+    </ul>
+
+    <ul class="gov-cuisine">
+      <li>Couscous aux légumes</li>
+      <li>Daurade grillée</li>
+      <li>Borghol</li>
+    </ul>
+  </article>
+
+  <!-- GABÈS -->
+  <article id="gov-gabes" class="gov-details">
+    <h2 class="gov-name">Gabès</h2>
+    <p class="gov-subtitle">L'oasis maritime</p>
+
+    <div class="gov-images" data-images="3"></div>
+
+    <div class="gov-description">
+      Unique oasis côtière de Méditerranée.
+    </div>
+
+    <div class="gov-population">374,300 habitants</div>
+    <div class="gov-superficie">7,166 km²</div>
+
+    <ul class="gov-attractions">
+      <li>Oasis de Gabès</li>
+      <li>Marché aux épices</li>
+      <li>Chenini</li>
+      <li>Plages</li>
+    </ul>
+
+    <ul class="gov-cuisine">
+      <li>Couscous aux dattes</li>
+      <li>Poisson séché</li>
+      <li>Bsissa</li>
+    </ul>
+  </article>
+
+  <!-- MÉDENINE -->
+  <article id="gov-medenine" class="gov-details">
+    <h2 class="gov-name">Médenine</h2>
+    <p class="gov-subtitle">Terre de Star Wars</p>
+
+    <div class="gov-images" data-images="3"></div>
+
+    <div class="gov-description">
+      Architecture berbère et décors cinématographiques.
+    </div>
+
+    <div class="gov-population">479,520 habitants</div>
+    <div class="gov-superficie">8,588 km²</div>
+
+    <ul class="gov-attractions">
+      <li>Ksar Ouled Soltane</li>
+      <li>Île de Djerba</li>
+      <li>Ksour berbères</li>
+      <li>Plages de Djerba</li>
+    </ul>
+
+    <ul class="gov-cuisine">
+      <li>Couscous au chameau</li>
+      <li>Poisson de Djerba</li>
+      <li>Pain traditionnel</li>
+    </ul>
+  </article>
+
+  <!-- TATAOUINE -->
+  <article id="gov-tataouine" class="gov-details">
+    <h2 class="gov-name">Tataouine</h2>
+    <p class="gov-subtitle">La planète Tatooine</p>
+
+    <div class="gov-images" data-images="3"></div>
+
+    <div class="gov-description">
+      Paysages désertiques et villages troglodytes.
+    </div>
+
+    <div class="gov-population">149,453 habitants</div>
+    <div class="gov-superficie">38,889 km²</div>
+
+    <ul class="gov-attractions">
+      <li>Ksar Hadada</li>
+      <li>Chenini</li>
+      <li>Douiret</li>
+      <li>Désert du Sahara</li>
+    </ul>
+
+    <ul class="gov-cuisine">
+      <li>Couscous berbère</li>
+      <li>Pain au four</li>
+      <li>Thé au pin</li>
+    </ul>
+  </article>
+
+  <!-- KÉBILI -->
+  <article id="gov-kebili" class="gov-details">
+    <h2 class="gov-name">Kébili</h2>
+    <p class="gov-subtitle">Porte du Sahara</p>
+
+    <div class="gov-images" data-images="3"></div>
+
+    <div class="gov-description">
+      Oasis du désert et thermalisme.
+    </div>
+
+    <div class="gov-population">156,961 habitants</div>
+    <div class="gov-superficie">22,454 km²</div>
+
+    <ul class="gov-attractions">
+      <li>Douz (festival du Sahara)</li>
+      <li>Ksar Ghilane</li>
+      <li>Oasis de montagne</li>
+      <li>Chott el Jérid</li>
+    </ul>
+
+    <ul class="gov-cuisine">
+      <li>Couscous au chameau</li>
+      <li>Dattes Deglet Nour</li>
+      <li>Pain du désert</li>
+    </ul>
+  </article>
+
+  <!-- TOZEUR -->
+  <article id="gov-tozeur" class="gov-details">
+    <h2 class="gov-name">Tozeur</h2>
+    <p class="gov-subtitle">Capitale des oasis</p>
+
+    <div class="gov-images" data-images="3"></div>
+
+    <div class="gov-description">
+      Architecture unique et palmeraies luxuriantes.
+    </div>
+
+    <div class="gov-population">107,912 habitants</div>
+    <div class="gov-superficie">5,593 km²</div>
+
+    <ul class="gov-attractions">
+      <li>Oasis de Tozeur</li>
+      <li>Chebika</li>
+      <li>Tamerza</li>
+      <li>Désert de sel</li>
+      <li>Nefta</li>
+    </ul>
+
+    <ul class="gov-cuisine">
+      <li>Deglet Nour</li>
+      <li>Couscous aux dattes</li>
+      <li>Thé aux pignons</li>
+    </ul>
+  </article>
+
+  <!-- GAFSA -->
+  <article id="gov-gafsa" class="gov-details">
+    <h2 class="gov-name">Gafsa</h2>
+    <p class="gov-subtitle">Ville des phosphates</p>
+
+    <div class="gov-images" data-images="2"></div>
+
+    <div class="gov-description">
+      Histoire millénaire et richesses minières.
+    </div>
+
+    <div class="gov-population">337,331 habitants</div>
+    <div class="gov-superficie">8,990 km²</div>
+
+    <ul class="gov-attractions">
+      <li>Piscines romaines</li>
+      <li>Musée archéologique</li>
+      <li>Oasis de montagne</li>
+      <li>Sites préhistoriques</li>
+    </ul>
+
+    <ul class="gov-cuisine">
+      <li>Couscous gafsi</li>
+      <li>Mermez</li>
+      <li>Pain traditionnel</li>
+    </ul>
+  </article>
+
+  <!-- KASSERINE -->
+  <article id="gov-kasserine" class="gov-details">
+    <h2 class="gov-name">Kasserine</h2>
+    <p class="gov-subtitle">Cœur montagneux</p>
+
+    <div class="gov-images" data-images="2"></div>
+
+    <div class="gov-description">
+      Nature sauvage et histoire résistante.
+    </div>
+
+    <div class="gov-population">439,243 habitants</div>
+    <div class="gov-superficie">8,066 km²</div>
+
+    <ul class="gov-attractions">
+      <li>Chambi (plus haut sommet)</li>
+      <li>Sites romains</li>
+      <li>Forêts de pins</li>
+      <li>Sbeitla</li>
+    </ul>
+
+    <ul class="gov-cuisine">
+      <li>Couscous aux légumes sauvages</li>
+      <li>Viande grillée</li>
+      <li>Lben</li>
+    </ul>
+  </article>
+
+  <!-- SIDI BOUZID -->
+  <article id="gov-sidibouzid" class="gov-details">
+    <h2 class="gov-name">Sidi Bouzid</h2>
+    <p class="gov-subtitle">Berceau du printemps arabe</p>
+
+    <div class="gov-images" data-images="2"></div>
+
+    <div class="gov-description">
+      Agriculture et histoire contemporaine.
+    </div>
+
+    <div class="gov-population">429,912 habitants</div>
+    <div class="gov-superficie">7,405 km²</div>
+
+    <ul class="gov-attractions">
+      <li>Monuments historiques</li>
+      <li>Marchés agricoles</li>
+      <li>Paysages ruraux</li>
+    </ul>
+
+    <ul class="gov-cuisine">
+      <li>Couscous fermier</li>
+      <li>Lben</li>
+      <li>Produits du terroir</li>
+    </ul>
+  </article>
+
+  <!-- SILIANA -->
+  <article id="gov-siliana" class="gov-details">
+    <h2 class="gov-name">Siliana</h2>
+    <p class="gov-subtitle">Grenier de la Tunisie</p>
+
+    <div class="gov-images" data-images="2"></div>
+
+    <div class="gov-description">
+      Agriculture céréalière et vestiges romains.
+    </div>
+
+    <div class="gov-population">223,087 habitants</div>
+    <div class="gov-superficie">4,631 km²</div>
+
+    <ul class="gov-attractions">
+      <li>Makthar</li>
+      <li>Barrage</li>
+      <li>Sites archéologiques</li>
+      <li>Paysages agricoles</li>
+    </ul>
+
+    <ul class="gov-cuisine">
+      <li>Couscous traditionnel</li>
+      <li>Produits laitiers</li>
+      <li>Pain maison</li>
+    </ul>
+  </article>
+
+  <!-- ZAGHOUAN -->
+  <article id="gov-zaghouan" class="gov-details">
+    <h2 class="gov-name">Zaghouan</h2>
+    <p class="gov-subtitle">La montagne de l'eau</p>
+
+    <div class="gov-images" data-images="2"></div>
+
+    <div class="gov-description">
+      Sources d'eau historiques et nature verdoyante.
+    </div>
+
+    <div class="gov-population">176,945 habitants</div>
+    <div class="gov-superficie">2,768 km²</div>
+
+    <ul class="gov-attractions">
+      <li>Temple des Eaux</li>
+      <li>Aqueduc romain</li>
+      <li>Mont Zaghouan</li>
+      <li>Sources thermales</li>
+    </ul>
+
+    <ul class="gov-cuisine">
+      <li>Couscous aux légumes</li>
+      <li>Huile d'olive</li>
+      <li>Produits de montagne</li>
+    </ul>
+  </article>
+
+  <!-- MANOUBA -->
+  <article id="gov-manouba" class="gov-details">
+    <h2 class="gov-name">Manouba</h2>
+    <p class="gov-subtitle">Banlieue dynamique</p>
+
+    <div class="gov-images" data-images="2"></div>
+
+    <div class="gov-description">
+      Développement urbain et proximité de la capitale.
+    </div>
+
+    <div class="gov-population">379,518 habitants</div>
+    <div class="gov-superficie">1,137 km²</div>
+
+    <ul class="gov-attractions">
+      <li>Université de la Manouba</li>
+      <li>Jardins</li>
+      <li>Architecture moderne</li>
+    </ul>
+
+    <ul class="gov-cuisine">
+      <li>Cuisine tunisoise</li>
+      <li>Street food</li>
+      <li>Pâtisseries</li>
+    </ul>
+  </article>
+
+  <!-- BÉJA -->
+  <article id="gov-beja" class="gov-details">
+    <h2 class="gov-name">Béja</h2>
+    <p class="gov-subtitle">La ville du blé</p>
+
+    <div class="gov-images" data-images="2"></div>
+
+    <div class="gov-description">
+      Agriculture fertile et histoire romaine.
+    </div>
+
+    <div class="gov-population">303,032 habitants</div>
+    <div class="gov-superficie">3,740 km²</div>
+
+    <ul class="gov-attractions">
+      <li>Dougga (UNESCO)</li>
+      <li>Kasbah</li>
+      <li>Sites romains</li>
+      <li>Forêts</li>
+    </ul>
+
+    <ul class="gov-cuisine">
+      <li>Couscous berbère</li>
+      <li>Produits agricoles</li>
+      <li>Huile d'olive</li>
+    </ul>
+  </article>
+
+  <!-- JENDOUBA -->
+  <article id="gov-jendouba" class="gov-details">
+    <h2 class="gov-name">Jendouba</h2>
+    <p class="gov-subtitle">La nature verdoyante</p>
+
+    <div class="gov-images" data-images="3"></div>
+
+    <div class="gov-description">
+      Forêts de chênes-lièges et patrimoine romain.
+    </div>
+
+    <div class="gov-population">401,477 habitants</div>
+    <div class="gov-superficie">3,102 km²</div>
+
+    <ul class="gov-attractions">
+      <li>Bulla Regia</li>
+      <li>Aïn Draham</li>
+      <li>Tabarka</li>
+      <li>Forêt de Kroumirie</li>
+    </ul>
+
+    <ul class="gov-cuisine">
+      <li>Sanglier</li>
+      <li>Champignons</li>
+      <li>Miel de montagne</li>
+      <li>Couscous forestier</li>
+    </ul>
+  </article>
+
+  <!-- LE KEF -->
+  <article id="gov-kef" class="gov-details">
+    <h2 class="gov-name">Le Kef</h2>
+    <p class="gov-subtitle">Ville des hauteurs</p>
+
+    <div class="gov-images" data-images="2"></div>
+
+    <div class="gov-description">
+      Ville de montagne avec vue panoramique.
+    </div>
+
+    <div class="gov-population">243,156 habitants</div>
+    <div class="gov-superficie">4,965 km²</div>
+
+    <ul class="gov-attractions">
+      <li>Kasbah</li>
+      <li>Table de Jugurtha</li>
+      <li>Sites numides</li>
+      <li>Musée régional</li>
+    </ul>
+
+    <ul class="gov-cuisine">
+      <li>Couscous berbère</li>
+      <li>Viande de montagne</li>
+      <li>Fromage fermier</li>
+    </ul>
+  </article>
+</section>
+
+<!-- ====================== MODAL ====================== -->
+<section class="modal" id="governorateModal" aria-hidden="true">
+  <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <button class="close-btn" id="modalClose" aria-label="Fermer">&times;</button>
+    <div class="modal-header">
+      <h2 id="modalTitle"></h2>
+      <p id="modalSubtitle"></p>
+    </div>
+    <div class="modal-images" id="modalImages"></div>
+    <div class="modal-info" id="modalInfo"></div>
+    <button class="back-btn" id="modalBack">← Retour à la carte</button>
+  </div>
+</section>
+
+<!-- ====================== GENERAL INFO ====================== -->
+<section id="general-info">
+  <h2>General Information about Tunisia</h2>
+  <p class="gi-intro">
+    Useful practical information to help you get to know Tunisia better
+  </p>
+
+  <div class="gi-grid">
+    <div class="gi-card">
+      <h3>Area</h3>
+      <p>163,155 km²</p>
+      <h3>Coastline</h3>
+      <p>1,298 km</p>
+    </div>
+
+    <div class="gi-card">
+      <h3>Climate</h3>
+      <p>
+        Mediterranean (semi-arid inland, arid in the south) <br />
+        Average temperatures : <br />Dec 11.4°C, Jul 29.3°C
+      </p>
+    </div>
+
+    <div class="gi-card">
+      <h3>Population</h3>
+      <p>11 972 169 million inhabitants (INS 2024)</p>
+      <ul>
+        <li>50.7% femmes</li>
+        <li>49.3% hommes</li>
+      </ul>
+    </div>
+
+    <div class="gi-card">
+      <h3>Language</h3>
+      <ul>
+        <li>Arabic (official)</li>
+        <li>French widely spoken</li>
+        <li>English & Italian commonly understood</li>
+      </ul>
+    </div>
+
+    <div class="gi-card">
+      <h3>Capital</h3>
+      <p>Tunis</p>
+    </div>
+
+    <div class="gi-card">
+      <h3>National holiday</h3>
+      <p>March 20 : Independence Day, 1956</p>
+    </div>
+
+    <div class="gi-card">
+      <h3>Religion</h3>
+      <p>Muslims 98%, Jews & Christians</p>
+    </div>
+
+    <div class="gi-card">
+      <h3>Telephone</h3>
+      <p>+216 (then 8 digit number)</p>
+    </div>
+
+    <div class="gi-card">
+      <h3>Currency</h3>
+      <p>Tunisian Dinar (TND) <br />1 EUR = 3.43 TND</p>
+    </div>
+
+    <div class="gi-card">
+      <h3>Airports</h3>
+      <ul>
+        <li>Tunis - Carthage</li>
+        <li>Monastir - Habib Bourguiba</li>
+        <li>Djerba - Zarzis</li>
+        <li>Enfidha - Hammamet</li>
+        <li>Gabès - Matmata</li>
+        <li>Gafsa - Ksar</li>
+        <li>Sfax - Thyna</li>
+        <li>Tabarka - Aïn Draham</li>
+        <li>Tozeur - Nefta</li>
+      </ul>
+    </div>
+
+    <div class="gi-card">
+      <h3>Airlines</h3>
+      <ul>
+        <li>
+          Tunisair <br />
+          <a href="https://www.tunisair.com.tn" target="_blank">www.tunisair.com.tn</a>
+        </li>
+        <li>
+          Nouvelair <br />
+          <a href="https://www.nouvelair.com" target="_blank">www.nouvelair.com</a>
+        </li>
+        <li>
+          Jasmin Airlines <br />
+          <a href="https://www.jasmin-airways.com" target="_blank">www.jasmin-airways.com</a>
+        </li>
+        <li>
+          Tunisair Express <br />
+          <a href="https://www.tunisairexpress.net" target="_blank">www.tunisairexpress.net</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="gi-card">
+      <h3>Emergency</h3>
+      <ul>
+        <li>Tourist Police: <strong>197</strong></li>
+        <li>Medical Emergency: <strong>190</strong></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== CONTACT ====================== -->
+<section id="contact">
+  <form class="panel-contact">
+    <h2>Contact</h2>
+    <div class="panel-row">
+      <div class="contact-left">
+        <label for="name">Full Name</label>
+        <input id="name" type="text" placeholder="Your full name" required />
+
+        <label for="country">Country of Origin</label>
+        <input id="country" type="text" placeholder="Your country" required />
+
+        <label for="email">Email Address</label>
+        <input id="email" type="email" placeholder="your.email@example.com" required />
+      </div>
+
+      <div class="contact-right">
+        <label for="subject">Subject</label>
+        <input id="subject" type="text" placeholder="Message subject" />
+
+        <label for="message">Message</label>
+        <textarea id="message" placeholder="Write your message..." required></textarea>
+      </div>
+    </div>
+
+    <div class="panel-actions">
+      <button type="submit" class="contact-btn">Send</button>
+      <button type="reset" class="contact-reset">Reset</button>
+    </div>
+  </form>
+</section>
+
+<script src="map.js" defer></script>
+</body>
+</html>
