@@ -26,72 +26,158 @@
 
 <!-- ====================== CARTE INTERACTIVE ====================== -->
 <section class="map-container" id="mapView">
-  <div class="map-intro">
-    <h2>Carte interactive de la Tunisie</h2>
-    <p>Cliquez sur un gouvernorat pour découvrir ses merveilles</p>
-  </div>
+    <div class="map-intro">
+      <h2>Carte interactive de la Tunisie</h2>
+      <p>Cliquez sur un gouvernorat pour découvrir ses merveilles</p>
+    </div>
 
-  <img id="real-map" src="img/map.png" alt="Carte de la Tunisie" usemap="#tunisia-map" />
+    <img id="real-map" src="img/map.png" alt="Carte de la Tunisie" usemap="#tunisia-map" />
 
-  <map name="tunisia-map" id="tunisia-map">
-    <!-- Ajuste les coords selon ton image -->
+    <map name="tunisia-map" id="tunisia-map">
+      <!-- Nord -->
+      <area shape="rect" coords="120,26,170,40"
+            href="#"
+            class="governorate"
+            data-gov="bizerte"
+            alt="Bizerte" />
 
-    <!-- Grand Tunis -->
-    <area shape="rect" coords="160,50,200,70"
-          href="#"
-          class="governorate"
-          data-gov="tunis"
-          alt="Tunis" />
+      <area shape="circle" coords="228,68,29"
+            href="#"
+            class="governorate"
+            data-gov="nabeul"
+            alt="Nabeul" />
 
-    <area shape="rect" coords="150,80,190,100"
-          href="#"
-          class="governorate"
-          data-gov="ariana"
-          alt="Ariana" />
+      <area shape="circle" coords="92,71,12"
+            href="#"
+            class="governorate"
+            data-gov="jendouba"
+            alt="Jendouba" />
 
-    <area shape="rect" coords="150,110,190,130"
-          href="#"
-          class="governorate"
-          data-gov="manouba"
-          alt="Manouba" />
+      <area shape="rect" coords="155,65,120,80"
+            href="#"
+            class="governorate"
+            data-gov="beja"
+            alt="Béja" />
 
-    <area shape="rect" coords="150,140,190,160"
-          href="#"
-          class="governorate"
-          data-gov="benarous"
-          alt="Ben Arous" />
+      <area shape="circle" coords="94,114,17"
+            href="#"
+            class="governorate"
+            data-gov="kef"
+            alt="Le Kef" />
 
-    <!-- Sahel / Centre-Est -->
-    <area shape="poly"
-          coords="260,180,285,175,290,195,270,200"
-          href="#"
-          class="governorate"
-          data-gov="sousse"
-          alt="Sousse" />
+      <area shape="rect" coords="115,90,140,135"
+            href="#"
+            class="governorate"
+            data-gov="siliana"
+            alt="Siliana" />
 
-    <area shape="poly"
-          coords="255,205,285,210,290,230,260,235"
-          href="#"
-          class="governorate"
-          data-gov="monastir"
-          alt="Monastir" />
+      <!-- Grand Tunis -->
+      <area shape="rect" coords="160,50,200,70"
+            href="#"
+            class="governorate"
+            data-gov="tunis"
+            alt="Tunis" />
 
-    <area shape="poly"
-          coords="250,240,280,250,285,290,255,295"
-          href="#"
-          class="governorate"
-          data-gov="sfax"
-          alt="Sfax" />
+      <area shape="rect" coords="160,80,175,110"
+            href="#"
+            class="governorate"
+            data-gov="zaghouan"
+            alt="Zaghouan" />
 
-    <!-- Tu peux rajouter d'autres <area> pour les autres gouvernorats -->
-  </map>
-</section>
+      <!-- Centre -->
+      <area shape="rect" coords="140,140,180,160"
+            href="#"
+            class="governorate"
+            data-gov="kairouan"
+            alt="Kairouan" />
+
+      <area shape="rect" coords="65,135,110,200"
+            href="#"
+            class="governorate"
+            data-gov="kasserine"
+            alt="Kasserine" />
+
+      <area shape="rect" coords="132,175,160,240"
+            href="#"
+            class="governorate"
+            data-gov="sidibouzid"
+            alt="Sidi Bouzid" />
+
+      <!-- Sahel -->
+      <area shape="rect" coords="180,100,210,120"
+            href="#"
+            class="governorate"
+            data-gov="sousse"
+            alt="Sousse" />
+
+      <area shape="rect" coords="195,108,215,132"
+            href="#"
+            class="governorate"
+            data-gov="monastir"
+            alt="Monastir" />
+
+      <area shape="rect" coords="201,150,240,175"
+            href="#"
+            class="governorate"
+            data-gov="mahdia"
+            alt="Mahdia" />
+
+      <area shape="rect" coords="180,190,225,230"
+            href="#"
+            class="governorate"
+            data-gov="sfax"
+            alt="Sfax" />
+
+      <!-- Sud -->
+      <area shape="circle" coords="94,238,18"
+            href="#"
+            class="governorate"
+            data-gov="gafsa"
+            alt="Gafsa" />
+
+      <area shape="rect" coords="16,260,70,280"
+            href="#"
+            class="governorate"
+            data-gov="tozeur"
+            alt="Tozeur" />
+
+      <area shape="rect" coords="71,261,116,360"
+            href="#"
+            class="governorate"
+            data-gov="kebili"
+            alt="Kébili" />
+
+      <area shape="rect" coords="140,250,180,310"
+            href="#"
+            class="governorate"
+            data-gov="gabes"
+            alt="Gabès" />
+
+      <area shape="circle" coords="218,322,17"
+            href="#"
+            class="governorate"
+            data-gov="medenine"
+            alt="Médenine" />
+
+      <area shape="circle" coords="163,420,42"
+            href="#"
+            class="governorate"
+            data-gov="tataouine"
+            alt="Tataouine" />
+    </map>
+
+    <div id="info-panel" class="info-panel">
+      <h3 id="gov-name">Gouvernorat</h3>
+      <p id="gov-description">Cliquez sur un gouvernorat pour voir ses informations.</p>
+    </div>
+  </section>
+
 
 <!-- ========== INFOS GOUVERNORATS EN HTML (CACHÉES) ========== -->
 <section id="gov-data">
   <!-- TUNIS -->
   <article id="gov-tunis" class="gov-details">
-    <h2 class="gov-name">Tunis</h2>
+    <h2 class="gov-name">Grand Tunis</h2>
     <p class="gov-subtitle">La capitale vibrante</p>
 
     <div class="gov-images" data-images="3">
@@ -121,70 +207,18 @@
     </ul>
   </article>
 
-  <!-- ARIANA -->
-  <article id="gov-ariana" class="gov-details">
-    <h2 class="gov-name">Ariana</h2>
-    <p class="gov-subtitle">La ville de la rose</p>
-
-    <div class="gov-images" data-images="3">
-         <img src="img/Tunis/medina.jpg" alt="Vue de la médina de Tunis">
-         <img src="img/Tunis/Sidi_boujpg.jpg" alt="Sidi Bousaid Tunis">
-         <img src="img/Tunis/tunis.jpg" alt="Musée du Bardo à Tunis">
-    </div>
-
-    <div class="gov-description">
-      Proche de Tunis, connue pour son artisanat et ses espaces verts.
-    </div>
-
-    <div class="gov-population">576,088 habitants</div>
-    <div class="gov-superficie">482 km²</div>
-
-    <ul class="gov-attractions">
-      <li>Parc du Belvédère</li>
-      <li>Marché artisanal</li>
-      <li>Mosquée El Khadra</li>
-    </ul>
-
-    <ul class="gov-cuisine">
-      <li>Mloukhiya</li>
-      <li>Makroudh</li>
-      <li>Tajine tunisien</li>
-    </ul>
-  </article>
-
-  <!-- BEN AROUS -->
-  <article id="gov-benarous" class="gov-details">
-    <h2 class="gov-name">Ben Arous</h2>
-    <p class="gov-subtitle">La porte du sud</p>
-
-    <div class="gov-images" data-images="2"></div>
-
-    <div class="gov-description">
-      Zone industrielle importante et patrimoine historique.
-    </div>
-
-    <div class="gov-population">631,842 habitants</div>
-    <div class="gov-superficie">761 km²</div>
-
-    <ul class="gov-attractions">
-      <li>Borj Cedria</li>
-      <li>Hammam Lif</li>
-      <li>Radès</li>
-    </ul>
-
-    <ul class="gov-cuisine">
-      <li>Poissons grillés</li>
-      <li>Harissa maison</li>
-      <li>Slata mechouia</li>
-    </ul>
-  </article>
+ 
 
   <!-- BIZERTE -->
   <article id="gov-bizerte" class="gov-details">
     <h2 class="gov-name">Bizerte</h2>
     <p class="gov-subtitle">La perle du Nord</p>
 
-    <div class="gov-images" data-images="3"></div>
+    <div class="gov-images" data-images="3">
+      <img src="img/Bizerte/portbizerte.jpg" alt="">
+      <img src="img/Bizerte/Medina-streets-of-Bizerte.jpg" alt="">
+      <img src="img/Bizerte/coco-beach.jpg" alt="">
+    </div>
 
     <div class="gov-description">
       Ville portuaire méditerranéenne aux plages magnifiques.
@@ -212,7 +246,11 @@
     <h2 class="gov-name">Nabeul</h2>
     <p class="gov-subtitle">La capitale de la poterie</p>
 
-    <div class="gov-images" data-images="3"></div>
+    <div class="gov-images" data-images="3">
+      <img src="img/Nabeul/nabeul1.jpg" alt="">
+      <img src="img/Nabeul/Hammamet.jpg" alt="">
+      <img src="img/Nabeul/Nabeul2.jpeg" alt="">
+    </div>
 
     <div class="gov-description">
       Artisanat traditionnel et stations balnéaires prisées.
@@ -240,7 +278,11 @@
     <h2 class="gov-name">Kairouan</h2>
     <p class="gov-subtitle">La ville sainte</p>
 
-    <div class="gov-images" data-images="3"></div>
+    <div class="gov-images" data-images="3">
+      <img src="img/Kairouan/mosque.jpg" alt="">
+      <img src="img/Kairouan/night.jpg" alt="">
+      <img src="img/Kairouan/medina.webp" alt="">
+    </div>
 
     <div class="gov-description">
       Quatrième ville sainte de l'Islam, riche patrimoine.
@@ -268,7 +310,11 @@
     <h2 class="gov-name">Sousse</h2>
     <p class="gov-subtitle">La perle du Sahel</p>
 
-    <div class="gov-images" data-images="3"></div>
+    <div class="gov-images" data-images="3">
+      <img src="img/Sousse/landscape.webp" alt="">
+      <img src="img/Sousse/souk.jpg" alt="">
+      <img src="img/Sousse/plage.webp" alt="">
+    </div>
 
     <div class="gov-description">
       Station balnéaire majeure et patrimoine méditerranéen.
@@ -296,7 +342,11 @@
     <h2 class="gov-name">Monastir</h2>
     <p class="gov-subtitle">La ville de Bourguiba</p>
 
-    <div class="gov-images" data-images="3"></div>
+    <div class="gov-images" data-images="3">
+      <img src="img/Monastir/Mausoleum.jpg" alt="">
+      <img src="img/Monastir/monastir1.jpg" alt="">
+      <img src="img/Monastir/medina.jpeg" alt="">
+    </div>
 
     <div class="gov-description">
       Ville historique et destination touristique élégante.
@@ -352,7 +402,11 @@
     <h2 class="gov-name">Sfax</h2>
     <p class="gov-subtitle">Capitale économique du Sud</p>
 
-    <div class="gov-images" data-images="3"></div>
+    <div class="gov-images" data-images="3">
+      <img src="img/Sfax/nightie.jpg" alt="">
+      <img src="img/Sfax/nature.webp" alt="">
+      <img src="img/Sfax/plage-sidi-mansour.jpg" alt="">
+    </div>
 
     <div class="gov-description">
       Centre industriel et commercial dynamique.
@@ -380,7 +434,11 @@
     <h2 class="gov-name">Gabès</h2>
     <p class="gov-subtitle">L'oasis maritime</p>
 
-    <div class="gov-images" data-images="3"></div>
+    <div class="gov-images" data-images="3">
+      <img src="img/Gabes/gabes-600.jpg" alt="">
+      <img src="img/Gabes/gabes-oasis.jpg" alt="">
+      <img src="img/Gabes/matmata.png" alt="">
+    </div>
 
     <div class="gov-description">
       Unique oasis côtière de Méditerranée.
@@ -408,7 +466,11 @@
     <h2 class="gov-name">Médenine</h2>
     <p class="gov-subtitle">Terre de Star Wars</p>
 
-    <div class="gov-images" data-images="3"></div>
+    <div class="gov-images" data-images="3">
+      <img src="img/Medenine/dream.webp" alt="">
+      <img src="img/Medenine/medenine.webp" alt="">
+      <img src="img/Medenine/bay.avif" alt="">
+    </div>
 
     <div class="gov-description">
       Architecture berbère et décors cinématographiques.
@@ -436,7 +498,11 @@
     <h2 class="gov-name">Tataouine</h2>
     <p class="gov-subtitle">La planète Tatooine</p>
 
-    <div class="gov-images" data-images="3"></div>
+    <div class="gov-images" data-images="3">
+      <img src="img/Medenine/star-wars.jpg" alt="">
+      <img src="img/Medenine/grotte.jpeg" alt="">
+      <img src="img/Medenine/desert-tunisie.jpg" alt="">
+    </div>
 
     <div class="gov-description">
       Paysages désertiques et villages troglodytes.
@@ -464,7 +530,11 @@
     <h2 class="gov-name">Kébili</h2>
     <p class="gov-subtitle">Porte du Sahara</p>
 
-    <div class="gov-images" data-images="3"></div>
+    <div class="gov-images" data-images="3">
+      <img src="img/Kebili/camel.webp" alt="">
+      <img src="img/Kebili/kebili.jpg" alt="">
+      <img src="img/Kebili/palm.jpg" alt="">
+    </div>
 
     <div class="gov-description">
       Oasis du désert et thermalisme.
