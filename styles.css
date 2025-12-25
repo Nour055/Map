@@ -473,6 +473,30 @@ header ul li a:hover {
   color: white;
   transform: translateY(-3px);
 }
+/* ================== FOOTER ================== */
+
+.footer {
+  background-color: #ecddec;      /* same family as your cards */
+  border-top: 2px solid #c2798b;
+  padding: 30px 20px;
+  text-align: center;
+  font-family: "Inter", Arial, sans-serif;
+}
+
+.footer h2 {
+  font-family: "Georgia", serif;
+  font-size: 20px;
+  color: #462c33;
+  margin-bottom: 6px;
+  letter-spacing: 1px;
+}
+
+.footer p {
+  font-size: 14px;
+  color: #7a4e5a;
+  margin: 0;
+}
+
 
 /* ================== RESPONSIVE ================== */
 
@@ -513,4 +537,14 @@ header ul li a:hover {
   .gi-intro {
     font-size: 16px;
   }
+}
+
+@media (max-width: 600px) {
+    .footer h2 {
+        font-size: 2rem;
+    }
+
+    .footer p {
+        font-size: 1rem;
+    }
 }
