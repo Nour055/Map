@@ -16,9 +16,10 @@
 
   <div class="title">
     <h1>Explore Tunisia</h1>
-    <h3>Click a governorate to discover culture, vibes, and hidden gems.</h3>
+    <h3>Discover culture, vibes, and hidden gems.</h3>
   </div>
   <ul>
+    <li><a href="#achievements">Achievements</a></li>
     <li><a href="#general-info">General Info</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
@@ -26,10 +27,10 @@
 
 <!-- ====================== CARTE INTERACTIVE ====================== -->
 <section class="map-container" id="mapView">
-    <div class="map-intro">
-      <h2>Carte interactive de la Tunisie</h2>
-      <p>Cliquez sur un gouvernorat pour découvrir ses merveilles</p>
-    </div>
+            <div class="map-intro">
+            <h2> Interactive Map of Tunisia</h2>
+            <p>Click on a governorate to discover its wonders</p>
+        </div>
 
     <img id="real-map" src="img/map.png" alt="Carte de la Tunisie" usemap="#tunisia-map" />
 
@@ -71,7 +72,6 @@
             data-gov="siliana"
             alt="Siliana" />
 
-      <!-- Grand Tunis -->
       <area shape="rect" coords="160,50,200,70"
             href="#"
             class="governorate"
@@ -171,20 +171,17 @@
             data-gov="tataouine"
             alt="Tataouine" />
     </map>
-
-    <div id="info-panel" class="info-panel">
-      <h3 id="gov-name">Gouvernorat</h3>
-      <p id="gov-description">Cliquez sur un gouvernorat pour voir ses informations.</p>
-    </div>
   </section>
 
 
-<!-- ========== INFOS GOUVERNORATS EN HTML (CACHÉES) ========== -->
+<!-- ========== INFOS GOUVERNORATS ========== -->
 <section id="gov-data">
+  <!-- Nord -->
+
   <!-- TUNIS -->
   <article id="gov-tunis" class="gov-details">
     <h2 class="gov-name">Grand Tunis</h2>
-    <p class="gov-subtitle">La capitale vibrante</p>
+    <p class="gov-subtitle">The Living Capital</p>
 
     <div class="gov-images" data-images="3">
          <img src="img/Tunis/medina.jpg" alt="Vue de la médina de Tunis">
@@ -193,32 +190,32 @@
     </div>
 
     <div class="gov-description">
-      Centre politique, économique et culturel de la Tunisie.
+     Tunis is the vibrant capital of Tunisia, where ancient history meets modern life.
+     The city combines the charm of its UNESCO-listed medina with contemporary neighborhoods, cultural institutions, and seaside cafés, making it a dynamic gateway to the country.
     </div>
 
-    <div class="gov-population">1,056,247 habitants</div>
-    <div class="gov-superficie">346 km²</div>
+    <div class="gov-population">~1.1 million inhabitants</div>
+    <div class="gov-superficie">212 km²</div>
 
     <ul class="gov-attractions">
-      <li>Médina de Tunis (UNESCO)</li>
-      <li>Musée du Bardo</li>
-      <li>Cathédrale Saint-Vincent-de-Paul</li>
+      <li>Medina of Tunis (UNESCO)</li>
+      <li>Zitouna Mosque</li>
+      <li>Bardo National Museum</li>
       <li>Avenue Habib Bourguiba</li>
+      <li>Sidi Bou Said</li>
     </ul>
 
     <ul class="gov-cuisine">
       <li>Lablabi</li>
-      <li>Brik à l'œuf</li>
-      <li>Couscous tunisois</li>
+      <li>Brik with egg</li>
+      <li>Traditional couscous</li>
     </ul>
   </article>
-
- 
 
   <!-- BIZERTE -->
   <article id="gov-bizerte" class="gov-details">
     <h2 class="gov-name">Bizerte</h2>
-    <p class="gov-subtitle">La perle du Nord</p>
+    <p class="gov-subtitle">The Mediterranean Gateway</p>
 
     <div class="gov-images" data-images="3">
       <img src="img/Bizerte/portbizerte.jpg" alt="">
@@ -227,30 +224,32 @@
     </div>
 
     <div class="gov-description">
-      Ville portuaire méditerranéenne aux plages magnifiques.
+      Bizerte is Tunisia’s northernmost governorate, overlooking the Mediterranean Sea.
+Known for its old port, beautiful beaches, and rich maritime heritage, Bizerte offers a peaceful blend of nature, history, and coastal life.
     </div>
 
-    <div class="gov-population">568,219 habitants</div>
+    <div class="gov-population">~568,000 inhabitants</div>
     <div class="gov-superficie">3,750 km²</div>
 
     <ul class="gov-attractions">
-      <li>Vieux Port</li>
-      <li>Fort d'Espagne</li>
-      <li>Plage de Remel</li>
-      <li>Lac de Bizerte</li>
+      <li>Old Port of Bizerte</li>
+      <li>Fort of Spain</li>
+      <li>Remel Beach</li>
+      <li>Cap Blanc (northernmost point of Africa)</li>
     </ul>
 
     <ul class="gov-cuisine">
-      <li>Poisson frais</li>
-      <li>Couscous au poisson</li>
+      <li>Fresh grilled fish</li>
+      <li>Seafood couscous</li>
       <li>Chakchouka</li>
+      <li>Traditional Mediterranean dishes</li>
     </ul>
   </article>
 
   <!-- NABEUL -->
   <article id="gov-nabeul" class="gov-details">
     <h2 class="gov-name">Nabeul</h2>
-    <p class="gov-subtitle">La capitale de la poterie</p>
+    <p class="gov-subtitle">Capital of Pottery and Seaside Resorts</p>
 
     <div class="gov-images" data-images="3">
       <img src="img/Nabeul/nabeul1.jpg" alt="">
@@ -259,30 +258,193 @@
     </div>
 
     <div class="gov-description">
-      Artisanat traditionnel et stations balnéaires prisées.
+      Nabeul is renowned for its traditional pottery, colorful markets, and popular seaside towns. It is a major tourist hub combining craftsmanship, beaches, and Punic history.
     </div>
 
-    <div class="gov-population">787,920 habitants</div>
+    <div class="gov-population">~787,000 inhabitants</div>
     <div class="gov-superficie">2,788 km²</div>
 
     <ul class="gov-attractions">
-      <li>Marché du vendredi</li>
-      <li>Hammamet</li>
-      <li>Kelibia</li>
-      <li>Kerkouane (UNESCO)</li>
+      <li>Nabeul Friday Market</li>
+      <li>Hammamet beaches and medina</li>
+      <li>Kelibia fortress</li>
+      <li>Kerkouane (Punic site – UNESCO)</li>
     </ul>
 
     <ul class="gov-cuisine">
-      <li>Harissa de Nabeul</li>
-      <li>Poissons et fruits de mer</li>
-      <li>Pâtisseries</li>
+      <li>Harissa of Nabeul</li>
+      <li>Fresh seafood</li>
+      <li>Traditional pastries</li>
     </ul>
   </article>
+  
+  <!-- SILIANA -->
+  <article id="gov-siliana" class="gov-details">
+    <h2 class="gov-name">Siliana</h2>
+    <p class="gov-subtitle">Land of Wheat and Ruins</p>
+
+    <div class="gov-images" data-images="2">
+      <img src="img/Siliana/img-0126.jpg" alt="">
+      <img src="img/Siliana/siliana.jpg" alt="">
+      <img src="img/Siliana/neige.jpg" alt="">
+    </div>
+
+    <div class="gov-description">
+      Siliana is a rural governorate known for cereal farming, Roman heritage, and seasonal landscapes. Snow can even appear in winter, giving it a unique character in Tunisia.
+    </div>
+
+    <div class="gov-population">~223,000 inhabitants</div>
+    <div class="gov-superficie">4,631 km²</div>
+
+    <ul class="gov-attractions">
+      <li>Makthar archaeological site</li>
+      <li>Roman temples and theaters</li>
+      <li>Agricultural plains</li>
+      <li>Dams and countryside landscapes</li>
+    </ul>
+
+    <ul class="gov-cuisine">
+      <li>Traditional couscous</li>
+      <li>Dairy products</li>
+      <li>Homemade bread and rural specialties</li>
+    </ul>
+  </article>
+
+  <!-- ZAGHOUAN -->
+  <article id="gov-zaghouan" class="gov-details">
+    <h2 class="gov-name">Zaghouan</h2>
+    <p class="gov-subtitle">The Mountain of Water</p>
+
+    <div class="gov-images" data-images="2">
+      <img src="img/Zaghouan/img-0013.jpg" alt="">
+      <img src="img/Zaghouan/img-9986.jpg" alt="">
+      <img src="img/Zaghouan/temple-d'eau.jpg" alt="">
+    </div>
+
+    <div class="gov-description">
+      Zaghouan is famous for its natural springs and Roman hydraulic heritage. Its mountainous terrain and green surroundings make it a refreshing destination close to the capital.
+    </div>
+
+    <div class="gov-population">~176,000 inhabitants</div>
+    <div class="gov-superficie">2,768 km²</div>
+
+    <ul class="gov-attractions">
+      <li>Temple of Water</li>
+      <li>Roman aqueduct to Carthage</li>
+      <li>Mount Zaghouan</li>
+      <li>Thermal springs</li>
+    </ul>
+
+    <ul class="gov-cuisine">
+      <li>Couscous with vegetables</li>
+      <li>Olive oil</li>
+      <li>Mountain farm products</li>
+    </ul>
+  </article>
+
+  <!-- BÉJA -->
+  <article id="gov-beja" class="gov-details">
+    <h2 class="gov-name">Béja</h2>
+    <p class="gov-subtitle">The Granary of Tunisia</p>
+
+    <div class="gov-images" data-images="2">
+      <img src="img/Beja/beja.jpg" alt="">
+      <img src="img/Beja/Kantra.jpg" alt="">
+      <img src="img/Beja/plage.jpg" alt="">
+    </div>
+
+    <div class="gov-description">
+      Béja is one of Tunisia’s most fertile regions, famous for its agricultural wealth and ancient Roman heritage. Rolling hills, forests, and archaeological sites make it a quiet yet historically rich destination.
+    </div>
+
+    <div class="gov-population">~303,000 inhabitants</div>
+    <div class="gov-superficie">3,740 km²</div>
+
+    <ul class="gov-attractions">
+      <li>Dougga (UNESCO World Heritage Site)</li>
+      <li>Béja Kasbah</li>
+      <li>Roman ruins and bridges</li>
+      <li>Forests and mountain landscapes</li>
+    </ul>
+
+    <ul class="gov-cuisine">
+      <li>Couscous berbère</li>
+      <li>Olive oil</li>
+      <li>Farm products and homemade bread</li>
+    </ul>
+  </article>
+
+  <!-- JENDOUBA -->
+  <article id="gov-jendouba" class="gov-details">
+    <h2 class="gov-name">Jendouba</h2>
+    <p class="gov-subtitle">The Green North</p>
+
+    <div class="gov-images" data-images="3">
+      <img src="img/Jendouba/Ain-Drahem.png" alt="">
+      <img src="img/Jendouba/mosque.webp" alt="">
+      <img src="img/Jendouba/snowy.avif" alt="">
+    </div>
+
+    <div class="gov-description">
+      Jendouba is Tunisia’s greenest governorate, covered with forests, mountains, and rivers. It is ideal for nature lovers and history enthusiasts, offering a cooler climate and outstanding Roman sites.
+    </div>
+
+    <div class="gov-population">~401,000 inhabitants</div>
+    <div class="gov-superficie">3,102 km²</div>
+
+    <ul class="gov-attractions">
+      <li>Bulla Regia (underground Roman houses)</li>
+      <li>Aïn Draham mountain resort</li>
+      <li>Tabarka (coral coast and jazz festival)</li>
+      <li>Kroumirie forests</li>
+    </ul>
+
+    <ul class="gov-cuisine">
+      <li>Forest style couscous</li>
+      <li>Wild mushrooms</li>
+      <li>Mountain honey</li>
+      <li>Gamebased traditional dishes</li>
+    </ul>
+  </article>
+
+  <!-- LE KEF -->
+  <article id="gov-kef" class="gov-details">
+    <h2 class="gov-name">Le Kef</h2>
+    <p class="gov-subtitle">City of Heights and History</p>
+
+    <div class="gov-images" data-images="2">
+      <img src="img/Kef/barrage.jpg" alt="">
+      <img src="img/Kef/final-jughurthajpg.jpg" alt="">
+      <img src="img/Kef/kef.jpg" alt="">
+    </div>
+
+    <div class="gov-description">
+      Kef is a historic mountain governorate offering panoramic views, fortified architecture, and deep Numidian and Roman roots. It is one of Tunisia’s most authentic inland destinations.
+    </div>
+
+    <div class="gov-population">~243,000 inhabitants</div>
+    <div class="gov-superficie">4,965 km²</div>
+
+    <ul class="gov-attractions">
+      <li>Kef Kasbah</li>
+      <li>Table of Jugurtha</li>
+      <li>Numidian archaeological sites</li>
+      <li>Regional museum</li>
+    </ul>
+
+    <ul class="gov-cuisine">
+      <li>Berber couscous</li>
+      <li>Mountain-style meat dishes</li>
+      <li>Traditional farmhouse cheese</li>
+    </ul>
+  </article>
+
+  <!-- Centre -->
 
   <!-- KAIROUAN -->
   <article id="gov-kairouan" class="gov-details">
     <h2 class="gov-name">Kairouan</h2>
-    <p class="gov-subtitle">La ville sainte</p>
+    <p class="gov-subtitle">Spiritual Heart of Tunisia</p>
 
     <div class="gov-images" data-images="3">
       <img src="img/Kairouan/mosque.jpg" alt="">
@@ -291,30 +453,97 @@
     </div>
 
     <div class="gov-description">
-      Quatrième ville sainte de l'Islam, riche patrimoine.
+      Kairouan is one of the most important religious and historical cities in the Islamic world. Founded in the 7th century, it played a central role in the spread of Islam in North Africa and remains a major cultural and spiritual destination.
     </div>
 
-    <div class="gov-population">570,559 habitants</div>
+    <div class="gov-population">~570,000 inhabitants</div>
     <div class="gov-superficie">6,712 km²</div>
 
     <ul class="gov-attractions">
-      <li>Grande Mosquée</li>
-      <li>Bassins des Aghlabides</li>
-      <li>Mausolée de Sidi Sahbi</li>
-      <li>Médina (UNESCO)</li>
+      <li>Great Mosque of Kairouan (Uqba Ibn Nafi Mosque)</li>
+      <li>Aghlabid Basins</li>
+      <li>Mausoleum of Sidi Sahbi (Barber’s Mosque)</li>
+      <li>Medina of Kairouan (UNESCO)</li>
+      <li>Traditional carpet workshops</li>
     </ul>
 
     <ul class="gov-cuisine">
       <li>Makroudh</li>
       <li>Kaak Warka</li>
-      <li>Couscous de Kairouan</li>
+      <li>Traditional couscous</li>
     </ul>
   </article>
+
+  <!-- KASSERINE -->
+  <article id="gov-kasserine" class="gov-details">
+    <h2 class="gov-name">Kasserine</h2>
+    <p class="gov-subtitle">Mountains and Roman Heritage</p>
+
+    <div class="gov-images" data-images="2">
+      <img src="img/kasserine/sbitla.jpg" alt="">
+      <img src="img/kasserine/chaanbi.jpg" alt="">
+      <img src="img/kasserine/kasserine.jpg" alt="">
+    </div>
+
+    <div class="gov-description">
+      Kasserine is a mountainous governorate known for its dramatic landscapes, ancient Roman cities, and strong cultural identity. It is home to Tunisia’s highest peak and offers rich archaeological and natural heritage.
+    </div>
+
+    <div class="gov-population">~439,000 inhabitants</div>
+    <div class="gov-superficie">8,066 km²</div>
+
+    <ul class="gov-attractions">
+      <li>Mount Chambi (Tunisia’s highest point – National Park)</li>
+      <li>Sbeitla (ancient Roman city of Sufetula)</li>
+      <li>Mountain forests and hiking areas</li>
+      <li>Traditional villages and local markets</li>
+    </ul>
+
+    <ul class="gov-cuisine">
+      <li>Couscous with wild herbs</li>
+      <li>Grilled meats</li>
+      <li>Traditional dairy products (lben)</li>
+      <li>Rural mountain dishes</li>
+    </ul>
+  </article>
+
+  <!-- SIDI BOUZID -->
+  <article id="gov-sidibouzid" class="gov-details">
+    <h2 class="gov-name">Sidi Bouzid</h2>
+    <p class="gov-subtitle">Agricultural Heartland</p>
+
+    <div class="gov-images" data-images="2">
+      <img src="img/Sidi Bouzid/ParcBouhedma.jpg" alt="">
+      <img src="img/Sidi Bouzid/Sidi_bouzid.jpg" alt="">
+    </div>
+
+    <div class="gov-description">
+      Sidi Bouzid is an agricultural governorate known for its fertile plains and central role in Tunisia’s contemporary history. 
+    </div>
+
+    <div class="gov-population">~430,000 inhabitants</div>
+    <div class="gov-superficie">7,405 km²</div>
+
+    <ul class="gov-attractions">
+      <li>MBouhedma National Park</li>
+      <li>Agricultural markets and rural landscapes</li>
+      <li>Local monuments linked to modern Tunisian history</li>
+      <li>Traditional villages</li>
+    </ul>
+
+    <ul class="gov-cuisine">
+      <li>Local cereals and agricultural products</li>
+      <li>Lben</li>
+      <li>Simple rural dishes</li>
+    </ul>
+  </article>
+
+  <!-- SAHEL -->
 
   <!-- SOUSSE -->
   <article id="gov-sousse" class="gov-details">
     <h2 class="gov-name">Sousse</h2>
-    <p class="gov-subtitle">La perle du Sahel</p>
+    <p class="gov-subtitle">The Pearl of the Sahel</p>
 
     <div class="gov-images" data-images="3">
       <img src="img/Sousse/landscape.webp" alt="">
@@ -323,21 +552,21 @@
     </div>
 
     <div class="gov-description">
-      Station balnéaire majeure et patrimoine méditerranéen.
+      Sousse is one of Tunisia’s most popular coastal destinations, combining a rich historical heritage with a lively seaside atmosphere. Its UNESCO-listed medina stands alongside modern resorts, making it a key hub for culture and tourism.
     </div>
 
-    <div class="gov-population">674,971 habitants</div>
+    <div class="gov-population">~675,000 inhabitants</div>
     <div class="gov-superficie">2,669 km²</div>
 
     <ul class="gov-attractions">
-      <li>Médina (UNESCO)</li>
-      <li>Ribat</li>
-      <li>Port El Kantaoui</li>
-      <li>Musée archéologique</li>
+      <li>Ribat of Sousse</li>
+      <li>Archaeological Museum of Sousse</li>
+      <li>Port El Kantaoui marina</li>
+      <li>Sandy Mediterranean beaches</li>
     </ul>
 
     <ul class="gov-cuisine">
-      <li>Poisson à la charmoula</li>
+      <li>Fresh seafood dishes</li>
       <li>Brik</li>
       <li>Ftayer</li>
     </ul>
@@ -346,7 +575,7 @@
   <!-- MONASTIR -->
   <article id="gov-monastir" class="gov-details">
     <h2 class="gov-name">Monastir</h2>
-    <p class="gov-subtitle">La ville de Bourguiba</p>
+    <p class="gov-subtitle">History by the Sea</p>
 
     <div class="gov-images" data-images="3">
       <img src="img/Monastir/Mausoleum.jpg" alt="">
@@ -355,21 +584,22 @@
     </div>
 
     <div class="gov-description">
-      Ville historique et destination touristique élégante.
+      Monastir is a coastal governorate known for its elegant seaside views, historical monuments, and relaxed atmosphere. It played an important role in Tunisia’s modern history and remains a refined tourist destination.
     </div>
 
-    <div class="gov-population">548,828 habitants</div>
+    <div class="gov-population">~549,000 inhabitants</div>
     <div class="gov-superficie">1,024 km²</div>
 
     <ul class="gov-attractions">
-      <li>Ribat de Monastir</li>
-      <li>Mausolée de Bourguiba</li>
-      <li>Marina</li>
-      <li>Îles Kuriat</li>
+      <li>Ribat of Monastir</li>
+      <li>Mausoleum of Habib Bourguiba</li>
+      <li>Monastir Marina</li>
+      <li>Kuriat Islands (nature reserve)</li>
+      <li>Coastal promenades</li>
     </ul>
 
     <ul class="gov-cuisine">
-      <li>Poissons grillés</li>
+      <li>Grilled fish</li>
       <li>Masfouf</li>
       <li>Zrir</li>
     </ul>
@@ -378,35 +608,37 @@
   <!-- MAHDIA -->
   <article id="gov-mahdia" class="gov-details">
     <h2 class="gov-name">Mahdia</h2>
-    <p class="gov-subtitle">Cité antique des Fatimides</p>
+    <p class="gov-subtitle">The Fatimid Coastal City</p>
 
     <div class="gov-images" data-images="3"></div>
 
     <div class="gov-description">
-      Authenticité méditerranéenne et histoire millénaire.
+      Mahdia is a historic coastal city founded by the Fatimids in the 10th century. Known for its white houses, fishing port, and pristine beaches, Mahdia offers an authentic and peaceful seaside experience.
     </div>
 
     <div class="gov-population">410,812 habitants</div>
     <div class="gov-superficie">2,966 km²</div>
 
     <ul class="gov-attractions">
-      <li>Cap Africa</li>
-      <li>Grande Mosquée</li>
-      <li>El Jem (UNESCO)</li>
-      <li>Port de pêche</li>
+      <li>Fatimid Great Mosque of Mahdia</li>
+      <li>Cap Africa (easternmost point of Tunisia)</li>
+      <li>Old port and medina</li>
+      <li>El Jem Amphitheatre (nearby – UNESCO)</li>
+      <li>Fine sandy beaches</li>
     </ul>
 
     <ul class="gov-cuisine">
-      <li>Couscous au poisson</li>
-      <li>Sardines farcies</li>
-      <li>Charmoula</li>
+      <li>Brik Mahdia</li>
+      <li>Stuffed sardines</li>
+      <li>Fish couscous</li>
+      <li>Chapati Mahdia</li>
     </ul>
   </article>
 
   <!-- SFAX -->
   <article id="gov-sfax" class="gov-details">
     <h2 class="gov-name">Sfax</h2>
-    <p class="gov-subtitle">Capitale économique du Sud</p>
+    <p class="gov-subtitle">Economic Capital of the South</p>
 
     <div class="gov-images" data-images="3">
       <img src="img/Sfax/nightie.jpg" alt="">
@@ -415,30 +647,32 @@
     </div>
 
     <div class="gov-description">
-      Centre industriel et commercial dynamique.
+      Sfax is Tunisia’s second-largest city and a major economic and industrial center. Its fortified medina, strong commercial culture, and proximity to the Kerkennah Islands give it a distinct identity rooted in work, tradition, and the sea.
     </div>
 
-    <div class="gov-population">955,421 habitants</div>
+    <div class="gov-population">~955,000 inhabitants</div>
     <div class="gov-superficie">7,545 km²</div>
 
     <ul class="gov-attractions">
-      <li>Médina fortifiée</li>
-      <li>Îles Kerkennah</li>
-      <li>Musée de Sfax</li>
-      <li>Souk traditionnel</li>
+      <li>Medina of Sfax (fortified historic center)</li>
+      <li>Archaeological Museum of Sfax</li>
+      <li>Kerkennah Islands</li>
+      <li>Traditional souks</li>
     </ul>
 
     <ul class="gov-cuisine">
-      <li>Couscous aux légumes</li>
-      <li>Daurade grillée</li>
-      <li>Borghol</li>
+      <li>Vegetable couscous</li>
+      <li>Charmoula</li>
+      <li>Bazinne</li>
     </ul>
   </article>
+
+  <!-- Sud -->
 
   <!-- GABÈS -->
   <article id="gov-gabes" class="gov-details">
     <h2 class="gov-name">Gabès</h2>
-    <p class="gov-subtitle">L'oasis maritime</p>
+    <p class="gov-subtitle">The Mediterranean Oasis</p>
 
     <div class="gov-images" data-images="3">
       <img src="img/Gabes/gabes-600.jpg" alt="">
@@ -447,22 +681,22 @@
     </div>
 
     <div class="gov-description">
-      Unique oasis côtière de Méditerranée.
+      Gabès is unique in the Mediterranean world for having a coastal oasis. It blends palm groves, sea views, and traditional markets, creating a rare natural and cultural landscape.
     </div>
 
-    <div class="gov-population">374,300 habitants</div>
+    <div class="gov-population">~374,000 inhabitants</div>
     <div class="gov-superficie">7,166 km²</div>
 
     <ul class="gov-attractions">
-      <li>Oasis de Gabès</li>
-      <li>Marché aux épices</li>
-      <li>Chenini</li>
-      <li>Plages</li>
+      <li>Gabès Oasis</li>
+      <li>Spice and henna markets</li>
+      <li>Coastal promenade</li>
+      <li>Nearby Berber villages</li>
     </ul>
 
     <ul class="gov-cuisine">
-      <li>Couscous aux dattes</li>
-      <li>Poisson séché</li>
+      <li>Date-based couscous</li>
+      <li>Dried fish</li>
       <li>Bsissa</li>
     </ul>
   </article>
@@ -470,7 +704,7 @@
   <!-- MÉDENINE -->
   <article id="gov-medenine" class="gov-details">
     <h2 class="gov-name">Médenine</h2>
-    <p class="gov-subtitle">Terre de Star Wars</p>
+    <p class="gov-subtitle">Berber Heritage and Desert Architecture</p>
 
     <div class="gov-images" data-images="3">
       <img src="img/Medenine/dream.webp" alt="">
@@ -479,26 +713,27 @@
     </div>
 
     <div class="gov-description">
-      Architecture berbère et décors cinématographiques.
+      Médenine is known for its Berber ksour (fortified granaries) and desert architecture. It serves as a cultural crossroads between the Sahara and the Mediterranean.
     </div>
 
-    <div class="gov-population">479,520 habitants</div>
+    <div class="gov-population">~480,000 inhabitants</div>
     <div class="gov-superficie">8,588 km²</div>
 
     <ul class="gov-attractions">
       <li>Ksar Ouled Soltane</li>
-      <li>Île de Djerba</li>
-      <li>Ksour berbères</li>
-      <li>Plages de Djerba</li>
+      <li>Ksar Hallouf</li>
+      <li>Berber villages</li>
+      <li>Traditional ksour architecture</li>
     </ul>
 
     <ul class="gov-cuisine">
-      <li>Couscous au chameau</li>
-      <li>Poisson de Djerba</li>
-      <li>Pain traditionnel</li>
+      <li>Berber couscous</li>
+      <li>Camel meat dishes</li>
+      <li>Traditional flatbread</li>
     </ul>
   </article>
 
+   <!-- Djerba -->
   <article id="gov-djerba" class="gov-details">
     <h2 class="gov-name">Djerba</h2>
     <p class="gov-subtitle">--</p>
@@ -508,30 +743,30 @@
     </div>
 
     <div class="gov-description">
-      Ville portuaire méditerranéenne aux plages magnifiques.
+      Djerba is Tunisia’s most famous island, known for its sandy beaches, white villages, and exceptional cultural diversity. It has long been a crossroads of civilizations and religions.
     </div>
 
-    <div class="gov-population">568,219 habitants</div>
+    <div class="gov-population">~165,000 inhabitants</div>
     <div class="gov-superficie">3,750 km²</div>
 
     <ul class="gov-attractions">
-      <li>Vieux Port</li>
-      <li>Fort d'Espagne</li>
-      <li>Plage de Remel</li>
-      <li>Lac de Bizerte</li>
+      <li>El Ghriba Synagogue (one of the oldest in the world)</li>
+      <li>Houmt Souk</li>
+      <li>Guellala pottery village</li>
+      <li>Beaches and lagoons</li>
     </ul>
 
     <ul class="gov-cuisine">
-      <li>Poisson frais</li>
-      <li>Couscous au poisson</li>
-      <li>Chakchouka</li>
+      <li>Djerbian fish dishes</li>
+      <li>Seafood couscous</li>
+      <li>Traditional island bread</li>
     </ul>
   </article>
 
   <!-- TATAOUINE -->
   <article id="gov-tataouine" class="gov-details">
     <h2 class="gov-name">Tataouine</h2>
-    <p class="gov-subtitle">La planète Tatooine</p>
+    <p class="gov-subtitle">Desert Landscapes and Ksour</p>
 
     <div class="gov-images" data-images="3">
       <img src="img/Tataouine/star-wars.jpg" alt="">
@@ -540,30 +775,30 @@
     </div>
 
     <div class="gov-description">
-      Paysages désertiques et villages troglodytes.
+      Tataouine is a vast desert governorate famous for its ksour, troglodyte villages, and lunar landscapes. It inspired the fictional planet “Tatooine” in Star Wars.
     </div>
 
-    <div class="gov-population">149,453 habitants</div>
+    <div class="gov-population">~149,000 inhabitants</div>
     <div class="gov-superficie">38,889 km²</div>
 
     <ul class="gov-attractions">
       <li>Ksar Hadada</li>
-      <li>Chenini</li>
-      <li>Douiret</li>
-      <li>Désert du Sahara</li>
+      <li>Chenini village</li>
+      <li>Douiret village</li>
+      <li>Sahara Desert landscapes</li>
     </ul>
 
     <ul class="gov-cuisine">
-      <li>Couscous berbère</li>
-      <li>Pain au four</li>
-      <li>Thé au pin</li>
+      <li>Berber couscous</li>
+      <li>Oven-baked bread</li>
+      <li>Herbal desert tea</li>
     </ul>
   </article>
 
   <!-- KÉBILI -->
   <article id="gov-kebili" class="gov-details">
     <h2 class="gov-name">Kébili</h2>
-    <p class="gov-subtitle">Porte du Sahara</p>
+    <p class="gov-subtitle">Gateway to the Sahara</p>
 
     <div class="gov-images" data-images="3">
       <img src="img/Kebili/camel.webp" alt="">
@@ -572,30 +807,29 @@
     </div>
 
     <div class="gov-description">
-      Oasis du désert et thermalisme.
-    </div>
+      Kébili is a desert governorate marking the entrance to the Sahara. It is deeply connected to nomadic traditions, oases, and desert tourism.
 
-    <div class="gov-population">156,961 habitants</div>
+    <div class="gov-population">~157,000 inhabitants</div>
     <div class="gov-superficie">22,454 km²</div>
 
     <ul class="gov-attractions">
-      <li>Douz (festival du Sahara)</li>
-      <li>Ksar Ghilane</li>
-      <li>Oasis de montagne</li>
-      <li>Chott el Jérid</li>
+      <li>Douz (Sahara Festival)</li>
+      <li>Ksar Ghilane oasis</li>
+      <li>Sand dunes and desert camps</li>
+      <li>Chatt el Jérid</li>
     </ul>
 
     <ul class="gov-cuisine">
-      <li>Couscous au chameau</li>
-      <li>Dattes Deglet Nour</li>
-      <li>Pain du désert</li>
+      <li>Camel couscous</li>
+      <li>Deglet Nour dates</li>
+      <li>Tabouna</li>
     </ul>
   </article>
 
   <!-- TOZEUR -->
   <article id="gov-tozeur" class="gov-details">
     <h2 class="gov-name">Tozeur</h2>
-    <p class="gov-subtitle">Capitale des oasis</p>
+    <p class="gov-subtitle">Capital of the Oases</p>
 
     <div class="gov-images" data-images="3">
       <img src="img/Tozeur/beautiful.webp" alt="">
@@ -604,31 +838,31 @@
     </div>
 
     <div class="gov-description">
-      Architecture unique et palmeraies luxuriantes.
+      Tozeur is one of Tunisia’s most iconic desert destinations, famous for its vast palm groves, traditional brick architecture, and proximity to spectacular desert landscapes.
     </div>
 
-    <div class="gov-population">107,912 habitants</div>
+    <div class="gov-population">~108,000 inhabitants</div>
     <div class="gov-superficie">5,593 km²</div>
 
     <ul class="gov-attractions">
-      <li>Oasis de Tozeur</li>
-      <li>Chebika</li>
-      <li>Tamerza</li>
-      <li>Désert de sel</li>
-      <li>Nefta</li>
+      <li>Tozeur Oasis</li>
+      <li>Old town (Ouled El Hadef)</li>
+      <li>Chebika, Tamerza, Midès mountain oases</li>
+      <li>Chatt El Jerid (salt lake)</li>
     </ul>
 
     <ul class="gov-cuisine">
       <li>Deglet Nour</li>
-      <li>Couscous aux dattes</li>
-      <li>Thé aux pignons</li>
+      <li>Couscous with dates</li>
+      <li>Pine nut tea</li>
+      <li>Tabouna</li>
     </ul>
   </article>
 
   <!-- GAFSA -->
   <article id="gov-gafsa" class="gov-details">
     <h2 class="gov-name">Gafsa</h2>
-    <p class="gov-subtitle">Ville des phosphates</p>
+    <p class="gov-subtitle">Ancient Oases and Roman Heritage</p>
 
     <div class="gov-images" data-images="2">
       <img src="img/Gafsa/ksar.jpg" alt="">
@@ -637,247 +871,27 @@
     </div>
 
     <div class="gov-description">
-      Histoire millénaire et richesses minières.
+     Gafsa is a historic inland governorate known for its ancient oases, Roman remains, and mountainous landscapes. It has been inhabited since prehistoric times and offers a unique mix of archaeology and desert-edge nature.
     </div>
 
-    <div class="gov-population">337,331 habitants</div>
+    <div class="gov-population">~337,000 inhabitants</div>
     <div class="gov-superficie">8,990 km²</div>
 
     <ul class="gov-attractions">
-      <li>Piscines romaines</li>
-      <li>Musée archéologique</li>
-      <li>Oasis de montagne</li>
-      <li>Sites préhistoriques</li>
+      <li>Roman Pools of Gafsa</li>
+      <li>Mountain oases</li>
+      <li>Gafsa Archaeological Museum</li>
+      <li>Prehistoric and Roman sites</li>
     </ul>
 
     <ul class="gov-cuisine">
       <li>Couscous gafsi</li>
-      <li>Mermez</li>
-      <li>Pain traditionnel</li>
+      <li>Mermez (traditional stew)</li>
+      <li>Local bread and olive oil</li>
     </ul>
   </article>
 
-  <!-- KASSERINE -->
-  <article id="gov-kasserine" class="gov-details">
-    <h2 class="gov-name">Kasserine</h2>
-    <p class="gov-subtitle">Cœur montagneux</p>
-
-    <div class="gov-images" data-images="2">
-      <img src="img/kasserine/sbitla.jpg" alt="">
-      <img src="img/kasserine/chaanbi.jpg" alt="">
-      <img src="img/kasserine/kasserine.jpg" alt="">
-    </div>
-
-    <div class="gov-description">
-      Nature sauvage et histoire résistante.
-    </div>
-
-    <div class="gov-population">439,243 habitants</div>
-    <div class="gov-superficie">8,066 km²</div>
-
-    <ul class="gov-attractions">
-      <li>Chambi (plus haut sommet)</li>
-      <li>Sites romains</li>
-      <li>Forêts de pins</li>
-      <li>Sbeitla</li>
-    </ul>
-
-    <ul class="gov-cuisine">
-      <li>Couscous aux légumes sauvages</li>
-      <li>Viande grillée</li>
-      <li>Lben</li>
-    </ul>
-  </article>
-
-  <!-- SIDI BOUZID -->
-  <article id="gov-sidibouzid" class="gov-details">
-    <h2 class="gov-name">Sidi Bouzid</h2>
-    <p class="gov-subtitle">Berceau du printemps arabe</p>
-
-    <div class="gov-images" data-images="2">
-      <img src="img/Sidi Bouzid/ParcBouhedma.jpg" alt="">
-      <img src="img/Sidi Bouzid/Sidi_bouzid.jpg" alt="">
-    </div>
-
-    <div class="gov-description">
-      Agriculture et histoire contemporaine.
-    </div>
-
-    <div class="gov-population">429,912 habitants</div>
-    <div class="gov-superficie">7,405 km²</div>
-
-    <ul class="gov-attractions">
-      <li>Monuments historiques</li>
-      <li>Marchés agricoles</li>
-      <li>Paysages ruraux</li>
-    </ul>
-
-    <ul class="gov-cuisine">
-      <li>Couscous fermier</li>
-      <li>Lben</li>
-      <li>Produits du terroir</li>
-    </ul>
-  </article>
-
-  <!-- SILIANA -->
-  <article id="gov-siliana" class="gov-details">
-    <h2 class="gov-name">Siliana</h2>
-    <p class="gov-subtitle">Grenier de la Tunisie</p>
-
-    <div class="gov-images" data-images="2">
-      <img src="img/Siliana/img-0126.jpg" alt="">
-      <img src="img/Siliana/siliana.jpg" alt="">
-      <img src="img/Siliana/neige.jpg" alt="">
-    </div>
-
-    <div class="gov-description">
-      Agriculture céréalière et vestiges romains.
-    </div>
-
-    <div class="gov-population">223,087 habitants</div>
-    <div class="gov-superficie">4,631 km²</div>
-
-    <ul class="gov-attractions">
-      <li>Makthar</li>
-      <li>Barrage</li>
-      <li>Sites archéologiques</li>
-      <li>Paysages agricoles</li>
-    </ul>
-
-    <ul class="gov-cuisine">
-      <li>Couscous traditionnel</li>
-      <li>Produits laitiers</li>
-      <li>Pain maison</li>
-    </ul>
-  </article>
-
-  <!-- ZAGHOUAN -->
-  <article id="gov-zaghouan" class="gov-details">
-    <h2 class="gov-name">Zaghouan</h2>
-    <p class="gov-subtitle">La montagne de l'eau</p>
-
-    <div class="gov-images" data-images="2">
-      <img src="img/Zaghouan/img-0013.jpg" alt="">
-      <img src="img/Zaghouan/img-9986.jpg" alt="">
-      <img src="img/Zaghouan/temple-d'eau.jpg" alt="">
-    </div>
-
-    <div class="gov-description">
-      Sources d'eau historiques et nature verdoyante.
-    </div>
-
-    <div class="gov-population">176,945 habitants</div>
-    <div class="gov-superficie">2,768 km²</div>
-
-    <ul class="gov-attractions">
-      <li>Temple des Eaux</li>
-      <li>Aqueduc romain</li>
-      <li>Mont Zaghouan</li>
-      <li>Sources thermales</li>
-    </ul>
-
-    <ul class="gov-cuisine">
-      <li>Couscous aux légumes</li>
-      <li>Huile d'olive</li>
-      <li>Produits de montagne</li>
-    </ul>
-  </article>
-  <!-- BÉJA -->
-  <article id="gov-beja" class="gov-details">
-    <h2 class="gov-name">Béja</h2>
-    <p class="gov-subtitle">La ville du blé</p>
-
-    <div class="gov-images" data-images="2">
-      <img src="img/Beja/beja.jpg" alt="">
-      <img src="img/Beja/Kantra.jpg" alt="">
-      <img src="img/Beja/plage.jpg" alt="">
-    </div>
-
-    <div class="gov-description">
-      Agriculture fertile et histoire romaine.
-    </div>
-
-    <div class="gov-population">303,032 habitants</div>
-    <div class="gov-superficie">3,740 km²</div>
-
-    <ul class="gov-attractions">
-      <li>Dougga (UNESCO)</li>
-      <li>Kasbah</li>
-      <li>Sites romains</li>
-      <li>Forêts</li>
-    </ul>
-
-    <ul class="gov-cuisine">
-      <li>Couscous berbère</li>
-      <li>Produits agricoles</li>
-      <li>Huile d'olive</li>
-    </ul>
-  </article>
-
-  <!-- JENDOUBA -->
-  <article id="gov-jendouba" class="gov-details">
-    <h2 class="gov-name">Jendouba</h2>
-    <p class="gov-subtitle">La nature verdoyante</p>
-
-    <div class="gov-images" data-images="3">
-      <img src="img/Jendouba/Ain-Drahem.png" alt="">
-      <img src="img/Jendouba/mosque.webp" alt="">
-      <img src="img/Jendouba/snowy.avif" alt="">
-    </div>
-
-    <div class="gov-description">
-      Forêts de chênes-lièges et patrimoine romain.
-    </div>
-
-    <div class="gov-population">401,477 habitants</div>
-    <div class="gov-superficie">3,102 km²</div>
-
-    <ul class="gov-attractions">
-      <li>Bulla Regia</li>
-      <li>Aïn Draham</li>
-      <li>Tabarka</li>
-      <li>Forêt de Kroumirie</li>
-    </ul>
-
-    <ul class="gov-cuisine">
-      <li>Sanglier</li>
-      <li>Champignons</li>
-      <li>Miel de montagne</li>
-      <li>Couscous forestier</li>
-    </ul>
-  </article>
-
-  <!-- LE KEF -->
-  <article id="gov-kef" class="gov-details">
-    <h2 class="gov-name">Le Kef</h2>
-    <p class="gov-subtitle">Ville des hauteurs</p>
-
-    <div class="gov-images" data-images="2">
-      <img src="img/Kef/barrage.jpg" alt="">
-      <img src="img/Kef/final-jughurthajpg.jpg" alt="">
-      <img src="img/Kef/kef.jpg" alt="">
-    </div>
-
-    <div class="gov-description">
-      Ville de montagne avec vue panoramique.
-    </div>
-
-    <div class="gov-population">243,156 habitants</div>
-    <div class="gov-superficie">4,965 km²</div>
-
-    <ul class="gov-attractions">
-      <li>Kasbah</li>
-      <li>Table de Jugurtha</li>
-      <li>Sites numides</li>
-      <li>Musée régional</li>
-    </ul>
-
-    <ul class="gov-cuisine">
-      <li>Couscous berbère</li>
-      <li>Viande de montagne</li>
-      <li>Fromage fermier</li>
-    </ul>
-  </article>
+  
 </section>
 
 <!-- ====================== MODAL ====================== -->
@@ -890,9 +904,93 @@
     </div>
     <div class="modal-images" id="modalImages"></div>
     <div class="modal-info" id="modalInfo"></div>
-    <button class="back-btn" id="modalBack">← Retour à la carte</button>
+    <button class="back-btn" id="modalBack">← Back to the map</button>
   </div>
 </section>
+
+<!-- ====================== ACHIEVEMENTS  ====================== -->
+<section id="achievements" class="main-section achievements-section">
+    <h2>🇹🇳 Tunisia's Pride & Achievements</h2>
+    <p class="achievements-intro">
+        Tunisia has contributed to world history through remarkable figures, pioneering achievements, 
+        and influential civilizations that shaped the Mediterranean and beyond.
+    </p>
+
+    <div class="achievements-grid">
+        <article class="achievement-card">
+            <div class="achievement-img">✈️</div>
+            <span class="achievement-badge">Pioneer</span>
+            <div class="achievement-content">
+                <h3>First Arab Woman Pilot</h3>
+                <p>
+                    Tunisia is proud to have produced one of the first Arab women to pilot an aircraft in the 1930s,
+                    symbolizing early female empowerment and breaking gender barriers in aviation history.
+                </p>
+            </div>
+        </article>
+
+        <article class="achievement-card">
+            <div class="achievement-img">⚔️</div>
+            <span class="achievement-badge">Legend</span>
+            <div class="achievement-content">
+                <h3>Hannibal Barca</h3>
+                <p>
+                    Born in ancient Carthage (247 BC), Hannibal is considered one of the greatest military
+                    strategists in history, famous for his audacious crossing of the Alps with war elephants to challenge Rome.
+                </p>
+            </div>
+        </article>
+
+        <article class="achievement-card">
+            <div class="achievement-img">👑</div>
+            <span class="achievement-badge">Founder</span>
+            <div class="achievement-content">
+                <h3>Queen Elissa (Dido)</h3>
+                <p>
+                    Elissa, also known as Dido, founded the powerful city of Carthage around 814 BC and remains
+                    a legendary symbol of intelligence, leadership, and cultural legacy in Mediterranean history.
+                </p>
+            </div>
+        </article>
+
+        <article class="achievement-card">
+            <div class="achievement-img">📜</div>
+            <span class="achievement-badge">Historic</span>
+            <div class="achievement-content">
+                <h3>Women's Rights Pioneer</h3>
+                <p>
+                    In 1956, Tunisia became the first country in the Arab world to grant women extensive legal rights
+                    through the Personal Status Code, including education, voting, and divorce rights—a revolutionary step.
+                </p>
+            </div>
+        </article>
+
+        <article class="achievement-card">
+            <div class="achievement-img">🏛️</div>
+            <span class="achievement-badge">Ancient</span>
+            <div class="achievement-content">
+                <h3>Carthage Civilization</h3>
+                <p>
+                    The Carthaginian Empire (814-146 BC) was a major Mediterranean power, dominating trade and naval warfare.
+                    Their advanced seafaring, engineering, and cultural achievements influenced the entire ancient world.
+                </p>
+            </div>
+        </article>
+
+        <article class="achievement-card">
+            <div class="achievement-img">🎓</div>
+            <span class="achievement-badge">Scholar</span>
+            <div class="achievement-content">
+                <h3>Ibn Khaldun</h3>
+                <p>
+                    Born in Tunis (1332-1406), Ibn Khaldun is considered the father of sociology, historiography,
+                    and economics. His work "Muqaddimah" revolutionized the understanding of civilizations and social sciences.
+                </p>
+            </div>
+        </article>
+    </div>
+</section>
+
 
 <!-- ====================== GENERAL INFO ====================== -->
 <section id="general-info">
@@ -1038,11 +1136,14 @@
     </div>
   </form>
 </section>
-<!-- footer -->
+
+<!-- ====================== FOOTER ====================== -->
 <footer class="footer">
-  <h2>Vitamin T 🇹🇳</h2>
+  <h2>Vitamin TN </h2>
   <p>One country. A thousand journeys.</p>
 </footer>
+
+
 <script src="map.js" defer></script>
 </body>
 </html>

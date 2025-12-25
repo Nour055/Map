@@ -81,28 +81,38 @@ if (imageNodes.length === 0) {
   });
 }
 
+if (!article) {
+  alert("Information coming soon 🇹🇳");
+  return;
+}
+
 
     // Infos détaillées
     modalInfo.innerHTML = `
-      <div class="info-card">
-        <h3>📍 Description</h3>
-        <p>${description}</p>
-      </div>
-      <div class="info-card">
-        <h3>👥 Population</h3>
-        <p>${population}</p>
-        <h3 style="margin-top: 10px;">📏 Superficie</h3>
-        <p>${superficie}</p>
-      </div>
-      <div class="info-card">
-        <h3>🏛️ Attractions</h3>
-        <ul>${attractions.map(a => `<li>${a}</li>`).join('')}</ul>
-      </div>
-      <div class="info-card">
-        <h3>🍽️ Spécialités Culinaires</h3>
-        <ul>${cuisine.map(c => `<li>${c}</li>`).join('')}</ul>
-      </div>
-    `;
+  <div class="info-card">
+    <h3>📍 Description</h3>
+    <p>${description}</p>
+  </div>
+
+  <div class="info-card">
+    <h3>👥 Population</h3>
+    <p>${population}</p>
+
+    <h3 style="margin-top: 10px;">📏 Area</h3>
+    <p>${superficie}</p>
+  </div>
+
+  <div class="info-card">
+    <h3>🏛️ Main Attractions</h3>
+    <ul>${attractions.map(a => `<li>${a}</li>`).join('')}</ul>
+  </div>
+
+  <div class="info-card">
+    <h3>🍽️ Local Cuisine</h3>
+    <ul>${cuisine.map(c => `<li>${c}</li>`).join('')}</ul>
+  </div>
+`;
+
 
     // Afficher le modal
     modal.style.display = 'block';

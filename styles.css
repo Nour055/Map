@@ -548,3 +548,218 @@ header ul li a:hover {
         font-size: 1rem;
     }
 }
+
+.achievements-section {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 60px 30px;
+            background: linear-gradient(135deg, rgba(232, 179, 196, 0.1), rgba(194, 121, 139, 0.05));
+            border-radius: 25px;
+            box-shadow: 0 10px 40px rgba(194, 121, 139, 0.15);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Effet décoratif d'arrière-plan */
+        .achievements-section::before {
+            content: "";
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(232, 179, 196, 0.3), transparent);
+            border-radius: 50%;
+            z-index: 0;
+        }
+
+        .achievements-section::after {
+            content: "";
+            position: absolute;
+            bottom: -150px;
+            left: -150px;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(194, 121, 139, 0.2), transparent);
+            border-radius: 50%;
+            z-index: 0;
+        }
+
+        .achievements-section > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .achievements-section h2 {
+            font-family: "Georgia", serif;
+            font-size: 42px;
+            color: #462c33;
+            text-align: center;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .achievements-intro {
+            text-align: center;
+            font-size: 19px;
+            color: #7a4e5a;
+            max-width: 700px;
+            margin: 0 auto 50px;
+            line-height: 1.7;
+            font-style: italic;
+        }
+
+        /* Grid des achievements */
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        /* Carte Achievement */
+        .achievement-card {
+            background: linear-gradient(145deg, #ffffff, #ffeef3);
+            border-radius: 20px;
+            padding: 0;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(194, 121, 139, 0.12);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 2px solid transparent;
+            position: relative;
+        }
+
+        .achievement-card:hover {
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: 0 15px 40px rgba(194, 121, 139, 0.25);
+            border-color: #e8b3c4;
+        }
+
+        /* Image de la carte */
+        .achievement-img {
+            width: 100%;
+            height: 220px;
+            background: linear-gradient(135deg, #e8b3c4, #c2798b);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .achievement-img::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: 0.5s;
+        }
+
+        .achievement-card:hover .achievement-img::before {
+            left: 100%;
+        }
+
+        /* Contenu de la carte */
+        .achievement-content {
+            padding: 25px;
+        }
+
+        .achievement-card h3 {
+            font-family: "Georgia", serif;
+            font-size: 22px;
+            color: #462c33;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .achievement-card p {
+            color: #7a4e5a;
+            font-size: 15px;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        /* Badge décoratif */
+        .achievement-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            color: #c2798b;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(5px);
+        }
+
+        /* Animation d'apparition */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .achievement-card {
+            animation: fadeInUp 0.6s ease forwards;
+            opacity: 0;
+        }
+
+        .achievement-card:nth-child(1) { animation-delay: 0.1s; }
+        .achievement-card:nth-child(2) { animation-delay: 0.2s; }
+        .achievement-card:nth-child(3) { animation-delay: 0.3s; }
+        .achievement-card:nth-child(4) { animation-delay: 0.4s; }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .achievements-section {
+                padding: 40px 20px;
+            }
+
+            .achievements-section h2 {
+                font-size: 32px;
+            }
+
+            .achievements-intro {
+                font-size: 16px;
+            }
+
+            .achievements-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .achievement-img {
+                height: 180px;
+                font-size: 60px;
+            }
+        }
+
+        /* Variantes de couleurs pour chaque carte */
+        .achievement-card:nth-child(1) .achievement-img {
+            background: linear-gradient(135deg, #e8b3c4, #d89fb4);
+        }
+
+        .achievement-card:nth-child(2) .achievement-img {
+            background: linear-gradient(135deg, #c2798b, #b36778);
+        }
+
+        .achievement-card:nth-child(3) .achievement-img {
+            background: linear-gradient(135deg, #d89fb4, #c2798b);
+        }
+
+        .achievement-card:nth-child(4) .achievement-img {
+            background: linear-gradient(135deg, #e8b3c4, #c2798b);
+        } 
