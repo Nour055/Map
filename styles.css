@@ -83,35 +83,81 @@ header ul li a:hover {
 
 /* ================== CARTE INTERACTIVE ================== */
 
-.map-container {
+
+ .home-map {
   max-width: 1200px;
   margin: 40px auto;
-  padding: 20px;
-  text-align: center;
+  padding: 30px 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  align-items: center;
 }
 
-.map-intro {
-  margin-bottom: 30px;
-}
-
-.map-intro h2 {
+/* Left text block */
+.home-intro h1 {
   font-family: "Georgia", serif;
-  font-size: 32px;
-  color: #462c33;
+  color: #81657C;
+  font-size: 36px;
   margin-bottom: 10px;
 }
 
-.map-intro p {
+.home-text {
+  color: #7a4e5a;
+  line-height: 1.6;
+  max-width: 480px;
+  margin-bottom: 20px;
+}
+
+/* Stats */
+.home-stats {
+  display: flex;
+  gap: 20px;
+}
+
+.stat {
+  background: rgba(255,255,255,0.7);
+  border: 1px solid #d4a7b7;
+  border-radius: 14px;
+  padding: 12px 16px;
+  text-align: center;
+  min-width: 90px;
+}
+
+.stat-number {
+  display: block;
+  font-weight: 700;
   font-size: 18px;
+  color: #462c33;
+}
+
+.stat-label {
+  font-size: 13px;
   color: #7a4e5a;
 }
 
-#real-map {
+/* Map box */
+.home-map-box {
+  text-align: center;
+}
 
+#home-map-img {
+  max-width: 100%;
   height: auto;
-  margin: 0 auto;
-  display: block;
-  filter: drop-shadow(0 4px 10px rgba(0,0,0,0.1));
+  border-radius: 14px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+/* ===== Fade & Slide animation ===== */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .governorate {
@@ -763,3 +809,131 @@ header ul li a:hover {
         .achievement-card:nth-child(4) .achievement-img {
             background: linear-gradient(135deg, #e8b3c4, #c2798b);
         } 
+
+/* ===== MODERN TIMELINE ===== */
+
+.timeline {
+  max-width: 1100px;
+  margin: 70px auto;
+  padding: 30px 20px;
+}
+
+.timeline-title {
+  text-align: center;
+  font-family: "Georgia", serif;
+  font-size: 32px;
+  color: #81657C;
+  margin-bottom: 8px;
+}
+
+.timeline-subtitle {
+  text-align: center;
+  color: #7a4e5a;
+  max-width: 720px;
+  margin: 0 auto 50px;
+  line-height: 1.6;
+}
+
+/* Central line */
+.timeline-line {
+  position: relative;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+.timeline-line::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    #c2798b,
+    rgba(194,121,139,0.3)
+  );
+  transform: translateX(-50%);
+  border-radius: 10px;
+}
+
+/* Events */
+.timeline-event {
+  position: relative;
+  width: 50%;
+  padding: 20px 40px;
+  box-sizing: border-box;
+}
+
+.timeline-event.left {
+  left: 0;
+  text-align: right;
+}
+
+.timeline-event.right {
+  left: 50%;
+  text-align: left;
+}
+
+/* Year badge */
+.timeline-year {
+  display: inline-block;
+  background: #e8b3c4;
+  color: #462c33;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: 20px;
+  border: 1px solid #c2798b;
+  margin-bottom: 8px;
+  font-size: 13px;
+}
+
+/* Card */
+.timeline-card {
+  background: rgba(255,255,255,0.75);
+  backdrop-filter: blur(4px);
+  border-radius: 16px;
+  padding: 18px;
+  border: 1px solid #d4a7b7;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.06);
+  max-width: 420px;
+}
+
+.timeline-event.left .timeline-card {
+  margin-left: auto;
+}
+
+.timeline-card h3 {
+  margin: 0 0 6px;
+  color: #462c33;
+  font-size: 18px;
+}
+
+.timeline-card p {
+  margin: 0;
+  font-size: 14px;
+  color: #462c33;
+  line-height: 1.5;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .timeline-line::before {
+    left: 20px;
+  }
+
+  .timeline-event,
+  .timeline-event.left,
+  .timeline-event.right {
+    width: 100%;
+    left: 0;
+    text-align: left;
+    padding-left: 50px;
+    padding-right: 10px;
+  }
+
+  .timeline-event.left .timeline-card,
+  .timeline-event.right .timeline-card {
+    margin-left: 0;
+  }
+}

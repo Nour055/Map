@@ -19,20 +19,42 @@
     <h3>Discover culture, vibes, and hidden gems.</h3>
   </div>
   <ul>
+    <li><a href="#timeline">History</a></li>
     <li><a href="#achievements">Achievements</a></li>
     <li><a href="#general-info">General Info</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </header>
 
-<!-- ====================== CARTE INTERACTIVE ====================== -->
-<section class="map-container" id="mapView">
-            <div class="map-intro">
-            <h2> Interactive Map of Tunisia</h2>
-            <p>Click on a governorate to discover its wonders</p>
-        </div>
+<section class="home-map">
 
-    <img id="real-map" src="img/map.png" alt="Carte de la Tunisie" usemap="#tunisia-map" />
+  <div class="home-intro ">
+    <h1>🇹🇳 Explore Tunisia</h1>
+    <p class="home-text">
+     Tunisia is a North African country located between the Mediterranean Sea
+  and the Sahara Desert, offering a fascinating mix of ancient history,
+  diverse landscapes, and a unique blend of Mediterranean and Arab cultures
+    </p>
+
+    <div class="home-stats">
+      <div class="stat">
+        <span class="stat-number">11.8M</span>
+        <span class="stat-label">Population</span>
+      </div>
+      <div class="stat">
+        <span class="stat-number">163,610</span>
+        <span class="stat-label">km² Area</span>
+      </div>
+      <div class="stat">
+        <span class="stat-number">24</span>
+        <span class="stat-label">Governorates</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="home-map-box">
+  
+ <img id="home-map-img" src="img/map.png" alt="Carte de la Tunisie" usemap="#tunisia-map" />
 
     <map name="tunisia-map" id="tunisia-map">
       <!-- Nord -->
@@ -171,8 +193,84 @@
             data-gov="tataouine"
             alt="Tataouine" />
     </map>
-  </section>
+  </div>
 
+</section>
+
+<section id="timeline">
+  <h2 class="timeline-title">🇹🇳 From Carthage to Today</h2>
+  <p class="timeline-subtitle">
+    A journey through Tunisia’s history, from ancient civilizations to the modern nation.
+  </p>
+
+  <div class="timeline-line">
+
+    <div class="timeline-event left">
+      <span class="timeline-year">814 BC</span>
+      <div class="timeline-card">
+        <h3>Carthage Founded</h3>
+        <p>
+          Queen Elissa (Dido) founded Carthage, establishing one of the most powerful
+          civilizations of the ancient Mediterranean.
+        </p>
+      </div>
+    </div>
+
+    <div class="timeline-event right">
+      <span class="timeline-year">264–146 BC</span>
+      <div class="timeline-card">
+        <h3>Punic Wars</h3>
+        <p>
+          Carthage becomes a major military and commercial power before falling
+          under Roman rule.
+        </p>
+      </div>
+    </div>
+
+    <div class="timeline-event left">
+      <span class="timeline-year">7th Century</span>
+      <div class="timeline-card">
+        <h3>Arab-Muslim Expansion</h3>
+        <p>
+          Islam and Arabic culture are introduced, shaping Tunisia’s identity
+          for centuries to come.
+        </p>
+      </div>
+    </div>
+
+    <div class="timeline-event right">
+      <span class="timeline-year">1574</span>
+      <div class="timeline-card">
+        <h3>Ottoman Era</h3>
+        <p>
+          Tunisia becomes a strategic Ottoman province, strengthening its
+          Mediterranean role.
+        </p>
+      </div>
+    </div>
+
+    <div class="timeline-event left">
+      <span class="timeline-year">1956</span>
+      <div class="timeline-card">
+        <h3>Independence</h3>
+        <p>
+          Tunisia gains independence and launches major social and educational reforms.
+        </p>
+      </div>
+    </div>
+
+    <div class="timeline-event right">
+      <span class="timeline-year">Today</span>
+      <div class="timeline-card">
+        <h3>Modern Tunisia</h3>
+        <p>
+          A modern nation balancing heritage, innovation, tourism, and cultural diversity.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
 
 <!-- ========== INFOS GOUVERNORATS ========== -->
 <section id="gov-data">
