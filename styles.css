@@ -1,8 +1,6 @@
 
  /* ================== RESET GLOBAL ================== */
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
 }
 
@@ -82,60 +80,140 @@ header ul li a:hover {
 }
 
 /* ================== CARTE INTERACTIVE ================== */
+.home-intro h2 {
+            font-family: "Georgia", serif;
+            font-size: 56px;
+            color: #462c33;
+            margin-bottom: 25px;
+            line-height: 1.2;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
 
+        /* Drapeau tunisien animé */
+        .tunisia-flag {
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            animation: flagWave 3s infinite ease-in-out;
+        }
 
- .home-map {
-  max-width: 1200px;
-  margin: 40px auto;
-  padding: 30px 20px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 30px;
-  align-items: center;
-}
+        @keyframes flagWave {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(-5deg); }
+            75% { transform: rotate(5deg); }
+        }
 
-/* Left text block */
-.home-intro h1 {
-  font-family: "Georgia", serif;
-  color: #81657C;
-  font-size: 36px;
-  margin-bottom: 10px;
-}
+        .flag-icon {
+            width: 80px;
+            height: 60px;
+            background: linear-gradient(to right, #E70013 0%, #E70013 100%);
+            border-radius: 8px;
+            box-shadow: 0 8px 25px rgba(231, 0, 19, 0.3);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
-.home-text {
-  color: #7a4e5a;
-  line-height: 1.6;
-  max-width: 480px;
-  margin-bottom: 20px;
-}
+        .flag-circle {
+            width: 38px;
+            height: 38px;
+            background: white;
+            border-radius: 50%;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
-/* Stats */
-.home-stats {
-  display: flex;
-  gap: 20px;
-}
+        .flag-crescent {
+            width: 24px;
+            height: 24px;
+            border: 3px solid #E70013;
+            border-radius: 50%;
+            position: relative;
+        }
 
-.stat {
-  background: rgba(255,255,255,0.7);
-  border: 1px solid #d4a7b7;
-  border-radius: 14px;
-  padding: 12px 16px;
-  text-align: center;
-  min-width: 90px;
-}
+        .flag-star {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            color: #E70013;
+            font-size: 16px;
+        }
 
-.stat-number {
-  display: block;
-  font-weight: 700;
-  font-size: 18px;
-  color: #462c33;
-}
+        .home-text {
+            font-size: 19px;
+            color: #7a4e5a;
+            line-height: 1.8;
+            margin-bottom: 40px;
+            text-align: justify;
+        }
 
-.stat-label {
-  font-size: 13px;
-  color: #7a4e5a;
-}
+        /* ====================== STATISTIQUES ====================== */
+        .home-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-top: 50px;
+        }
 
+        .stat {
+            background: linear-gradient(145deg, #ffffff, #ffeef3);
+            padding: 30px 20px;
+            border-radius: 20px;
+            text-align: center;
+            border: 2px solid #e8b3c4;
+            box-shadow: 0 8px 25px rgba(194, 121, 139, 0.15);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(232, 179, 196, 0.3), transparent);
+            transition: 0.5s;
+        }
+
+        .stat:hover::before {
+            left: 100%;
+        }
+
+        .stat:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(194, 121, 139, 0.25);
+            border-color: #c2798b;
+        }
+
+        .stat-number {
+            display: block;
+            font-family: "Georgia", serif;
+            font-size: 35px;
+            font-weight: bold;
+            color: #c2798b;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(194, 121, 139, 0.2);
+        }
+
+        .stat-label {
+            display: block;
+            font-size: 16px;
+            color: #7a4e5a;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
 /* Map box */
 .home-map-box {
   text-align: center;

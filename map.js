@@ -5,12 +5,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const modalImages = document.getElementById('modalImages');
   const modalInfo = document.getElementById('modalInfo');
 
- window.addEventListener("load", () => {
-  document.querySelectorAll(".fade-in").forEach(el => {
-    el.classList.add("show");
-  });
-});
-
   // Clic sur les zones de la carte
   document.querySelectorAll('area.governorate[data-gov]').forEach(area => {
     area.addEventListener('click', (e) => {
