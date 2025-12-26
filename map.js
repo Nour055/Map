@@ -131,3 +131,24 @@ if (!article) {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 });
+
+  const events = document.querySelectorAll('.timeline-event');
+
+  const revealTimeline = () => {
+    const trigger = window.innerHeight * 0.85;
+
+    events.forEach((event, index) => {
+      const top = event.getBoundingClientRect().top;
+
+      if (top < trigger) {
+        setTimeout(() => {
+          event.classList.add('show');
+        }, index * 150);
+      }
+    });
+  };
+
+  window.addEventListener('scroll', revealTimeline);
+  revealTimeline();
+
+

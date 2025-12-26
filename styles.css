@@ -80,9 +80,35 @@ header ul li a:hover {
 }
 
 /* ================== CARTE INTERACTIVE ================== */
-.home-intro h2 {
+.home-map {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0px 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            position: relative;
+        }
+
+.home-intro {
+            animation: slideInLeft 1s ease-out;
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .home-intro h2 {
             font-family: "Georgia", serif;
-            font-size: 56px;
+            font-size: 40px;
             color: #462c33;
             margin-bottom: 25px;
             line-height: 1.2;
@@ -92,60 +118,35 @@ header ul li a:hover {
             flex-wrap: wrap;
         }
 
-        /* Drapeau tunisien animé */
-        .tunisia-flag {
-            display: inline-flex;
-            align-items: center;
-            gap: 15px;
-            animation: flagWave 3s infinite ease-in-out;
-        }
+/* Container du drapeau */
+.tunisia-flag {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 12px;
+  animation: flagWave 3s infinite ease-in-out;
+  transform-origin: left center;
+}
 
-        @keyframes flagWave {
-            0%, 100% { transform: rotate(0deg); }
-            25% { transform: rotate(-5deg); }
-            75% { transform: rotate(5deg); }
-        }
+/* Image du drapeau */
+.flag-img {
+  width: 60px;          /* ajuste si besoin */
+  height: auto;
+  border-radius: 6px;
+  box-shadow: 0 6px 18px rgba(231, 0, 19, 0.25);
+  display: block;
+}
 
-        .flag-icon {
-            width: 80px;
-            height: 60px;
-            background: linear-gradient(to right, #E70013 0%, #E70013 100%);
-            border-radius: 8px;
-            box-shadow: 0 8px 25px rgba(231, 0, 19, 0.3);
-            position: relative;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+/* Animation douce */
 
-        .flag-circle {
-            width: 38px;
-            height: 38px;
-            background: white;
-            border-radius: 50%;
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+@keyframes flagWave {
+  0%   { transform: rotate(0deg); }
+  20%  { transform: rotate(-2deg); }
+  40%  { transform: rotate(2deg); }
+  60%  { transform: rotate(-1deg); }
+  80%  { transform: rotate(1deg); }
+  100% { transform: rotate(0deg); }
+}
 
-        .flag-crescent {
-            width: 24px;
-            height: 24px;
-            border: 3px solid #E70013;
-            border-radius: 50%;
-            position: relative;
-        }
-
-        .flag-star {
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            color: #E70013;
-            font-size: 16px;
-        }
 
         .home-text {
             font-size: 19px;
@@ -214,6 +215,7 @@ header ul li a:hover {
             text-transform: uppercase;
             letter-spacing: 1px;
         }
+
 /* Map box */
 .home-map-box {
   text-align: center;
@@ -226,16 +228,22 @@ header ul li a:hover {
   box-shadow: 0 8px 20px rgba(0,0,0,0.08);
 }
 
-/* ===== Fade & Slide animation ===== */
-.fade-in {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+.map-hint {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #7a4e5a;
 }
 
-.fade-in.show {
-  opacity: 1;
-  transform: translateY(0);
+/* Responsive */
+@media (max-width: 900px) {
+  .home-map {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .home-stats {
+    justify-content: center;
+  }
 }
 
 .governorate {
@@ -677,24 +685,10 @@ header ul li a:hover {
             max-width: 1200px;
             margin: 60px auto;
             padding: 60px 30px;
-            background: linear-gradient(135deg, rgba(232, 179, 196, 0.1), rgba(194, 121, 139, 0.05));
+
             border-radius: 25px;
-            box-shadow: 0 10px 40px rgba(194, 121, 139, 0.15);
             position: relative;
             overflow: hidden;
-        }
-
-        /* Effet décoratif d'arrière-plan */
-        .achievements-section::before {
-            content: "";
-            position: absolute;
-            top: -100px;
-            right: -100px;
-            width: 300px;
-            height: 300px;
-            background: radial-gradient(circle, rgba(232, 179, 196, 0.3), transparent);
-            border-radius: 50%;
-            z-index: 0;
         }
 
         .achievements-section::after {
@@ -890,128 +884,505 @@ header ul li a:hover {
 
 /* ===== MODERN TIMELINE ===== */
 
-.timeline {
+.history-timeline {
   max-width: 1100px;
-  margin: 70px auto;
-  padding: 30px 20px;
+  margin: 90px auto;
+  padding: 20px;
 }
 
 .timeline-title {
   text-align: center;
-  font-family: "Georgia", serif;
+  font-family: Georgia, serif;
+  font-size: 32px;
+  color: #5a3b45;
+  margin-bottom: 60px;
+}
+
+/* Ligne horizontale */
+.timeline-track {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  padding-top: 15px;
+}
+
+.timeline-track::before {
+  content: "";
+  position: absolute;
+  top: 60px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: #e3b2c3;
+}
+
+/* Événement */
+.timeline-event {
+  position: relative;
+  width: 23%;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.6s ease;
+}
+
+.timeline-event.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Icône */
+.timeline-icon {
+  font-size: 26px;
+  background: #f3c8d5;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+  position: relative;
+  z-index: 2;
+}
+
+/* Date */
+.timeline-date {
+  font-size: 13px;
+  font-weight: 700;
+  color: #a25a74;
+  margin-bottom: 10px;
+  display: block;
+}
+
+/* Carte */
+.timeline-card {
+  background: rgba(255,255,255,0.95);
+  padding: 16px 18px;
+  border-radius: 14px;
+  border: 1px solid #d4a7b7;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.04);
+}
+
+.timeline-card h3 {
+  margin: 0 0 8px;
+  font-family: Georgia, serif;
+  color: #5a3b45;
+}
+
+.timeline-card p {
+  margin: 0;
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: #333;
+}
+
+
+/* ===== WHY VISIT TUNISIA ===== */
+
+.why-tunisia {
+  max-width: 1100px;
+  margin: 80px auto;
+  padding: 30px 20px;
+}
+
+.why-title {
+  text-align: center;
+  font-family: Georgia, serif;
   font-size: 32px;
   color: #81657C;
   margin-bottom: 8px;
 }
 
-.timeline-subtitle {
+.why-intro {
   text-align: center;
+  max-width: 700px;
+  margin: 0 auto 40px;
   color: #7a4e5a;
-  max-width: 720px;
-  margin: 0 auto 50px;
   line-height: 1.6;
 }
 
-/* Central line */
-.timeline-line {
-  position: relative;
-  margin: 0 auto;
-  padding: 20px 0;
-}
-
-.timeline-line::before {
-  content: "";
-  position: absolute;
-  left: 50%;
-  top: 0;
-  width: 4px;
-  height: 100%;
-  background: linear-gradient(
-    to bottom,
-    #c2798b,
-    rgba(194,121,139,0.3)
-  );
-  transform: translateX(-50%);
-  border-radius: 10px;
-}
-
-/* Events */
-.timeline-event {
-  position: relative;
-  width: 50%;
-  padding: 20px 40px;
-  box-sizing: border-box;
-}
-
-.timeline-event.left {
-  left: 0;
-  text-align: right;
-}
-
-.timeline-event.right {
-  left: 50%;
-  text-align: left;
-}
-
-/* Year badge */
-.timeline-year {
-  display: inline-block;
-  background: #e8b3c4;
-  color: #462c33;
-  font-weight: 700;
-  padding: 6px 14px;
-  border-radius: 20px;
-  border: 1px solid #c2798b;
-  margin-bottom: 8px;
-  font-size: 13px;
+/* Grid */
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
 }
 
 /* Card */
-.timeline-card {
+.why-card {
   background: rgba(255,255,255,0.75);
-  backdrop-filter: blur(4px);
-  border-radius: 16px;
-  padding: 18px;
   border: 1px solid #d4a7b7;
-  box-shadow: 0 10px 24px rgba(0,0,0,0.06);
-  max-width: 420px;
+  border-radius: 18px;
+  padding: 18px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.04);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.timeline-event.left .timeline-card {
-  margin-left: auto;
+.why-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px rgba(0,0,0,0.08);
 }
 
-.timeline-card h3 {
-  margin: 0 0 6px;
+/* Image placeholder */
+.why-image {
+  width: 100%;
+  height: 140px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #f3c8d5, #f7e2ea);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #a25a74;
+  font-size: 14px;
+  font-style: italic;
+}
+
+/* Text */
+.why-card h3 {
+  margin: 0 0 8px;
   color: #462c33;
   font-size: 18px;
 }
 
-.timeline-card p {
+.why-card p {
   margin: 0;
-  font-size: 14px;
-  color: #462c33;
-  line-height: 1.5;
+  font-size: 14.5px;
+  color: #333;
+  line-height: 1.55;
 }
 
-/* Responsive */
-@media (max-width: 900px) {
-  .timeline-line::before {
-    left: 20px;
-  }
 
-  .timeline-event,
-  .timeline-event.left,
-  .timeline-event.right {
-    width: 100%;
-    left: 0;
-    text-align: left;
-    padding-left: 50px;
-    padding-right: 10px;
-  }
+/*DID YOU KNOW*/
+.did-you-know {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 40px;       
+            border-radius: 30px;
+            
+            position: relative;
+            overflow: hidden;
+        }
+        .did-you-know::after {
+            content: "🇹🇳";
+            position: absolute;
+            bottom: -80px;
+            left: -80px;
+            font-size: 400px;
+            opacity: 0.04;
+            transform: rotate(25deg);
+            z-index: 0;
+        }
 
-  .timeline-event.left .timeline-card,
-  .timeline-event.right .timeline-card {
-    margin-left: 0;
-  }
-}
+        .did-you-know > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .did-you-know h2 {
+            font-family: "Georgia", serif;
+            font-size: 52px;
+            color: #462c33;
+            text-align: center;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.05);
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+
+        .did-you-know h2::before {
+            content: "💡";
+            display: inline-block;
+            margin-right: 15px;
+            animation: glow 2s infinite alternate;
+        }
+
+        @keyframes glow {
+            0% { 
+                filter: brightness(1);
+                transform: scale(1);
+            }
+            100% { 
+                filter: brightness(1.3);
+                transform: scale(1.1);
+            }
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 20px;
+            color: #7a4e5a;
+            font-style: italic;
+            margin-bottom: 60px;
+            opacity: 0;
+            animation: fadeIn 1s ease forwards 0.3s;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* ====================== FACTS GRID ====================== */
+        .facts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .fact-card {
+            background: linear-gradient(145deg, #ffffff, #ffeef3);
+            padding: 35px 30px;
+            border-radius: 22px;
+            border: 2px solid #e8b3c4;
+            box-shadow: 0 10px 30px rgba(194, 121, 139, 0.15);
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: slideUp 0.8s ease forwards;
+        }
+
+        .fact-card:nth-child(1) { animation-delay: 0.1s; }
+        .fact-card:nth-child(2) { animation-delay: 0.2s; }
+        .fact-card:nth-child(3) { animation-delay: 0.3s; }
+        .fact-card:nth-child(4) { animation-delay: 0.4s; }
+        .fact-card:nth-child(5) { animation-delay: 0.5s; }
+        .fact-card:nth-child(6) { animation-delay: 0.6s; }
+        .fact-card:nth-child(7) { animation-delay: 0.7s; }
+        .fact-card:nth-child(8) { animation-delay: 0.8s; }
+
+        @keyframes slideUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Effet de brillance au survol */
+        .fact-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+            transition: 0.6s;
+        }
+
+        .fact-card:hover::before {
+            left: 100%;
+        }
+
+        .fact-card:hover {
+            transform: translateY(-15px) scale(1.05);
+            box-shadow: 0 20px 50px rgba(194, 121, 139, 0.3);
+            border-color: #c2798b;
+        }
+
+        .fact-card:hover .fact-icon {
+            transform: scale(0.7) translateY(-20px);
+            opacity: 0.3;
+        }
+
+        .fact-card:hover .fact-text {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .fact-card:hover .mystery-text {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+
+        /* Icône de la carte */
+        .fact-icon {
+            font-size: 56px;
+            display: block;
+            text-align: center;
+            margin-bottom: 20px;
+            filter: drop-shadow(0 4px 8px rgba(194, 121, 139, 0.3));
+            animation: float 3s infinite ease-in-out;
+            transition: all 0.4s ease;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .fact-card:nth-child(1) .fact-icon { animation-delay: 0s; }
+        .fact-card:nth-child(2) .fact-icon { animation-delay: 0.5s; }
+        .fact-card:nth-child(3) .fact-icon { animation-delay: 1s; }
+        .fact-card:nth-child(4) .fact-icon { animation-delay: 1.5s; }
+        .fact-card:nth-child(5) .fact-icon { animation-delay: 2s; }
+        .fact-card:nth-child(6) .fact-icon { animation-delay: 2.5s; }
+        .fact-card:nth-child(7) .fact-icon { animation-delay: 3s; }
+        .fact-card:nth-child(8) .fact-icon { animation-delay: 3.5s; }
+
+        .fact-text {
+            font-size: 17px;
+            color: #462c33;
+            line-height: 1.8;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        /* Badge numéro */
+        .fact-number {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            width: 35px;
+            height: 35px;
+            background: linear-gradient(135deg, #c2798b, #e8b3c4);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 14px;
+            box-shadow: 0 4px 12px rgba(194, 121, 139, 0.4);
+        }
+
+        /* Variantes de couleurs pour chaque carte */
+        .fact-card:nth-child(1) {
+            background: linear-gradient(145deg, #fff5f7, #ffeef3);
+        }
+
+        .fact-card:nth-child(2) {
+            background: linear-gradient(145deg, #ffeef3, #fff5f7);
+        }
+
+        .fact-card:nth-child(3) {
+            background: linear-gradient(145deg, #ffffff, #fff5f7);
+        }
+
+        .fact-card:nth-child(4) {
+            background: linear-gradient(145deg, #fff5f7, #ffffff);
+        }
+
+        .fact-card:nth-child(5) {
+            background: linear-gradient(145deg, #ffeef3, #ffffff);
+        }
+
+        .fact-card:nth-child(6) {
+            background: linear-gradient(145deg, #ffffff, #ffeef3);
+        }
+
+        .fact-card:nth-child(7) {
+            background: linear-gradient(145deg, #fff5f7, #ffeef3);
+        }
+
+        .fact-card:nth-child(8) {
+            background: linear-gradient(145deg, #ffeef3, #fff5f7);
+        }
+
+        /* ====================== CTA SECTION ====================== */
+        .facts-cta {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 2px solid #e8b3c4;
+        }
+
+        .facts-cta p {
+            font-size: 20px;
+            color: #7a4e5a;
+            margin-bottom: 25px;
+            font-weight: 600;
+        }
+
+        .explore-more-btn {
+            display: inline-block;
+            padding: 16px 45px;
+            background: linear-gradient(135deg, #c2798b, #e8b3c4);
+            color: white;
+            text-decoration: none;
+            font-size: 17px;
+            font-weight: 700;
+            border-radius: 50px;
+            box-shadow: 0 8px 25px rgba(194, 121, 139, 0.4);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .explore-more-btn::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .explore-more-btn:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .explore-more-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(194, 121, 139, 0.5);
+        }
+
+        .explore-more-btn span {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ====================== RESPONSIVE ====================== */
+        @media (max-width: 768px) {
+            .did-you-know {
+                padding: 60px 30px;
+            }
+
+            .did-you-know h2 {
+                font-size: 38px;
+            }
+
+            .section-subtitle {
+                font-size: 16px;
+            }
+
+            .facts-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .fact-icon {
+                font-size: 48px;
+            }
+
+            .fact-text {
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .did-you-know {
+                padding: 40px 20px;
+            }
+
+            .did-you-know h2 {
+                font-size: 32px;
+            }
+
+            .fact-card {
+                padding: 28px 22px;
+            }
+        }
