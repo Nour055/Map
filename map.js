@@ -150,5 +150,22 @@ if (!article) {
 
   window.addEventListener('scroll', revealTimeline);
   revealTimeline();
+  // Tab functionality
+document.addEventListener('DOMContentLoaded', () => {
+  const tabs = document.querySelectorAll('.tab-btn');
+  const sections = document.querySelectorAll('.tab-section');
 
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      // Remove active from all tabs and sections
+      tabs.forEach(t => t.classList.remove('active'));
+      sections.forEach(s => s.classList.remove('active'));
 
+      // Add active to clicked tab and corresponding section
+      tab.classList.add('active');
+      const targetId = tab.getAttribute('data-tab');
+      const targetSection = document.getElementById(targetId);
+      if (targetSection) targetSection.classList.add('active');
+    });
+  });
+});
