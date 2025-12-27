@@ -691,18 +691,6 @@ header ul li a:hover {
             overflow: hidden;
         }
 
-        .achievements-section::after {
-            content: "";
-            position: absolute;
-            bottom: -150px;
-            left: -150px;
-            width: 400px;
-            height: 400px;
-            background: radial-gradient(circle, rgba(194, 121, 139, 0.2), transparent);
-            border-radius: 50%;
-            z-index: 0;
-        }
-
         .achievements-section > * {
             position: relative;
             z-index: 1;
@@ -991,7 +979,7 @@ header ul li a:hover {
   text-align: center;
   font-family: Georgia, serif;
   font-size: 32px;
-  color: #81657C;
+  color: #462c33;
   margin-bottom: 8px;
 }
 
@@ -1055,334 +1043,158 @@ header ul li a:hover {
 }
 
 
-/*DID YOU KNOW*/
+/* ====================== DID YOU KNOW SECTION ====================== */
 .did-you-know {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 80px 40px;       
-            border-radius: 30px;
-            
-            position: relative;
-            overflow: hidden;
-        }
-        .did-you-know::after {
-            content: "🇹🇳";
-            position: absolute;
-            bottom: -80px;
-            left: -80px;
-            font-size: 400px;
-            opacity: 0.04;
-            transform: rotate(25deg);
-            z-index: 0;
-        }
+  max-width: 1300px;
+  margin: 70px auto;
+  padding: 60px 40px;
+  border-radius: 28px;
+}
 
-        .did-you-know > * {
-            position: relative;
-            z-index: 1;
-        }
+.did-you-know h2 {
+  font-family: Georgia, serif;
+  font-size: 42px;
+  color: #462c33;
+  text-align: center;
+  margin-bottom: 12px;
+}
 
-        .did-you-know h2 {
-            font-family: "Georgia", serif;
-            font-size: 52px;
-            color: #462c33;
-            text-align: center;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.05);
-            position: relative;
-            display: inline-block;
-            width: 100%;
-        }
+.section-subtitle {
+  text-align: center;
+  font-size: 18px;
+  color: #7a4e5a;
+  margin-bottom: 45px;
+}
 
-        .did-you-know h2::before {
-            content: "💡";
-            display: inline-block;
-            margin-right: 15px;
-            animation: glow 2s infinite alternate;
-        }
+/* ====================== GRID ====================== */
+.facts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 28px;
+}
 
-        @keyframes glow {
-            0% { 
-                filter: brightness(1);
-                transform: scale(1);
-            }
-            100% { 
-                filter: brightness(1.3);
-                transform: scale(1.1);
-            }
-        }
+/* ====================== CARD ====================== */
+.fact-card {
+  background: linear-gradient(145deg, #ffffff, #fff2f6);
+  padding: 32px 24px;
+  border-radius: 22px;
+  border: 1px solid #e8b3c4;
+  box-shadow: 0 10px 30px rgba(194, 121, 139, 0.12);
+  position: relative;
+  text-align: center;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
 
-        .section-subtitle {
-            text-align: center;
-            font-size: 20px;
-            color: #7a4e5a;
-            font-style: italic;
-            margin-bottom: 60px;
-            opacity: 0;
-            animation: fadeIn 1s ease forwards 0.3s;
-        }
+.fact-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 45px rgba(194, 121, 139, 0.25);
+}
 
-        @keyframes fadeIn {
-            to {
-                opacity: 1;
-            }
-        }
+/* ====================== IMAGE ====================== */
+.fact-image {
+  width: 95px;
+  height: 95px;
+  margin: 0 auto 18px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ffeef3, #ffffff);
+  border: 3px solid #e8b3c4;
+  box-shadow: 0 5px 15px rgba(194, 121, 139, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
 
-        /* ====================== FACTS GRID ====================== */
-        .facts-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
-        }
+.fact-card:hover .fact-image {
+  transform: scale(1.05);
+  border-color: #c2798b;
+  box-shadow: 0 8px 20px rgba(194, 121, 139, 0.3);
+}
 
-        .fact-card {
-            background: linear-gradient(145deg, #ffffff, #ffeef3);
-            padding: 35px 30px;
-            border-radius: 22px;
-            border: 2px solid #e8b3c4;
-            box-shadow: 0 10px 30px rgba(194, 121, 139, 0.15);
-            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            position: relative;
-            overflow: hidden;
-            cursor: pointer;
-            opacity: 0;
-            transform: translateY(30px);
-            animation: slideUp 0.8s ease forwards;
-        }
+.fact-image img {
+  width: 95px;
+  height: 95px;
+  object-fit: cover;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
 
-        .fact-card:nth-child(1) { animation-delay: 0.1s; }
-        .fact-card:nth-child(2) { animation-delay: 0.2s; }
-        .fact-card:nth-child(3) { animation-delay: 0.3s; }
-        .fact-card:nth-child(4) { animation-delay: 0.4s; }
-        .fact-card:nth-child(5) { animation-delay: 0.5s; }
-        .fact-card:nth-child(6) { animation-delay: 0.6s; }
-        .fact-card:nth-child(7) { animation-delay: 0.7s; }
-        .fact-card:nth-child(8) { animation-delay: 0.8s; }
+.fact-card:hover .fact-image img {
+  transform: scale(1.1);
+}
 
-        @keyframes slideUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+/* ====================== TEXT ====================== */
+.fact-text {
+  font-size: 15.5px;
+  line-height: 1.7;
+  color: #462c33;
+}
 
-        /* Effet de brillance au survol */
-        .fact-card::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
-            transition: 0.6s;
-        }
+/* ====================== NUMBER BADGE ====================== */
+.fact-number {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #c2798b, #e8b3c4);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 3px 10px rgba(194, 121, 139, 0.3);
+  transition: transform 0.3s ease;
+}
 
-        .fact-card:hover::before {
-            left: 100%;
-        }
+.fact-card:hover .fact-number {
+  transform: scale(1.1) rotate(10deg);
+}
 
-        .fact-card:hover {
-            transform: translateY(-15px) scale(1.05);
-            box-shadow: 0 20px 50px rgba(194, 121, 139, 0.3);
-            border-color: #c2798b;
-        }
+/* ====================== RESPONSIVE ====================== */
+@media (max-width: 900px) {
+  .did-you-know h2 {
+    font-size: 36px;
+  }
+  
+  .section-subtitle {
+    font-size: 16px;
+  }
+  
+  .fact-image {
+    width: 85px;
+    height: 85px;
+  }
+  
+  .fact-image img {
+    width: 85px;
+    height: 85px;
+  }
+}
 
-        .fact-card:hover .fact-icon {
-            transform: scale(0.7) translateY(-20px);
-            opacity: 0.3;
-        }
-
-        .fact-card:hover .fact-text {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .fact-card:hover .mystery-text {
-            opacity: 0;
-            transform: translateY(-10px);
-        }
-
-        /* Icône de la carte */
-        .fact-icon {
-            font-size: 56px;
-            display: block;
-            text-align: center;
-            margin-bottom: 20px;
-            filter: drop-shadow(0 4px 8px rgba(194, 121, 139, 0.3));
-            animation: float 3s infinite ease-in-out;
-            transition: all 0.4s ease;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-
-        .fact-card:nth-child(1) .fact-icon { animation-delay: 0s; }
-        .fact-card:nth-child(2) .fact-icon { animation-delay: 0.5s; }
-        .fact-card:nth-child(3) .fact-icon { animation-delay: 1s; }
-        .fact-card:nth-child(4) .fact-icon { animation-delay: 1.5s; }
-        .fact-card:nth-child(5) .fact-icon { animation-delay: 2s; }
-        .fact-card:nth-child(6) .fact-icon { animation-delay: 2.5s; }
-        .fact-card:nth-child(7) .fact-icon { animation-delay: 3s; }
-        .fact-card:nth-child(8) .fact-icon { animation-delay: 3.5s; }
-
-        .fact-text {
-            font-size: 17px;
-            color: #462c33;
-            line-height: 1.8;
-            text-align: center;
-            font-weight: 500;
-        }
-
-        /* Badge numéro */
-        .fact-number {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            width: 35px;
-            height: 35px;
-            background: linear-gradient(135deg, #c2798b, #e8b3c4);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            font-size: 14px;
-            box-shadow: 0 4px 12px rgba(194, 121, 139, 0.4);
-        }
-
-        /* Variantes de couleurs pour chaque carte */
-        .fact-card:nth-child(1) {
-            background: linear-gradient(145deg, #fff5f7, #ffeef3);
-        }
-
-        .fact-card:nth-child(2) {
-            background: linear-gradient(145deg, #ffeef3, #fff5f7);
-        }
-
-        .fact-card:nth-child(3) {
-            background: linear-gradient(145deg, #ffffff, #fff5f7);
-        }
-
-        .fact-card:nth-child(4) {
-            background: linear-gradient(145deg, #fff5f7, #ffffff);
-        }
-
-        .fact-card:nth-child(5) {
-            background: linear-gradient(145deg, #ffeef3, #ffffff);
-        }
-
-        .fact-card:nth-child(6) {
-            background: linear-gradient(145deg, #ffffff, #ffeef3);
-        }
-
-        .fact-card:nth-child(7) {
-            background: linear-gradient(145deg, #fff5f7, #ffeef3);
-        }
-
-        .fact-card:nth-child(8) {
-            background: linear-gradient(145deg, #ffeef3, #fff5f7);
-        }
-
-        /* ====================== CTA SECTION ====================== */
-        .facts-cta {
-            text-align: center;
-            margin-top: 60px;
-            padding-top: 40px;
-            border-top: 2px solid #e8b3c4;
-        }
-
-        .facts-cta p {
-            font-size: 20px;
-            color: #7a4e5a;
-            margin-bottom: 25px;
-            font-weight: 600;
-        }
-
-        .explore-more-btn {
-            display: inline-block;
-            padding: 16px 45px;
-            background: linear-gradient(135deg, #c2798b, #e8b3c4);
-            color: white;
-            text-decoration: none;
-            font-size: 17px;
-            font-weight: 700;
-            border-radius: 50px;
-            box-shadow: 0 8px 25px rgba(194, 121, 139, 0.4);
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .explore-more-btn::before {
-            content: "";
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 0;
-            height: 0;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.3);
-            transform: translate(-50%, -50%);
-            transition: width 0.6s, height 0.6s;
-        }
-
-        .explore-more-btn:hover::before {
-            width: 300px;
-            height: 300px;
-        }
-
-        .explore-more-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 35px rgba(194, 121, 139, 0.5);
-        }
-
-        .explore-more-btn span {
-            position: relative;
-            z-index: 1;
-        }
-
-        /* ====================== RESPONSIVE ====================== */
-        @media (max-width: 768px) {
-            .did-you-know {
-                padding: 60px 30px;
-            }
-
-            .did-you-know h2 {
-                font-size: 38px;
-            }
-
-            .section-subtitle {
-                font-size: 16px;
-            }
-
-            .facts-grid {
-                grid-template-columns: 1fr;
-                gap: 25px;
-            }
-
-            .fact-icon {
-                font-size: 48px;
-            }
-
-            .fact-text {
-                font-size: 16px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .did-you-know {
-                padding: 40px 20px;
-            }
-
-            .did-you-know h2 {
-                font-size: 32px;
-            }
-
-            .fact-card {
-                padding: 28px 22px;
-            }
-        }
+@media (max-width: 500px) {
+  .did-you-know {
+    padding: 45px 20px;
+  }
+  
+  .did-you-know h2 {
+    font-size: 30px;
+  }
+  
+  .fact-card {
+    padding: 26px 20px;
+  }
+  
+  .fact-image {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .fact-image img {
+    width: 80px;
+    height: 80px;
+  }
+}
