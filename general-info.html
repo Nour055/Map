@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="styles.css">
 
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Discover the magic of Tunisia" />
+  <title>Tunisia through our eyes</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
     <header>
   <a href="index.html">
@@ -124,7 +126,7 @@
     </div>
   </section>
 
-    <section id="contact">
+<section id="contact">
   <form class="panel-contact">
     <h2>Contact</h2>
     <div class="panel-row">
@@ -160,266 +162,70 @@
   <p>One country. A thousand journeys.</p>
 </footer>
 
-    <!-- Chat Widget Button -->
-    <button class="chat-widget-button" id="chatToggle">
-        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
-        </svg>
+  <!-- Chat Widget Button -->
+<button class="chat-widget-button" id="chatToggle">
+    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+    </svg>
+</button>
+
+  <!-- Chat Panel -->
+<div class="chat-panel" id="chatPanel">
+  <div class="chat-header">
+      <div class="chat-header-content">
+        <div class="chat-header-icon"> <img src="img/chatboticone.png" alt=""></div>
+          <div class="chat-header-text">
+            <h3>Tunisia Assistant</h3>
+            <p>Ask me anything about Tunisia</p>
+          </div>
+      </div>
+    <button class="chat-close" id="chatClose">
+      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+      </svg>
     </button>
+  </div>
 
-    <!-- Chat Panel -->
-    <div class="chat-panel" id="chatPanel">
-        <div class="chat-header">
-            <div class="chat-header-content">
-                <div class="chat-header-icon">
-                  <img src="img/197624.png" alt="">
-                </div>
-                <div class="chat-header-text">
-                    <h3>Tunisia Assistant</h3>
-                    <p>Ask me anything about Tunisia</p>
-                </div>
-            </div>
-            <button class="chat-close" id="chatClose">
-                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
-                </svg>
-            </button>
+  <div class="chat-messages" id="chatMessages">
+    <div class="chat-message assistant">
+      <div>
+        <div class="assistant-label">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+          </svg> Tunisia Guide
         </div>
-
-        <div class="chat-messages" id="chatMessages">
-            <div class="chat-message assistant">
-                <div>
-                    <div class="assistant-label">
-                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-                        </svg>
-                        Tunisia Guide
-                    </div>
-                    <div class="message-bubble">
-                        Asslemaa! 👋 Welcome to Tunisia's information assistant. I'm here to help you discover the beauty, history, and culture of Tunisia. Feel free to ask me anything about this wonderful North African country!
-                    </div>
-                </div>
-            </div>
+        <div class="message-bubble">
+          Asslemaa! 👋 Welcome to Tunisia's information assistant. I'm here to help you discover the beauty, history, and culture of Tunisia. Feel free to ask me anything about this wonderful North African country!
         </div>
+      </div>
+    </div>
+  </div>
 
-        <div class="quick-questions" id="quickQuestions">
-            <p>
-                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
-                </svg>
-                Quick questions:
-            </p>
-            <button class="quick-btn" onclick="sendQuickQuestion('What is Tunisia known for?')">What is Tunisia known for?</button>
-            <button class="quick-btn" onclick="sendQuickQuestion('What currency is used?')">What currency is used?</button>
-            <button class="quick-btn" onclick="sendQuickQuestion('Tell me about Tunisian food')">Tell me about Tunisian food</button>
-            <button class="quick-btn" onclick="sendQuickQuestion('What are the main tourist sites?')">What are the main tourist sites?</button>
-        </div>
+  <div class="quick-questions" id="quickQuestions">
+    <p>
+      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
+      </svg> Quick questions:
+    </p>
+    <button class="quick-btn" onclick="sendQuickQuestion('What is Tunisia known for?')">What is Tunisia known for?</button>
+    <button class="quick-btn" onclick="sendQuickQuestion('What currency is used?')">What currency is used?</button>
+    <button class="quick-btn" onclick="sendQuickQuestion('Tell me about Tunisian food')">Tell me about Tunisian food</button>
+    <button class="quick-btn" onclick="sendQuickQuestion('What are the main tourist sites?')">What are the main tourist sites?</button>
+  </div>
 
-        <div class="chat-input-container">
-            <div class="chat-input-wrapper">
-                <input type="text" class="chat-input" id="chatInput" placeholder="Ask me anything about Tunisia..." />
+  <div class="chat-input-container">
+    <div class="chat-input-wrapper">
+      <input type="text" class="chat-input" id="chatInput" placeholder="Ask me anything about Tunisia..." />
                 <button class="chat-send-btn" id="chatSend">
                     <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/>
                     </svg>
                 </button>
-            </div>
-            <p class="chat-footer-text">🇹🇳 Powered by AI</p>
-        </div>
     </div>
+    <p class="chat-footer-text">🇹🇳 Powered by AI</p>
+  </div>
+</div>
 
-    <script>
-        const chatToggle = document.getElementById('chatToggle');
-        const chatPanel = document.getElementById('chatPanel');
-        const chatClose = document.getElementById('chatClose');
-        const chatMessages = document.getElementById('chatMessages');
-        const chatInput = document.getElementById('chatInput');
-        const chatSend = document.getElementById('chatSend');
-        const quickQuestions = document.getElementById('quickQuestions');
-        let isLoading = false;
-
-        // Knowledge base for Tunisia
-        function getResponse(question) {
-            const q = question.toLowerCase();
-            
-            // Known for
-            if (q.includes('known for') || q.includes('famous for')) {
-                return "Tunisia is known for its stunning Mediterranean beaches, the vast Sahara Desert, ancient ruins like Carthage and the El Djem amphitheater, and its rich cultural heritage blending Arab, Berber, African, and Mediterranean influences. It's also famous for its delicious cuisine, beautiful medinas, and warm hospitality!";
-            }
-            
-            // Currency
-            if (q.includes('currency') || q.includes('money') || q.includes('dinar')) {
-                return "Tunisia uses the Tunisian Dinar (TND), which is divided into 1,000 millimes. The exchange rate is approximately 1 EUR = 3.43 TND. You can exchange currency at banks, airports, and authorized exchange offices throughout the country.";
-            }
-            
-            // Food
-            if (q.includes('food') || q.includes('cuisine') || q.includes('dish')) {
-                return "Tunisian cuisine is absolutely delicious! Must-try dishes include couscous (the national dish), brik (crispy pastry with egg and tuna), harissa (spicy chili paste), tajine, and mechouia salad. Don't miss the fresh seafood, fragrant mint tea, and sweet pastries like makroud and baklava!";
-            }
-            
-            // Tourist sites
-            if (q.includes('tourist') || q.includes('visit') || q.includes('sites') || q.includes('attractions') || q.includes('places') || q.includes('monuments')) {
-                return "Tunisia has incredible attractions! Visit the ancient ruins of Carthage, the beautiful blue and white village of Sidi Bou Said, the Roman amphitheater in El Djem, the Medina of Tunis (UNESCO site), the oasis town of Tozeur, and the stunning island of Djerba. The Sahara Desert experience is unforgettable!";
-            }
-            
-            // Weather/Climate
-            if (q.includes('weather') || q.includes('climate') || q.includes('temperature')) {
-                return "Tunisia has a Mediterranean climate with hot, dry summers and mild winters. Coastal areas are pleasant year-round, with summer temperatures around 29°C and winter around 11°C. The interior is semi-arid, and the south has an arid desert climate. The best time to visit is spring (March-May) or autumn (September-November).";
-            }
-            
-            // Beaches
-            if (q.includes('beach') || q.includes('coast') || q.includes('sea')) {
-                return "Tunisia has 1,298 km of beautiful Mediterranean coastline! Popular beach destinations include Hammamet, Sousse, Monastir, the island of Djerba, and Tabarka. You'll find golden sandy beaches, crystal-clear turquoise waters, and excellent resorts along the coast.";
-            }
-            
-            // Sahara
-            if (q.includes('sahara') || q.includes('desert')) {
-                return "The Sahara Desert in southern Tunisia is breathtaking! Popular experiences include camel treks, overnight stays in desert camps, visiting oases like Douz and Tozeur, exploring the Star Wars filming locations, and watching magical sunrises and sunsets over the dunes.";
-            }
-            
-            // Language
-            if (q.includes('language') || q.includes('speak')) {
-                return "Arabic is the official language of Tunisia. However, French is widely spoken and used in business and education. Many Tunisians also speak English, especially in tourist areas, and Italian is commonly understood. The local dialect is Tunisian Arabic (Derja).";
-            }
-            
-            // History/Carthage
-            if (q.includes('history') || q.includes('carthage') || q.includes('roman')) {
-                return "Tunisia has a fascinating history spanning over 3,000 years! It was home to the ancient Phoenician city of Carthage, later became part of the Roman Empire, was conquered by Arabs in the 7th century, and gained independence from France in 1956. You can explore incredible archaeological sites from all these periods.";
-            }
-            
-            // Capital
-            if (q.includes('capital') || q.includes('tunis')) {
-                return "Tunis is the capital and largest city of Tunisia, located on the Mediterranean coast. It's a vibrant mix of ancient medina (UNESCO World Heritage site), French colonial architecture, and modern districts. Must-see spots include the Bardo Museum, Zitouna Mosque, and nearby Carthage ruins.";
-            }
-            
-            // Safety
-            if (q.includes('safe') || q.includes('safety') || q.includes('secure')) {
-                return "Tunisia is generally a safe destination for tourists. The Tunisian people are known for their warm hospitality and friendliness. As with any travel destination, use common sense, stay aware of your surroundings, and follow local advice. Tourist Police (dial 197) are available to help visitors.";
-            }
-            
-            // Best time to visit
-            if (q.includes('when') || q.includes('best time')) {
-                return "The best time to visit Tunisia is during spring (March to May) or autumn (September to November) when temperatures are pleasant and comfortable for sightseeing. Summer (June-August) is perfect for beach holidays but can be very hot inland. Winter is mild and great for exploring the south.";
-            }
-            
-            // Culture/traditions
-            if (q.includes('culture') || q.includes('tradition') || q.includes('customs')) {
-                return "Tunisia has a rich cultural blend of Arab, Berber, Mediterranean, and African influences. Traditions include warm hospitality, mint tea ceremonies, vibrant festivals, traditional music like malouf, and beautiful handicrafts such as pottery, carpets, and metalwork. Religious and family values are important.";
-            }
-            
-            // Hotels/accommodation
-            if (q.includes('hotel') || q.includes('accommodation') || q.includes('stay')) {
-                return "Tunisia offers diverse accommodation options for all budgets! From luxury beach resorts and boutique riads in the medinas to budget-friendly hotels and desert camps. Popular areas include Hammamet, Sousse, Djerba, and Tunis. Many all-inclusive resorts are available along the coast.";
-            }
-            
-            // Transportation
-            if (q.includes('transport') || q.includes('travel') || q.includes('get around')) {
-                return "Getting around Tunisia is easy! Options include trains (connecting major cities), buses (louages for shorter distances), taxis (both metered and shared), rental cars, and domestic flights. The TGM light rail connects Tunis to coastal suburbs like Carthage and Sidi Bou Said.";
-            }
-            
-            // Greetings in French
-            if (q.includes('bonjour') || q.includes('salut')) {
-                return "Bonjour! Je suis ravi de vous aider à découvrir la Tunisie. La Tunisie est un magnifique pays méditerranéen avec une histoire riche, des plages splendides, le désert du Sahara, et une culture accueillante. N'hésitez pas à me poser vos questions!";
-            }
-            
-            // Greetings in Arabic
-            if (q.includes('مرحبا') || q.includes('السلام')) {
-                return "مرحبا! تونس بلد جميل في شمال إفريقيا، مشهورة بشواطئها الرائعة، تاريخها العريق، صحراء الصحراء، وكرم ضيافة شعبها. كيف يمكنني مساعدتك في التعرف على تونس؟";
-            }
-            
-            // Default response
-            return "That's a great question about Tunisia! While I can provide general information about Tunisia's geography, culture, history, tourism, and daily life, I'd recommend checking official tourism websites for the most detailed and up-to-date information. Is there anything specific about Tunisia's beaches, deserts, cities, or culture you'd like to know?";
-        }
-
-        // Toggle chat panel
-        chatToggle.addEventListener('click', () => {
-            chatPanel.classList.toggle('open');
-            chatToggle.classList.toggle('active');
-        });
-
-        chatClose.addEventListener('click', () => {
-            chatPanel.classList.remove('open');
-            chatToggle.classList.remove('active');
-        });
-
-        // Send message
-        async function sendMessage(message) {
-            if (!message.trim() || isLoading) return;
-
-            // Hide quick questions after first message
-            if (chatMessages.children.length === 1) {
-                quickQuestions.style.display = 'none';
-            }
-
-            // Add user message
-            addMessage(message, 'user');
-            chatInput.value = '';
-
-            // Show typing indicator
-            isLoading = true;
-            chatSend.disabled = true;
-            const typingDiv = document.createElement('div');
-            typingDiv.className = 'chat-message assistant';
-            typingDiv.innerHTML = `
-                <div class="typing-indicator">
-                    <div class="typing-dot"></div>
-                    <div class="typing-dot"></div>
-                    <div class="typing-dot"></div>
-                </div>
-            `;
-            chatMessages.appendChild(typingDiv);
-            chatMessages.scrollTop = chatMessages.scrollHeight;
-
-            try {
-                // Simulate API delay for realistic feel
-                await new Promise(resolve => setTimeout(resolve, 1000 + Math.random() * 1000));
-                
-                const reply = getResponse(message);
-                typingDiv.remove();
-                addMessage(reply, 'assistant');
-            } catch (error) {
-                typingDiv.remove();
-                addMessage("I apologize, but I'm having trouble right now. Please try again in a moment.", 'assistant');
-            } finally {
-                isLoading = false;
-                chatSend.disabled = false;
-            }
-        }
-
-        function addMessage(text, role) {
-            const messageDiv = document.createElement('div');
-            messageDiv.className = `chat-message ${role}`;
-            
-            if (role === 'assistant') {
-                messageDiv.innerHTML = `
-                    <div>
-                        <div class="assistant-label">
-                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-                            </svg>
-                            Tunisia Guide
-                        </div>
-                        <div class="message-bubble">${text}</div>
-                    </div>
-                `;
-            } else {
-                messageDiv.innerHTML = `<div class="message-bubble">${text}</div>`;
-            }
-            
-            chatMessages.appendChild(messageDiv);
-            chatMessages.scrollTop = chatMessages.scrollHeight;
-        }
-
-        function sendQuickQuestion(question) {
-            chatInput.value = question;
-            sendMessage(question);
-        }
-
-        // Event listeners
-        chatSend.addEventListener('click', () => sendMessage(chatInput.value));
-        chatInput.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') sendMessage(chatInput.value);
-        });
-    </script>
+<script src="map.js"></script>
 </body>
 </html>

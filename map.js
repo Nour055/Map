@@ -86,29 +86,28 @@ if (!article) {
   return;
 }
 
-
     // Infos détaillées
     modalInfo.innerHTML = `
   <div class="info-card">
-    <h3>📍 Description</h3>
+    <h3>Description : </h3>
     <p>${description}</p>
   </div>
 
   <div class="info-card">
-    <h3>👥 Population</h3>
+    <h3>Population : </h3>
     <p>${population}</p>
 
-    <h3 style="margin-top: 10px;">📏 Area</h3>
+    <h3 style="margin-top: 10px;">Area : </h3>
     <p>${superficie}</p>
   </div>
 
   <div class="info-card">
-    <h3>🏛️ Main Attractions</h3>
+    <h3>Main Attractions : </h3>
     <ul>${attractions.map(a => `<li>${a}</li>`).join('')}</ul>
   </div>
 
   <div class="info-card">
-    <h3>🍽️ Local Cuisine</h3>
+    <h3>Local Cuisine : </h3>
     <ul>${cuisine.map(c => `<li>${c}</li>`).join('')}</ul>
   </div>
 `;
@@ -169,3 +168,195 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
+
+ const chatToggle = document.getElementById('chatToggle');
+        const chatPanel = document.getElementById('chatPanel');
+        const chatClose = document.getElementById('chatClose');
+        const chatMessages = document.getElementById('chatMessages');
+        const chatInput = document.getElementById('chatInput');
+        const chatSend = document.getElementById('chatSend');
+        const quickQuestions = document.getElementById('quickQuestions');
+        let isLoading = false;
+
+        // Knowledge base for Tunisia
+        function getResponse(question) {
+            const q = question.toLowerCase();
+            
+            // Known for
+            if (q.includes('known for') || q.includes('famous for')) {
+                return "Tunisia is known for its stunning Mediterranean beaches, the vast Sahara Desert, ancient ruins like Carthage and the El Djem amphitheater, and its rich cultural heritage blending Arab, Berber, African, and Mediterranean influences. It's also famous for its delicious cuisine, beautiful medinas, and warm hospitality!";
+            }
+            
+            // Currency
+            if (q.includes('currency') || q.includes('money') || q.includes('dinar')) {
+                return "Tunisia uses the Tunisian Dinar (TND), which is divided into 1,000 millimes. The exchange rate is approximately 1 EUR = 3.43 TND. You can exchange currency at banks, airports, and authorized exchange offices throughout the country.";
+            }
+            
+            // Food
+            if (q.includes('food') || q.includes('cuisine') || q.includes('dish')) {
+                return "Tunisian cuisine is absolutely delicious! Must-try dishes include couscous (the national dish), brik (crispy pastry with egg and tuna), harissa (spicy chili paste), tajine, and mechouia salad. Don't miss the fresh seafood, fragrant mint tea, and sweet pastries like makroud and baklava!";
+            }
+            
+            // Tourist sites
+            if (q.includes('tourist') || q.includes('visit') || q.includes('sites') || q.includes('attractions') || q.includes('places') || q.includes('monuments')) {
+                return "Tunisia has incredible attractions! Visit the ancient ruins of Carthage, the beautiful blue and white village of Sidi Bou Said, the Roman amphitheater in El Djem, the Medina of Tunis (UNESCO site), the oasis town of Tozeur, and the stunning island of Djerba. The Sahara Desert experience is unforgettable!";
+            }
+            
+            // Weather/Climate
+            if (q.includes('weather') || q.includes('climate') || q.includes('temperature')) {
+                return "Tunisia has a Mediterranean climate with hot, dry summers and mild winters. Coastal areas are pleasant year-round, with summer temperatures around 29°C and winter around 11°C. The interior is semi-arid, and the south has an arid desert climate. The best time to visit is spring (March-May) or autumn (September-November).";
+            }
+            
+            // Beaches
+            if (q.includes('beach') || q.includes('coast') || q.includes('sea')) {
+                return "Tunisia has 1,298 km of beautiful Mediterranean coastline! Popular beach destinations include Hammamet, Sousse, Monastir, the island of Djerba, and Tabarka. You'll find golden sandy beaches, crystal-clear turquoise waters, and excellent resorts along the coast.";
+            }
+            
+            // Sahara
+            if (q.includes('sahara') || q.includes('desert')) {
+                return "The Sahara Desert in southern Tunisia is breathtaking! Popular experiences include camel treks, overnight stays in desert camps, visiting oases like Douz and Tozeur, exploring the Star Wars filming locations, and watching magical sunrises and sunsets over the dunes.";
+            }
+            
+            // Language
+            if (q.includes('language') || q.includes('speak')) {
+                return "Arabic is the official language of Tunisia. However, French is widely spoken and used in business and education. Many Tunisians also speak English, especially in tourist areas, and Italian is commonly understood. The local dialect is Tunisian Arabic (Derja).";
+            }
+            
+            // History/Carthage
+            if (q.includes('history') || q.includes('carthage') || q.includes('roman')) {
+                return "Tunisia has a fascinating history spanning over 3,000 years! It was home to the ancient Phoenician city of Carthage, later became part of the Roman Empire, was conquered by Arabs in the 7th century, and gained independence from France in 1956. You can explore incredible archaeological sites from all these periods.";
+            }
+            
+            // Capital
+            if (q.includes('capital') || q.includes('tunis')) {
+                return "Tunis is the capital and largest city of Tunisia, located on the Mediterranean coast. It's a vibrant mix of ancient medina (UNESCO World Heritage site), French colonial architecture, and modern districts. Must-see spots include the Bardo Museum, Zitouna Mosque, and nearby Carthage ruins.";
+            }
+            
+            // Safety
+            if (q.includes('safe') || q.includes('safety') || q.includes('secure')) {
+                return "Tunisia is generally a safe destination for tourists. The Tunisian people are known for their warm hospitality and friendliness. As with any travel destination, use common sense, stay aware of your surroundings, and follow local advice. Tourist Police (dial 197) are available to help visitors.";
+            }
+            
+            // Best time to visit
+            if (q.includes('when') || q.includes('best time')) {
+                return "The best time to visit Tunisia is during spring (March to May) or autumn (September to November) when temperatures are pleasant and comfortable for sightseeing. Summer (June-August) is perfect for beach holidays but can be very hot inland. Winter is mild and great for exploring the south.";
+            }
+            
+            // Culture/traditions
+            if (q.includes('culture') || q.includes('tradition') || q.includes('customs')) {
+                return "Tunisia has a rich cultural blend of Arab, Berber, Mediterranean, and African influences. Traditions include warm hospitality, mint tea ceremonies, vibrant festivals, traditional music like malouf, and beautiful handicrafts such as pottery, carpets, and metalwork. Religious and family values are important.";
+            }
+            
+            // Hotels/accommodation
+            if (q.includes('hotel') || q.includes('accommodation') || q.includes('stay')) {
+                return "Tunisia offers diverse accommodation options for all budgets! From luxury beach resorts and boutique riads in the medinas to budget-friendly hotels and desert camps. Popular areas include Hammamet, Sousse, Djerba, and Tunis. Many all-inclusive resorts are available along the coast.";
+            }
+            
+            // Transportation
+            if (q.includes('transport') || q.includes('travel') || q.includes('get around')) {
+                return "Getting around Tunisia is easy! Options include trains (connecting major cities), buses (louages for shorter distances), taxis (both metered and shared), rental cars, and domestic flights. The TGM light rail connects Tunis to coastal suburbs like Carthage and Sidi Bou Said.";
+            }
+            
+            // Greetings in French
+            if (q.includes('bonjour') || q.includes('salut')) {
+                return "Bonjour! Je suis ravi de vous aider à découvrir la Tunisie. La Tunisie est un magnifique pays méditerranéen avec une histoire riche, des plages splendides, le désert du Sahara, et une culture accueillante. N'hésitez pas à me poser vos questions!";
+            }
+            
+            // Greetings in Arabic
+            if (q.includes('مرحبا') || q.includes('السلام')) {
+                return "مرحبا! تونس بلد جميل في شمال إفريقيا، مشهورة بشواطئها الرائعة، تاريخها العريق، صحراء الصحراء، وكرم ضيافة شعبها. كيف يمكنني مساعدتك في التعرف على تونس؟";
+            }
+            
+            // Default response
+            return "That's a great question about Tunisia! While I can provide general information about Tunisia's geography, culture, history, tourism, and daily life, I'd recommend checking official tourism websites for the most detailed and up-to-date information. Is there anything specific about Tunisia's beaches, deserts, cities, or culture you'd like to know?";
+        }
+
+        // Toggle chat panel
+        chatToggle.addEventListener('click', () => {
+            chatPanel.classList.toggle('open');
+            chatToggle.classList.toggle('active');
+        });
+
+        chatClose.addEventListener('click', () => {
+            chatPanel.classList.remove('open');
+            chatToggle.classList.remove('active');
+        });
+
+        // Send message
+        async function sendMessage(message) {
+            if (!message.trim() || isLoading) return;
+
+            // Hide quick questions after first message
+            if (chatMessages.children.length === 1) {
+                quickQuestions.style.display = 'none';
+            }
+
+            // Add user message
+            addMessage(message, 'user');
+            chatInput.value = '';
+
+            // Show typing indicator
+            isLoading = true;
+            chatSend.disabled = true;
+            const typingDiv = document.createElement('div');
+            typingDiv.className = 'chat-message assistant';
+            typingDiv.innerHTML = `
+                <div class="typing-indicator">
+                    <div class="typing-dot"></div>
+                    <div class="typing-dot"></div>
+                    <div class="typing-dot"></div>
+                </div>
+            `;
+            chatMessages.appendChild(typingDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+
+            try {
+                // Simulate API delay for realistic feel
+                await new Promise(resolve => setTimeout(resolve, 1000 + Math.random() * 1000));
+                
+                const reply = getResponse(message);
+                typingDiv.remove();
+                addMessage(reply, 'assistant');
+            } catch (error) {
+                typingDiv.remove();
+                addMessage("I apologize, but I'm having trouble right now. Please try again in a moment.", 'assistant');
+            } finally {
+                isLoading = false;
+                chatSend.disabled = false;
+            }
+        }
+
+        function addMessage(text, role) {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `chat-message ${role}`;
+            
+            if (role === 'assistant') {
+                messageDiv.innerHTML = `
+                    <div>
+                        <div class="assistant-label">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                            </svg>
+                            Tunisia Guide
+                        </div>
+                        <div class="message-bubble">${text}</div>
+                    </div>
+                `;
+            } else {
+                messageDiv.innerHTML = `<div class="message-bubble">${text}</div>`;
+            }
+            
+            chatMessages.appendChild(messageDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        function sendQuickQuestion(question) {
+            chatInput.value = question;
+            sendMessage(question);
+        }
+
+        // Event listeners
+        chatSend.addEventListener('click', () => sendMessage(chatInput.value));
+        chatInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') sendMessage(chatInput.value);
+        });
