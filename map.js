@@ -9,26 +9,26 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('area.governorate[data-gov]').forEach(area => {
     area.addEventListener('click', (e) => {
       e.preventDefault();
-      const govKey = area.dataset.gov; // ex : "tunis"
+      const govKey = area.dataset.gov; 
       showGovernorateInfo(govKey);
     });
   });
 
-  // Boutons du modal
+
   const closeBtn = document.getElementById('modalClose');
   const backBtn = document.getElementById('modalBack');
 
   if (closeBtn) closeBtn.addEventListener('click', closeModal);
   if (backBtn) backBtn.addEventListener('click', showMap);
 
-  // Clic en dehors du contenu du modal
+ 
   if (modal) {
     modal.addEventListener('click', (e) => {
       if (e.target === modal) closeModal();
     });
   }
 
-  // Touche Échap
+
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') closeModal();
   });
@@ -52,18 +52,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const imagesDiv = article.querySelector('.gov-images');
     const imagesCount = imagesDiv ? parseInt(imagesDiv.dataset.images || '0', 10) : 0;
 
-    // Remplir le header du modal
+   
     modalTitle.textContent = name;
     modalSubtitle.textContent = subtitle;
 
-    // Images "placeholder"
-    // Images : on récupère les <img> du HTML
 modalImages.innerHTML = '';
 
 const imageNodes = article.querySelectorAll('.gov-images img');
 
 if (imageNodes.length === 0) {
-  // Si pas d'images définies pour ce gouvernorat, tu peux afficher un message par défaut
+
   const placeholder = document.createElement('div');
   placeholder.className = 'modal-img';
   placeholder.textContent = `Photos à venir pour ${name}`;
@@ -73,7 +71,6 @@ if (imageNodes.length === 0) {
     const wrapper = document.createElement('div');
     wrapper.className = 'modal-img';
 
-    // on clone l'image pour ne pas la déplacer du HTML d'origine
     const clone = imgEl.cloneNode(true);
     wrapper.appendChild(clone);
 
@@ -86,7 +83,6 @@ if (!article) {
   return;
 }
 
-    // Infos détaillées
     modalInfo.innerHTML = `
   <div class="info-card">
     <h3>Description : </h3>
@@ -112,8 +108,6 @@ if (!article) {
   </div>
 `;
 
-
-    // Afficher le modal
     modal.style.display = 'block';
     modal.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
@@ -149,18 +143,17 @@ if (!article) {
 
   window.addEventListener('scroll', revealTimeline);
   revealTimeline();
-  // Tab functionality
+
 document.addEventListener('DOMContentLoaded', () => {
   const tabs = document.querySelectorAll('.tab-btn');
   const sections = document.querySelectorAll('.tab-section');
 
   tabs.forEach(tab => {
     tab.addEventListener('click', () => {
-      // Remove active from all tabs and sections
+
       tabs.forEach(t => t.classList.remove('active'));
       sections.forEach(s => s.classList.remove('active'));
 
-      // Add active to clicked tab and corresponding section
       tab.classList.add('active');
       const targetId = tab.getAttribute('data-tab');
       const targetSection = document.getElementById(targetId);
@@ -178,7 +171,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const quickQuestions = document.getElementById('quickQuestions');
         let isLoading = false;
 
-        // Knowledge base for Tunisia
        function getResponse(question) {
     const q = question.toLowerCase();
     
@@ -257,32 +249,32 @@ document.addEventListener('DOMContentLoaded', () => {
         return "Getting around Tunisia is easy! Options include trains (connecting major cities), buses (louages for shared taxis), private taxis, rental cars, and domestic flights. The TGM light rail connects Tunis to coastal suburbs like Carthage and Sidi Bou Said.";
     }
 
-    // Geography / Location (New Category)
+    // Geography / Location 
     if (q.includes('where is') || q.includes('location') || q.includes('continent') || q.includes('map') || q.includes('border') || q.includes('africa') || q.includes('europe')) {
         return "Tunisia is located in North Africa. It is the northernmost country in Africa and is bordered by Algeria to the west and southwest, Libya to the southeast, and the Mediterranean Sea to the north and east. It is just a short ferry ride away from islands like Sicily (Italy).";
     }
 
-    // Shopping / Markets / Souvenirs (New Category)
+    // Shopping / Markets / Souvenirs
     if (q.includes('shopping') || q.includes('shop') || q.includes('buy') || q.includes('souvenir') || q.includes('market') || q.includes('souk') || q.includes('bazaar') || q.includes('mall') || q.includes('carpet') || q.includes('pottery')) {
         return "Tunisia is a paradise for shoppers! You can visit traditional markets (souks) in the medinas to buy handwoven carpets, pottery, ceramics, leather goods, olive oil, and spices. Don't forget to haggle for the best price. The center of Tunis and Sidi Bou Said are famous for their artisan shops.";
     }
 
-    // Visa / Entry Requirements (New Category)
+    // Visa / Entry Requirements
     if (q.includes('visa') || q.includes('passport') || q.includes('entry') || q.includes('enter') || q.includes('requirements') || q.includes('document')) {
         return "Visa requirements for Tunisia vary depending on your nationality. Many European, North American, and some other nationalities do not need a visa for stays of up to 90 days. However, it is essential to check with the Tunisian embassy or consulate in your country for the most current visa regulations before you travel.";
     }
     
-    // Greetings in French (Expanded)
+    // Greetings in French
     if (q.includes('bonjour') || q.includes('salut') || q.includes('ça va') || q.includes('merci')) {
         return "Bonjour! Je suis ravi de vous aider à découvrir la Tunisie. La Tunisie est un magnifique pays méditerranéen avec une histoire riche, des plages splendides, le désert du Sahara, et une culture accueillante. N'hésitez pas à me poser vos questions!";
     }
     
-    // Greetings in Arabic (Expanded)
+    // Greetings in Arabic
     if (q.includes('مرحبا') || q.includes('السلام') || q.includes('صباح الخير') || q.includes('مساء الخير') ||q.includes('عسلامة')||q.includes('asslema')) {
         return "مرحبا! تونس بلد جميل في شمال إفريقيا، مشهورة بشواطئها الرائعة، تاريخها العريق، صحراء الصحراء، وكرم ضيافة شعبها. كيف يمكنني مساعدتك في التعرف على تونس؟";
     }
 
-    // Generic English Greetings (New)
+    // Generic English Greetings
     if (q.includes('hello') || q.includes('hi') || q.includes('hey') || q.includes('greetings')) {
         return "Hello! I'm here to help you plan your trip to Tunisia. Whether you have questions about the food, the history, or the beaches, just ask away!";
     }
@@ -380,3 +372,25 @@ document.addEventListener('DOMContentLoaded', () => {
         chatInput.addEventListener('keypress', (e) => {
             if (e.key === 'Enter') sendMessage(chatInput.value);
         });
+
+const timelineEvents = document.querySelectorAll(".timeline-event");
+
+const observer = new IntersectionObserver(
+  entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+      }
+    });
+  },
+  { threshold: 0.3 }
+);
+
+timelineEvents.forEach(event => observer.observe(event));
+
+timelineEvents.forEach(event => {
+  event.addEventListener("click", () => {
+    timelineEvents.forEach(e => e.classList.remove("active"));
+    event.classList.add("active");
+  });
+});
