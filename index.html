@@ -9,20 +9,27 @@
 </head>
 
 <body>
-<header>
-  <a href="index.html">
-    <img src="img/LOGO.png" alt="logo Tunisia" />
-  </a>
+<header class="header">
+  <div class="main-header">
+    <div class="header-content">
+      <a href="index.html" class="logo-section" aria-label="Home">
+        <img src="img/LOGO.png" alt="Logo Tunisia" width="140" height="auto" />
+      </a>
+    <div class="logo-tagline">
+      <h1>Tunisia through Our Eyes</h1>
+      <p>One country. A thousand journeys.</p>
+    </div>
 
-  <div class="title">
-    <h1>Tunisia through Our eyes </h1>
-    <h3>Discover culture, vibes, and hidden gems.</h3>
+      <nav class="primary-nav">
+        <ul id="mainNav">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="achievements.html">Achievements</a></li>
+          <li><a href="general-info.html">General Info</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
   </div>
-  <ul>
-    <li><a href="achievements.html">Achievements</a></li>
-    <li><a href="general-info.html">General Info</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
 </header>
 
 <section class="home-map">
@@ -202,13 +209,16 @@
 
 </section>
 
-<section class="history-timeline" id="timeline">
-  <h2 class="timeline-title">From Carthage to Today</h2>
+<section class="history-timeline">
+  <h2 class="timeline-title"> From Carthage to Today</h2>
 
   <div class="timeline-track">
 
     <div class="timeline-event">
-      <span class="timeline-icon">⚔️</span>
+    <div class="timeline-icon">
+  <img src="img/history/carthage.png">
+</div>
+
       <span class="timeline-date">814 BC</span>
       <div class="timeline-card">
         <h3>Carthage</h3>
@@ -220,37 +230,76 @@
     </div>
 
     <div class="timeline-event">
-      <span class="timeline-icon">🏛️</span>
+<div class="timeline-icon">
+  <img src="img/history/roma.jpg">
+</div>
+
       <span class="timeline-date">146 BC</span>
       <div class="timeline-card">
         <h3>Roman Tunisia</h3>
         <p>
-          Tunisia flourished under Roman rule, leaving iconic monuments
-          such as El Djem and Dougga.
+          After defeating Carthage, Rome made Tunisia one of its richest provinces,
+          building amphitheaters, aqueducts, and cities.
         </p>
       </div>
     </div>
 
     <div class="timeline-event">
-      <span class="timeline-icon">☪️</span>
-      <span class="timeline-date">7th c.</span>
+<div class="timeline-icon">
+  <img src="img/history/islam.jpg">
+</div>
+
+      <span class="timeline-date">647 AD</span>
       <div class="timeline-card">
-        <h3>Islamic Era</h3>
+        <h3>Arab Conquest</h3>
         <p>
-          The founding of Kairouan established Tunisia as a major
-          center of Islamic culture and learning.
+          The arrival of Islam transformed Tunisia, establishing Arab-Islamic culture
+          and founding Kairouan, one of the holiest cities in Islam.
         </p>
       </div>
     </div>
 
     <div class="timeline-event">
-      <span class="timeline-icon">🇹🇳</span>
+<div class="timeline-icon">
+  <img src="img/history/ottman.gif">
+</div>
+
+      <span class="timeline-date">1574</span>
+      <div class="timeline-card">
+        <h3>Ottoman Era</h3>
+        <p>
+          Tunisia became part of the Ottoman Empire, developing a unique blend
+          of Turkish, Arab, and Mediterranean cultures.
+        </p>
+      </div>
+    </div>
+
+    <div class="timeline-event">
+<div class="timeline-icon">
+  <img src="img/history/france.jpg"">
+</div>
+
+      <span class="timeline-date">1881</span>
+      <div class="timeline-card">
+        <h3>French Protectorate</h3>
+        <p>
+          Tunisia became a French protectorate, leading to 75 years of colonial rule
+          that shaped modern Tunisian society and infrastructure.
+        </p>
+      </div>
+    </div>
+
+    <div class="timeline-event">
+<div class="timeline-icon">
+  <img src="img/history/independance.jpg">
+</div>
+
       <span class="timeline-date">1956</span>
       <div class="timeline-card">
-        <h3>Modern Tunisia</h3>
+        <h3>Independence</h3>
         <p>
-          Independence marked the birth of modern Tunisia,
-          blending tradition, identity, and progress.
+          Led by Habib Bourguiba, Tunisia gained independence on March 20, 1956,
+          becoming a modern republic with progressive reforms.
         </p>
       </div>
     </div>
@@ -260,7 +309,6 @@
 
 
 <section class="why-tunisia">
-
   <h2 class="why-title">Why Visit Tunisia?</h2>
   <p class="why-intro">
     A unique destination where beaches, deserts, history, and hospitality
@@ -371,7 +419,7 @@
 
     <div class="gov-description">
       Bizerte is Tunisia’s northernmost governorate, overlooking the Mediterranean Sea.
-Known for its old port, beautiful beaches, and rich maritime heritage, Bizerte offers a peaceful blend of nature, history, and coastal life.
+      Known for its old port, beautiful beaches, and rich maritime heritage, Bizerte offers a peaceful blend of nature, history, and coastal life.
     </div>
 
     <div class="gov-population">~568,000 inhabitants</div>
@@ -565,7 +613,8 @@ Known for its old port, beautiful beaches, and rich maritime heritage, Bizerte o
     </div>
 
     <div class="gov-description">
-      Kef is a historic mountain governorate offering panoramic views, fortified architecture, and deep Numidian and Roman roots. It is one of Tunisia’s most authentic inland destinations.
+      Kef is a historic mountain governorate offering panoramic views, fortified architecture, and deep Numidian and Roman roots. 
+      It is one of Tunisia’s most authentic inland destinations.
     </div>
 
     <div class="gov-population">~243,000 inhabitants</div>
@@ -598,7 +647,8 @@ Known for its old port, beautiful beaches, and rich maritime heritage, Bizerte o
     </div>
 
     <div class="gov-description">
-      Kairouan is one of the most important religious and historical cities in the Islamic world. Founded in the 7th century, it played a central role in the spread of Islam in North Africa and remains a major cultural and spiritual destination.
+      Kairouan is one of the most important religious and historical cities in the Islamic world. 
+      Founded in the 7th century, it played a central role in the spread of Islam in North Africa and remains a major cultural and spiritual destination.
     </div>
 
     <div class="gov-population">~570,000 inhabitants</div>
@@ -631,7 +681,8 @@ Known for its old port, beautiful beaches, and rich maritime heritage, Bizerte o
     </div>
 
     <div class="gov-description">
-      Kasserine is a mountainous governorate known for its dramatic landscapes, ancient Roman cities, and strong cultural identity. It is home to Tunisia’s highest peak and offers rich archaeological and natural heritage.
+      Kasserine is a mountainous governorate known for its dramatic landscapes, ancient Roman cities, and strong cultural identity. 
+      It is home to Tunisia’s highest peak and offers rich archaeological and natural heritage.
     </div>
 
     <div class="gov-population">~439,000 inhabitants</div>
@@ -697,7 +748,8 @@ Known for its old port, beautiful beaches, and rich maritime heritage, Bizerte o
     </div>
 
     <div class="gov-description">
-      Sousse is one of Tunisia’s most popular coastal destinations, combining a rich historical heritage with a lively seaside atmosphere. Its UNESCO-listed medina stands alongside modern resorts, making it a key hub for culture and tourism.
+      Sousse is one of Tunisia’s most popular coastal destinations, combining a rich historical heritage with a lively seaside atmosphere. 
+      Its UNESCO-listed medina stands alongside modern resorts, making it a key hub for culture and tourism.
     </div>
 
     <div class="gov-population">~675,000 inhabitants</div>
@@ -729,7 +781,8 @@ Known for its old port, beautiful beaches, and rich maritime heritage, Bizerte o
     </div>
 
     <div class="gov-description">
-      Monastir is a coastal governorate known for its elegant seaside views, historical monuments, and relaxed atmosphere. It played an important role in Tunisia’s modern history and remains a refined tourist destination.
+      Monastir is a coastal governorate known for its elegant seaside views, historical monuments, and relaxed atmosphere. 
+      It played an important role in Tunisia’s modern history and remains a refined tourist destination.
     </div>
 
     <div class="gov-population">~549,000 inhabitants</div>
@@ -762,7 +815,8 @@ Known for its old port, beautiful beaches, and rich maritime heritage, Bizerte o
     </div>
 
     <div class="gov-description">
-      Mahdia is a historic coastal city founded by the Fatimids in the 10th century. Known for its white houses, fishing port, and pristine beaches, Mahdia offers an authentic and peaceful seaside experience.
+      Mahdia is a historic coastal city founded by the Fatimids in the 10th century. 
+      Known for its white houses, fishing port, and pristine beaches, Mahdia offers an authentic and peaceful seaside experience.
     </div>
 
     <div class="gov-population">410,812 habitants</div>
@@ -796,7 +850,8 @@ Known for its old port, beautiful beaches, and rich maritime heritage, Bizerte o
     </div>
 
     <div class="gov-description">
-      Sfax is Tunisia’s second-largest city and a major economic and industrial center. Its fortified medina, strong commercial culture, and proximity to the Kerkennah Islands give it a distinct identity rooted in work, tradition, and the sea.
+      Sfax is Tunisia’s second-largest city and a major economic and industrial center. 
+      Its fortified medina, strong commercial culture, and proximity to the Kerkennah Islands give it a distinct identity rooted in work, tradition, and the sea.
     </div>
 
     <div class="gov-population">~955,000 inhabitants</div>
@@ -829,7 +884,8 @@ Known for its old port, beautiful beaches, and rich maritime heritage, Bizerte o
     </div>
 
     <div class="gov-description">
-      Gabès is unique in the Mediterranean world for having a coastal oasis. It blends palm groves, sea views, and traditional markets, creating a rare natural and cultural landscape.
+      Gabès is unique in the Mediterranean world for having a coastal oasis. 
+      It blends palm groves, sea views, and traditional markets, creating a rare natural and cultural landscape.
     </div>
 
     <div class="gov-population">~374,000 inhabitants</div>
@@ -861,7 +917,8 @@ Known for its old port, beautiful beaches, and rich maritime heritage, Bizerte o
     </div>
 
     <div class="gov-description">
-      Médenine is known for its Berber ksour (fortified granaries) and desert architecture. It serves as a cultural crossroads between the Sahara and the Mediterranean.
+      Médenine is known for its Berber ksour (fortified granaries) and desert architecture. 
+      It serves as a cultural crossroads between the Sahara and the Mediterranean.
     </div>
 
     <div class="gov-population">~480,000 inhabitants</div>
@@ -893,7 +950,8 @@ Known for its old port, beautiful beaches, and rich maritime heritage, Bizerte o
     </div>
 
     <div class="gov-description">
-      Djerba is Tunisia’s most famous island, known for its sandy beaches, white villages, and exceptional cultural diversity. It has long been a crossroads of civilizations and religions.
+      Djerba is Tunisia’s most famous island, known for its sandy beaches, white villages, and exceptional cultural diversity. 
+      It has long been a crossroads of civilizations and religions.
     </div>
 
     <div class="gov-population">~165,000 inhabitants</div>
@@ -925,7 +983,8 @@ Known for its old port, beautiful beaches, and rich maritime heritage, Bizerte o
     </div>
 
     <div class="gov-description">
-      Tataouine is a vast desert governorate famous for its ksour, troglodyte villages, and lunar landscapes. It inspired the fictional planet “Tatooine” in Star Wars.
+      Tataouine is a vast desert governorate famous for its ksour, troglodyte villages, and lunar landscapes. 
+      It inspired the fictional planet “Tatooine” in Star Wars.
     </div>
 
     <div class="gov-population">~149,000 inhabitants</div>
@@ -957,7 +1016,9 @@ Known for its old port, beautiful beaches, and rich maritime heritage, Bizerte o
     </div>
 
     <div class="gov-description">
-      Kébili is a desert governorate marking the entrance to the Sahara. It is deeply connected to nomadic traditions, oases, and desert tourism.
+      Kébili is a desert governorate marking the entrance to the Sahara. 
+      It is deeply connected to nomadic traditions, oases, and desert tourism.
+    </div>
 
     <div class="gov-population">~157,000 inhabitants</div>
     <div class="gov-superficie">22,454 km²</div>
@@ -1021,7 +1082,8 @@ Known for its old port, beautiful beaches, and rich maritime heritage, Bizerte o
     </div>
 
     <div class="gov-description">
-     Gafsa is a historic inland governorate known for its ancient oases, Roman remains, and mountainous landscapes. It has been inhabited since prehistoric times and offers a unique mix of archaeology and desert-edge nature.
+     Gafsa is a historic inland governorate known for its ancient oases, Roman remains, and mountainous landscapes. 
+     It has been inhabited since prehistoric times and offers a unique mix of archaeology and desert-edge nature.
     </div>
 
     <div class="gov-population">~337,000 inhabitants</div>
@@ -1165,13 +1227,14 @@ Known for its old port, beautiful beaches, and rich maritime heritage, Bizerte o
   <p>One country. A thousand journeys.</p>
 </footer>
 
-  <!-- Chat Widget Button -->
+<!-- Chat Widget Button -->
 <button class="chat-widget-button" id="chatToggle">
     <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
     </svg>
 </button>
-  <!-- Chat Panel -->
+
+<!-- Chat Panel -->
 <div class="chat-panel" id="chatPanel">
   <div class="chat-header">
       <div class="chat-header-content">
@@ -1229,5 +1292,7 @@ Known for its old port, beautiful beaches, and rich maritime heritage, Bizerte o
 </div>
 
 <script src="map.js" ></script>
+
 </body>
+
 </html>
