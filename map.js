@@ -3,124 +3,117 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 1. GOVERNORATES MODAL
 
-  const modal = document.getElementById('governorateModal');
-  const modalTitle = document.getElementById('modalTitle');
-  const modalSubtitle = document.getElementById('modalSubtitle');
-  const modalImages = document.getElementById('modalImages');
-  const modalInfo = document.getElementById('modalInfo');
-  const closeBtn = document.getElementById('modalClose');
-  const backBtn = document.getElementById('modalBack');
+  const modal = document.getElementById("governorateModal");
+  const modalTitle = document.getElementById("modalTitle");
+  const modalSubtitle = document.getElementById("modalSubtitle");
+  const modalImages = document.getElementById("modalImages");
+  const modalInfo = document.getElementById("modalInfo");
+  const closeBtn = document.getElementById("modalClose");
+  const backBtn = document.getElementById("modalBack");
 
-  // Click on map areas
   if (modal) {
-    document.querySelectorAll('area.governorate[data-gov]').forEach(area => {
-      area.addEventListener('click', (e) => {
-        e.preventDefault();
-        const govKey = area.dataset.gov; 
-        showGovernorateInfo(govKey);
+    // Click on governorate areas
+    document
+      .querySelectorAll("area.governorate[data-gov]")
+      .forEach(area => {
+        area.addEventListener("click", e => {
+          e.preventDefault();
+          showGovernorateInfo(area.dataset.gov);
+        });
       });
-    });
 
-    // Close modal button
-    if (closeBtn) closeBtn.addEventListener('click', closeModal);
-    if (backBtn) backBtn.addEventListener('click', showMap);
+    // Close modal actions
+    closeBtn?.addEventListener("click", closeModal);
+    backBtn?.addEventListener("click", showMap);
 
-    // Close modal on overlay click
-    modal.addEventListener('click', (e) => {
+    modal.addEventListener("click", e => {
       if (e.target === modal) closeModal();
     });
 
-    // Close modal on Escape key
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') closeModal();
+    document.addEventListener("keydown", e => {
+      if (e.key === "Escape") closeModal();
     });
   }
 
-  // Show governorate informations
   function showGovernorateInfo(govKey) {
     const article = document.getElementById(`gov-${govKey}`);
-    
     if (!article) {
       alert("Information coming soon 🇹🇳");
       return;
     }
 
-    const name = article.querySelector('.gov-name')?.textContent || '';
-    const subtitle = article.querySelector('.gov-subtitle')?.textContent || '';
-    const description = article.querySelector('.gov-description')?.textContent || '';
-    const population = article.querySelector('.gov-population')?.textContent || '';
-    const superficie = article.querySelector('.gov-superficie')?.textContent || '';
+    modalTitle.textContent =
+      article.querySelector(".gov-name")?.textContent || "";
+    modalSubtitle.textContent =
+      article.querySelector(".gov-subtitle")?.textContent || "";
 
-    const attractions = [...article.querySelectorAll('.gov-attractions li')].map(li => li.textContent);
-    const cuisine = [...article.querySelectorAll('.gov-cuisine li')].map(li => li.textContent);
+    const description =
+      article.querySelector(".gov-description")?.textContent || "";
+    const population =
+      article.querySelector(".gov-population")?.textContent || "";
+    const superficie =
+      article.querySelector(".gov-superficie")?.textContent || "";
 
-    const imagesDiv = article.querySelector('.gov-images');
-    const imagesCount = imagesDiv ? parseInt(imagesDiv.dataset.images || '0', 10) : 0;
+    const attractions = [...article.querySelectorAll(".gov-attractions li")].map(
+      li => li.textContent
+    );
+    const cuisine = [...article.querySelectorAll(".gov-cuisine li")].map(
+      li => li.textContent
+    );
 
-    modalTitle.textContent = name;
-    modalSubtitle.textContent = subtitle;
+    // Images
+    modalImages.innerHTML = "";
+    const images = article.querySelectorAll(".gov-images img");
 
-    modalImages.innerHTML = '';
-    const imageNodes = article.querySelectorAll('.gov-images img');
-
-    if (imageNodes.length === 0) {
-      const placeholder = document.createElement('div');
-      placeholder.className = 'modal-img';
-      placeholder.textContent = `Photos à venir pour ${name}`;
-      modalImages.appendChild(placeholder);
+    if (images.length === 0) {
+      modalImages.innerHTML = `<div class="modal-img">Photos coming soon</div>`;
     } else {
-      imageNodes.forEach(imgEl => {
-        const wrapper = document.createElement('div');
-        wrapper.className = 'modal-img';
-        const clone = imgEl.cloneNode(true);
-        wrapper.appendChild(clone);
+      images.forEach(img => {
+        const wrapper = document.createElement("div");
+        wrapper.className = "modal-img";
+        wrapper.appendChild(img.cloneNode(true));
         modalImages.appendChild(wrapper);
       });
     }
 
     modalInfo.innerHTML = `
       <div class="info-card">
-        <h3>Description : </h3>
+        <h3>Description</h3>
         <p>${description}</p>
       </div>
 
       <div class="info-card">
-        <h3>Population : </h3>
+        <h3>Population</h3>
         <p>${population}</p>
-
-        <h3 style="margin-top: 10px;">Area : </h3>
+        <h3 style="margin-top:10px;">Area</h3>
         <p>${superficie}</p>
       </div>
 
       <div class="info-card">
-        <h3>Main Attractions : </h3>
-        <ul>${attractions.map(a => `<li>${a}</li>`).join('')}</ul>
+        <h3>Main Attractions</h3>
+        <ul>${attractions.map(a => `<li>${a}</li>`).join("")}</ul>
       </div>
 
       <div class="info-card">
-        <h3>Local Cuisine : </h3>
-        <ul>${cuisine.map(c => `<li>${c}</li>`).join('')}</ul>
+        <h3>Local Cuisine</h3>
+        <ul>${cuisine.map(c => `<li>${c}</li>`).join("")}</ul>
       </div>
     `;
 
-    modal.style.display = 'block';
-    modal.setAttribute('aria-hidden', 'false');
-    document.body.style.overflow = 'hidden';
+    modal.style.display = "block";
+    modal.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
   }
 
-  // Close modal
   function closeModal() {
-    if (modal) {
-      modal.style.display = 'none';
-      modal.setAttribute('aria-hidden', 'true');
-      document.body.style.overflow = 'auto';
-    }
+    modal.style.display = "none";
+    modal.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "auto";
   }
 
-  // Show map
   function showMap() {
     closeModal();
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
   // 2. NAVIGATION 
@@ -132,57 +125,30 @@ document.addEventListener('DOMContentLoaded', () => {
   links.forEach(link => {
     link.classList.remove("active");
     const href = link.getAttribute("href");
-
-    // Page match
-    if (href === currentPage) {
-      link.classList.add("active");
-    }
-
-    // Hash match 
-    if (href === currentHash && currentHash !== "") {
+    if (href === currentPage || href === currentHash) {
       link.classList.add("active");
     }
   });
 
-  // 3. TIMELINE ANIMATIONS
+// 3. TIMELINE ANIMATIONS 
 
-  const events = document.querySelectorAll('.timeline-event');
+const timelineEvents = document.querySelectorAll(".timeline-event");
 
-  if (events.length > 0) {
-    const revealTimeline = () => {
-      const trigger = window.innerHeight * 0.85;
-
-      events.forEach((event, index) => {
-        const top = event.getBoundingClientRect().top;
-
-        if (top < trigger) {
-          setTimeout(() => {
-            event.classList.add('show');
-          }, index * 150);
-        }
-      });
-    };
-
-    window.addEventListener('scroll', revealTimeline);
-    revealTimeline();
-
-    const timelineEvents = document.querySelectorAll(".timeline-event");
-
+  if (timelineEvents.length > 0) {
     const observer = new IntersectionObserver(
       entries => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
             entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
           }
         });
       },
       { threshold: 0.3 }
     );
 
-    timelineEvents.forEach(event => observer.observe(event));
-
-    // Timeline event click
     timelineEvents.forEach(event => {
+      observer.observe(event);
       event.addEventListener("click", () => {
         timelineEvents.forEach(e => e.classList.remove("active"));
         event.classList.add("active");
@@ -192,19 +158,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 4. TABS MANAGEMENT
 
-  const tabs = document.querySelectorAll('.tab-btn');
-  const sections = document.querySelectorAll('.tab-section');
+const tabs = document.querySelectorAll(".tab-btn");
+  const sections = document.querySelectorAll(".tab-section");
 
   tabs.forEach(tab => {
-    tab.addEventListener('click', () => {
+    tab.addEventListener("click", () => {
+      tabs.forEach(t => t.classList.remove("active"));
+      sections.forEach(s => s.classList.remove("active"));
 
-      tabs.forEach(t => t.classList.remove('active'));
-      sections.forEach(s => s.classList.remove('active'));
-
-      tab.classList.add('active');
-      const targetId = tab.getAttribute('data-tab');
-      const targetSection = document.getElementById(targetId);
-      if (targetSection) targetSection.classList.add('active');
+      tab.classList.add("active");
+      document
+        .getElementById(tab.dataset.tab)
+        ?.classList.add("active");
     });
   });
 
@@ -502,3 +467,37 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 });
+/* 6. LEAFLET MAP MODAL */
+
+let mapInitialized = false;
+let leafletMap;
+
+const openMapBtn = document.getElementById("openMapBtn");
+const closeMapBtn = document.getElementById("closeMapBtn");
+const mapModal = document.getElementById("mapModal");
+
+if (openMapBtn && mapModal && closeMapBtn) {
+  openMapBtn.addEventListener("click", () => {
+    mapModal.classList.remove("hidden");
+
+    if (!mapInitialized) {
+      leafletMap = L.map("leafletMap").setView([33.8869, 9.5375], 6);
+      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        attribution: "&copy; OpenStreetMap contributors"
+      }).addTo(leafletMap);
+      mapInitialized = true;
+    }
+
+    setTimeout(() => leafletMap.invalidateSize(), 200);
+  });
+
+  closeMapBtn.addEventListener("click", () => {
+    mapModal.classList.add("hidden");
+  });
+
+  mapModal.addEventListener("click", e => {
+    if (e.target === mapModal) {
+      mapModal.classList.add("hidden");
+    }
+  });
+}

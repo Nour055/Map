@@ -6,6 +6,8 @@
   <meta name="description" content="Discover the magic of Tunisia" />
   <title>Tunisia through our eyes</title>
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+
 </head>
 
 <body>
@@ -34,42 +36,61 @@
 
 <section class="home-map">
  <div class="home-intro">
-       <h2>
+  <h2>
   <span class="tunisia-flag">
     <img src="img/Random/Flag_of_Tunisia.svg.webp" alt="Tunisian flag" class="flag-img">
   </span>
   Explore Tunisia
-</h2>
-        <p class="home-text">
-            Tunisia is a North African country located between the Mediterranean Sea
-            and the Sahara Desert, offering a fascinating mix of ancient history,
-            diverse landscapes, and a unique blend of Mediterranean and Arab cultures.
-            <br>From stunning beaches to desert dunes, from Roman ruins to vibrant souks,
-            Tunisia captivates every traveler with its rich heritage and warm hospitality.
-        </p>
+  </h2>
+  <p class="home-text">
+    Tunisia is a North African country located between the Mediterranean Sea
+    and the Sahara Desert, offering a fascinating mix of ancient history,
+    diverse landscapes, and a unique blend of Mediterranean and Arab cultures.
+    <br>From stunning beaches to desert dunes, from Roman ruins to vibrant souks,
+    unisia captivates every traveler with its rich heritage and warm hospitality.
+  </p>
 
-        <div class="home-stats">
-            <div class="stat">
-                <span class="stat-number">11.8M</span>
-                <span class="stat-label">Population</span>
-            </div>
-            <div class="stat">
-                <span class="stat-number">163,610</span>
-                <span class="stat-label">km² Area</span>
-            </div>
-            <div class="stat">
-                <span class="stat-number">24</span>
-                <span class="stat-label">Governorates</span>
-            </div>
-        </div>
+  <div class="home-stats">
+
+    <div class="stat">
+      <span class="stat-number">11.8M</span>
+      <span class="stat-label">Population</span>
     </div>
 
-  <div class="home-map-box">
-  
- <img id="home-map-img" src="img/Random/map.png" alt="Carte de la Tunisie" usemap="#tunisia-map" />
+    <div class="stat">
+      <span class="stat-number">163,610</span>
+      <span class="stat-label">km² Area</span>
+    </div>
+
+    <div class="stat">
+      <span class="stat-number">24</span>
+      <span class="stat-label">Governorates</span>
+    </div>
+  </div>
+
+<div class="map-action">
+  <button id="openMapBtn" class="nav-btn map-nav-btn">
+    See Tunisia on the Map
+  </button>
+</div>
+
+<div id="mapModal" class="map-modal hidden">
+  <div class="modal-content">
+    <span class="close-btn" id="closeMapBtn">&times;</span>
+    <div class="modal-header">
+      <h2>See Tunisia on the Map</h2>
+      <p>Interactive geographic view of the country</p>
+    </div>
+    <div id="leafletMap"></div>
+  </div>
+</div>
 
 
-    <map name="tunisia-map" id="tunisia-map">
+ </div>
+
+ <div class="home-map-box">
+   <img id="home-map-img" src="img/Random/map.png" alt="Carte de la Tunisie" usemap="#tunisia-map" />
+   <map name="tunisia-map" id="tunisia-map">
       <!-- Nord -->
       <area shape="rect" coords="120,26,170,40"
             href="#"
@@ -205,9 +226,8 @@
             class="governorate"
             data-gov="tataouine"
             alt="Tataouine" />
-    </map>
+   </map>
   </div>
-
 
 </section>
 
@@ -1294,6 +1314,8 @@
 </div>
 
 <script src="map.js" ></script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
 
 </body>
 
