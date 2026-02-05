@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Discover the magic of Tunisia" />
+  <title>Tunisia through our eyes</title>
+  <link rel="stylesheet" href="gallery.css" />
+  <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+<header class="header">
+  <div class="main-header">
+    <div class="header-content">
+      <a href="index.html" class="logo-section" aria-label="Home">
+        <img src="img/Random/LOGO.png" alt="Logo" width="140" height="auto" />
+      </a>
+    <div class="logo-tagline">
+      <h1>Tunisia through Our Eyes</h1>
+      <p>One country. A thousand journeys.</p>
+    </div>
+
+      <nav class="primary-nav">
+        <ul id="mainNav">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="achievements.html">Achievements</a></li>
+          <li><a href="general-info.html">General Info</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+    
+<section class="gallery-section">
+
+  <div class="header-image">
+    <img src="img/Random/Contact-Photo.png" alt="Tunisia landscape" />
+  </div>
+
+  <h2>Welcome to Tunisia</h2>
+  <p class="gallery-intro">
+    Explore the richness of Tunisia through videos of its heritage, nature, and vibrant culture.
+  </p>
+
+    <!-- STATS -->
+    <div class="stats-container">
+        <div class="stat">
+            <span class="stat-number">21</span>
+            <span class="stat-label">Destinations</span>
+        </div>
+        <div class="stat">
+            <span class="stat-number">5</span>
+            <span class="stat-label">Categories</span>
+        </div>
+        <div class="stat">
+            <span class="stat-number">100%</span>
+            <span class="stat-label">Tunisian</span>
+        </div>
+    </div>
+
+    <!-- FILTERS -->
+    <section class="filters-section">
+        <div class="filter-bar">
+            <span class="filter-label">Filter by:</span>
+            <button class="filter-btn active" onclick="filterVideos('all')">All</button>
+            <button class="filter-btn" onclick="filterVideos('beach')">Beaches</button>
+            <button class="filter-btn" onclick="filterVideos('unesco')">UNESCO</button>
+            <button class="filter-btn" onclick="filterVideos('desert')">Desert</button>
+            <button class="filter-btn" onclick="filterVideos('nature')">Nature</button>
+            <button class="filter-btn" onclick="filterVideos('culture')">Culture</button>
+        </div>
+        <div class="results-info" id="resultsInfo"></div>
+    </section>
+
+    <!-- VIDEO GRID -->
+    <section class="videos-container">
+        <div class="video-grid" id="videoGrid">
+            <!-- Matmata -->
+            <div class="video-card" data-category="culture" onclick="openModal(this)">
+                <div class="video-thumbnail">
+                    <img src="videoIMG/matmata.jpg" alt="grottes_matmata" class="video-image">
+                    <span class="video-location-badge">South</span>
+                    <div class="play-overlay">
+                        <div class="play-button">
+                            <div class="play-icon"></div>
+                        </div>
+                    </div>
+                    <div class="video-content">
+                        <h3 class="video-title">Troglodyte Houses</h3>
+                        <p class="video-description">Traditional underground dwellings of Matmata</p>
+                    </div>
+                </div>
+                <div hidden class="video-data" data-url="https://www.youtube.com/embed/0NwFVXfSCCw?si=uxbhJC_ZGJa2Wfpq"></div>
+            </div>
+
+            
+
+            <!-- Hammamet -->
+            <div class="video-card" data-category="beach" onclick="openModal(this)">
+                <div class="video-thumbnail">
+                    <img src="videoIMG/hammamet.webp" alt="Hammamet" class="video-image">
+                    <span class="video-location-badge">North-East</span>
+                    <div class="play-overlay">
+                        <div class="play-button">
+                            <div class="play-icon"></div>
+                        </div>
+                    </div>
+                    <div class="video-content">
+                        <h3 class="video-title">Hammamet</h3>
+                        <p class="video-description">Beautiful beaches and historic medina</p>
+                    </div>
+                </div>
+                <div hidden class="video-data" data-url="https://www.youtube.com/embed/WOf2aaI53zE?si=7FbDPqbYganeb3bf"></div>
+            </div>
+
+
+            <!-- Kerkennah -->
+            <div class="video-card" data-category="beach" onclick="openModal(this)">
+                <div class="video-thumbnail">
+                    <img src="videoIMG/Kerkennah.jpg" alt="Kerkennah" class="video-image">
+                    <span class="video-location-badge">East Coast</span>
+                    <div class="play-overlay">
+                        <div class="play-button">
+                            <div class="play-icon"></div>
+                        </div>
+                    </div>
+                    <div class="video-content">
+                        <h3 class="video-title">Kerkennah Islands</h3>
+                        <p class="video-description">Peaceful archipelago with crystal clear waters</p>
+                    </div>
+                </div>
+                <div hidden class="video-data" data-url="https://www.youtube.com/embed/M-56Pvne1UA?si=z4A1LD2Cw45gOHbJ"></div>
+            </div>
+
+            <!-- Ain Draham -->
+            <div class="video-card" data-category="nature" onclick="openModal(this)">
+                <div class="video-thumbnail">
+                    <img src="videoIMG/ainDrahem.jpg" alt="Ain Draham" class="video-image">
+                    <span class="video-location-badge">North-West</span>
+                    <div class="play-overlay">
+                        <div class="play-button">
+                            <div class="play-icon"></div>
+                        </div>
+                    </div>
+                    <div class="video-content">
+                        <h3 class="video-title">Ain Draham</h3>
+                        <p class="video-description">Mountains, forests and fresh air of the Tell</p>
+                    </div>
+                </div>
+                <div hidden class="video-data" data-url="https://www.youtube.com/embed/hYF71KxoduA?si=BCbgSmWWONsEIgm1"></div>
+            </div>
+
+            <!-- Ksar Ghilane -->
+            <div class="video-card" data-category="nature" onclick="openModal(this)">
+                <div class="video-thumbnail">
+                    <img src="videoIMG/ksarGhilane.jpg" alt="Ksar Ghilane" class="video-image">
+                    <span class="video-location-badge">South Desert</span>
+                    <div class="play-overlay">
+                        <div class="play-button">
+                            <div class="play-icon"></div>
+                        </div>
+                    </div>
+                    <div class="video-content">
+                        <h3 class="video-title">Ksar Ghilane</h3>
+                        <p class="video-description">Desert oasis with natural hot springs</p>
+                    </div>
+                </div>
+                <div hidden class="video-data" data-url="https://www.youtube.com/embed/B7rIJO1v_Q4?si=FKy8PEXCEE-e3OnQ"></div>
+            </div>
+
+            <!-- Tabarka -->
+            <div class="video-card" data-category="beach" onclick="openModal(this)">
+                <div class="video-thumbnail">
+                    <img src="videoIMG/tabarka.jpg" alt="Tabarka" class="video-image">
+                    <span class="video-location-badge">North-West Coast</span>
+                    <div class="play-overlay">
+                        <div class="play-button">
+                            <div class="play-icon"></div>
+                        </div>
+                    </div>
+                    <div class="video-content">
+                        <h3 class="video-title">Tabarka</h3>
+                        <p class="video-description">Coastal town with coral reefs and Roman history</p>
+                    </div>
+                </div>
+                <div hidden class="video-data" data-url="https://www.youtube.com/embed/WOB4Gmqv82A?si=e1upMKMtu4IYo_wg"></div>
+            </div>
+
+            <!-- Chott el Jerid -->
+            <div class="video-card" data-category="desert" onclick="openModal(this)">
+                <div class="video-thumbnail">
+                    <img src="videoIMG/Chott-El-Jerid.jpg" alt="Chott el Jerid" class="video-image">
+                    <span class="video-location-badge">South</span>
+                    <div class="play-overlay">
+                        <div class="play-button">
+                            <div class="play-icon"></div>
+                        </div>
+                    </div>
+                    <div class="video-content">
+                        <h3 class="video-title">Chott el Jérid</h3>
+                        <p class="video-description">Spectacular salt lake with fascinating mirages</p>
+                    </div>
+                </div>
+                <div hidden class="video-data" data-url="https://www.youtube.com/embed/YLAht-JkMxM?si=ZM7yaWcJzRIC869N"></div>
+            </div>
+
+            <!-- Douz -->
+            <div class="video-card" data-category="desert" onclick="openModal(this)">
+                <div class="video-thumbnail">
+                    <img src="videoIMG/douz.webp" alt="Douz" class="video-image">
+                    <span class="video-location-badge">South</span>
+                    <div class="play-overlay">
+                        <div class="play-button">
+                            <div class="play-icon"></div>
+                        </div>
+                    </div>
+                    <div class="video-content">
+                        <h3 class="video-title">Douz</h3>
+                        <p class="video-description">Gateway to Sahara, desert festival and camel rides</p>
+                    </div>
+                </div>
+                <div hidden class="video-data" data-url="https://www.youtube.com/embed/LMjEzZYlkSU?si=Gj__2FSyzHSyNEnq"></div>
+            </div>
+            <!-- Tozeur -->
+            <div class="video-card" data-category="nature" onclick="openModal(this)">
+                <div class="video-thumbnail">
+                    <img src="videoIMG/chebika-oasis-lac-palmier-900x600.jpg" alt="Tozeur" class="video-image">
+                    <span class="video-location-badge">South-West</span>
+                    <div class="play-overlay">
+                        <div class="play-button">
+                            <div class="play-icon"></div>
+                        </div>
+                    </div>
+                    <div class="video-content">
+                        <h3 class="video-title">Tozeur Oasis</h3>
+                        <p class="video-description">Lush palm groves and traditional architecture</p>
+                    </div>
+                </div>
+                <div hidden class="video-data" data-url="https://www.youtube.com/embed/GxIAwcVpvKM?si=8rxTMWzQMoKpIsCa"></div>
+            </div>
+
+            <!-- Kairouan -->
+            <div class="video-card" data-category="culture" onclick="openModal(this)">
+                <div class="video-thumbnail">
+                    <img src="videoIMG/Kairouan.jpg" alt="Kairouan" class="video-image">
+                    <span class="video-location-badge">Center</span>
+                    <div class="play-overlay">
+                        <div class="play-button">
+                            <div class="play-icon"></div>
+                        </div>
+                    </div>
+                    <div class="video-content">
+                        <h3 class="video-title">Kairouan</h3>
+                        <p class="video-description">Holy city and exceptional Islamic heritage</p>
+                    </div>
+                </div>
+                <div hidden class="video-data" data-url="https://www.youtube.com/embed/WXeaagOdBYI?si=mAktSUBCnyfPDI1z"></div>
+            </div>
+            <!-- Sousse -->
+            <div class="video-card" data-category="unesco" onclick="openModal(this)">
+                <div class="video-thumbnail">
+                    <img src="videoIMG/kantaoui.avif" alt="Kantaoui-Sousse" class="video-image">
+                    <span class="video-location-badge">Coast Center</span>
+                    <div class="play-overlay">
+                        <div class="play-button">
+                            <div class="play-icon"></div>
+                        </div>
+                    </div>
+                    <div class="video-content">
+                        <h3 class="video-title">Kantaoui-Sousse</h3>
+                        <p class="video-description">where the sea meets joy.</p>
+                    </div>
+                </div>
+                <div hidden class="video-data" data-url="https://www.youtube.com/embed/IeeZrqm6m1I?si=pQ__QsQBRgBoaLqK"></div>
+            </div>
+
+            <!-- Tunis -->
+            <div class="video-card" data-category="culture" onclick="openModal(this)">
+                <div class="video-thumbnail">
+                    <img src="videoIMG/medina-tunis.jpg" alt="Tunis" class="video-image">
+                    <span class="video-location-badge">Capital</span>
+                    <div class="play-overlay">
+                        <div class="play-button">
+                            <div class="play-icon"></div>
+                        </div>
+                    </div>
+                    <div class="video-content">
+                        <h3 class="video-title">Tunis - Medina</h3>
+                        <p class="video-description">Vibrant capital with UNESCO-listed medina</p>
+                    </div>
+                </div>
+                <div hidden class="video-data" data-url="https://www.youtube.com/embed/CJNhVpXyIdI?si=HklnSorxOb825XoI0"></div>
+            </div>
+
+             <!-- Mahdia -->
+            <div class="video-card" data-category="beach" onclick="openModal(this)">
+                <div class="video-thumbnail">
+                    <img src="videoIMG/mahdia.jpg" alt="Mahdia" class="video-image">
+                    <span class="video-location-badge">East Coast</span>
+                    <div class="play-overlay">
+                        <div class="play-button">
+                            <div class="play-icon"></div>
+                        </div>
+                    </div>
+                    <div class="video-content">
+                        <h3 class="video-title">Mahdia</h3>
+                        <p class="video-description">Historic fishing port and pristine beaches</p>
+                    </div>
+                </div>
+                <div hidden class="video-data" data-url="https://www.youtube.com/embed/xHHEH78Rnko?si=j5DEDXN2LT5mVt75"></div>
+            </div>
+            <!-- Bizerte -->
+            <div class="video-card" data-category="beach" onclick="openModal(this)">
+                <div class="video-thumbnail">
+                    <img src="videoIMG/port-of-Bizerte.jpg" alt="Bizerte" class="video-image">
+                    <span class="video-location-badge">North</span>
+                    <div class="play-overlay">
+                        <div class="play-button">
+                            <div class="play-icon"></div>
+                        </div>
+                    </div>
+                    <div class="video-content">
+                        <h3 class="video-title">Bizerte</h3>
+                        <p class="video-description">Old Andalusian port and Mediterranean beaches</p>
+                    </div>
+                </div>
+                <div hidden class="video-data" data-url="https://www.youtube.com/embed/uyeXpLjqgxw?si=35P9uHspZ49tSW5J"></div>
+            </div>
+
+      <!-- Zaghouan -->
+        <div class="video-card" data-category="nature" onclick="openModal(this)">
+            <div class="video-thumbnail">
+                <img src="videoIMG/zaghouan.png" alt="Zaghouan" class="video-image">
+                <span class="video-location-badge">North</span>
+                <div class="play-overlay">
+                    <div class="play-button">
+                        <div class="play-icon"></div>
+                </div>
+            </div>
+            <div class="video-content">
+                <h3 class="video-title">Zaghouan</h3>
+                <p class="video-description">Activities: Hiking • Kayaking • Zipline</p>
+            </div>
+            </div>
+            <div hidden class="video-data" data-url="https://www.youtube.com/embed/bTJoyAVhJQU?si=-U75Cq8K1sfCyTGd"></div>
+        </div>
+        <!-- Amphitheatre of El Djem -->
+            <div class="video-card" data-category="history" onclick="openModal(this)">
+                <div class="video-thumbnail">
+                <img src="videoIMG/el-jem.jpg" alt="Amphitheatre of El Djem" class="video-image">
+                <span class="video-location-badge">Center</span>
+                <div class="play-overlay">
+                    <div class="play-button">
+                        <div class="play-icon"></div>
+                </div>
+            </div>
+            </div>
+            <div class="video-content">
+                <h3 class="video-title">Amphitheatre of El Djem</h3>
+                <p class="video-description">Roman Architecture • Gladiator History • UNESCO World Heritage</p>
+            </div>
+            <div hidden class="video-data" data-url="https://www.youtube.com/embed/utySho-xoHI?si=GuUieYkfHyPoWSyz">
+            </div>
+        </div>
+        <!-- Oudhna (Uthina) -->
+            <div class="video-card" data-category="history" onclick="openModal(this)">
+            <div class="video-thumbnail">
+                <img src="videoIMG/oudhna.jpg" alt="Oudhna Archaeological Site" class="video-image">
+                <span class="video-location-badge">North</span>
+                <div class="play-overlay">
+                    <div class="play-button">
+                        <div class="play-icon"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="video-content">
+                <h3 class="video-title">Oudhna (Uthina)</h3>
+                <p class="video-description"> Roman Ruins • Amphitheatre • Capitol & Forum</p>
+            </div>
+
+            <div hidden class="video-data" data-url="https://www.youtube.com/embed/HyBmSQ8YnA8?si=63B8NkPqIZsh7e5O">
+            </div>
+        </div>
+        <!-- Ain Soltane -->
+        <div class="video-card" data-category="nature" onclick="openModal(this)">
+        <div class="video-thumbnail">
+            <img src="videoIMG/ainsoltan.jpg" alt="Ain Soltane" class="video-image">
+            <span class="video-location-badge">North West</span>
+            <div class="play-overlay">
+                <div class="play-button">
+                    <div class="play-icon"></div>
+                </div>
+            </div>
+        </div>
+        <div class="video-content">
+            <h3 class="video-title">Ain Soltane</h3>
+            <p class="video-description">Natural Spring • Forests • Hiking & Relaxation</p>
+        </div>
+
+        <div hidden class="video-data" data-url="https://www.youtube.com/embed/MOO-ltZzBCk?si=-n2RBFaGUG5XAX7">
+        </div>
+    </div>
+    <!-- Bardo National Museum -->
+<div class="video-card" data-category="history" onclick="openModal(this)">
+    <div class="video-thumbnail">
+        <img src="videoIMG/bardo.jpg" alt="Bardo National Museum" class="video-image">
+        <span class="video-location-badge">North</span>
+        <div class="play-overlay">
+            <div class="play-button">
+                <div class="play-icon"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="video-content">
+        <h3 class="video-title">Bardo National Museum</h3>
+        <p class="video-description">Roman Mosaics • Tunisian History • World-Class Collections</p>
+    </div>
+
+    <div hidden class="video-data" data-url="https://www.youtube.com/embed/MOOdI0eF3m0?si=F7bYh6IcPF7Oz99F">
+    </div>
+</div>
+<!-- Sidi Bou Said -->
+<div class="video-card" data-category="culture" onclick="openModal(this)">
+    <div class="video-thumbnail">
+        <img src="videoIMG/horizontal-sidi-bou-said.jpg" alt="Sidi Bou Said" class="video-image">
+        <span class="video-location-badge">North</span>
+        <div class="play-overlay">
+            <div class="play-button">
+                <div class="play-icon"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="video-content">
+        <h3 class="video-title">Sidi Bou Said</h3>
+        <p class="video-description"> Blue & White Architecture • Sea Views • Art & Cafés</p>
+    </div>
+
+    <div hidden class="video-data" data-url="https://www.youtube.com/embed/RylpGy7j_cg?si=cknbPatrPDUPq3Ct">
+    </div>
+</div>
+<!-- Ruins of Carthage -->
+<div class="video-card" data-category="history" onclick="openModal(this)">
+    <div class="video-thumbnail">
+        <img src="videoIMG/ruins-of-carthage.avif" alt="Ruins of Carthage" class="video-image">
+        <span class="video-location-badge">North</span>
+        <div class="play-overlay">
+            <div class="play-button">
+                <div class="play-icon"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="video-content">
+        <h3 class="video-title">Ruins of Carthage</h3>
+        <p class="video-description"> Phoenician & Roman Ruins • Baths of Antoninus • Sea Views</p>
+    </div>
+
+    <div hidden class="video-data" data-url="https://www.youtube.com/embed/ejdFfbjUfSg?si=DsmSOUcTB_nDFlQQ">
+    </div>
+</div>
+
+    </section>
+
+    <!-- MODAL -->
+    <div class="modal" id="videoModal">
+        <div class="modal-content">
+            <button class="close-btn" onclick="closeModal()">×</button>
+            <div class="modal-header">
+                <h2 id="modalTitle">Title</h2>
+                <p id="modalDescription">Description</p>
+            </div>
+            <div class="modal-body">
+                <div class="video-container">
+                    <iframe id="modalIframe" src="" allowfullscreen></iframe>
+                </div>
+                <a href="#" target="_blank" id="youtubeLink" class="youtube-link">
+                    🎬 Watch on YouTube
+                </a>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<section id="contact">
+  <form class="panel-contact">
+    <h2>Contact</h2>
+    <div class="panel-row">
+      <div class="contact-left">
+        <label for="name">Full Name</label>
+        <input id="name" type="text" placeholder="Your full name" required />
+
+        <label for="country">Country of Origin</label>
+        <input id="country" type="text" placeholder="Your country" required />
+
+        <label for="email">Email Address</label>
+        <input id="email" type="email" placeholder="your.email@example.com" required />
+      </div>
+
+      <div class="contact-right">
+        <label for="subject">Subject</label>
+        <input id="subject" type="text" placeholder="Message subject" />
+
+        <label for="message">Message</label>
+        <textarea id="message" placeholder="Write your message..." required></textarea>
+      </div>
+    </div>
+
+    <div class="panel-actions">
+      <button type="submit" class="contact-btn">Send</button>
+      <button type="reset" class="contact-reset">Reset</button>
+    </div>
+  </form>
+</section>
+
+<footer class="footer">
+  <h2>Vitamin TN </h2>
+  <p>One country. A thousand journeys.</p>
+</footer>
+
+<!-- Chat Widget Button -->
+<button class="chat-widget-button" id="chatToggle">
+    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+    </svg>
+</button>
+
+<!-- Chat Panel -->
+<div class="chat-panel" id="chatPanel">
+  <div class="chat-header">
+      <div class="chat-header-content">
+        <div class="chat-header-icon"> <img src="img/Random/chatboticone.png" alt=""></div>
+          <div class="chat-header-text">
+            <h3>Tunisia Assistant</h3>
+            <p>Ask me anything about Tunisia</p>
+          </div>
+      </div>
+    <button class="chat-close" id="chatClose">
+      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+      </svg>
+    </button>
+  </div>
+
+  <div class="chat-messages" id="chatMessages">
+    <div class="chat-message assistant">
+      <div>
+        <div class="assistant-label">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+          </svg> Tunisia Guide
+        </div>
+        <div class="message-bubble">
+          Asslemaa! 👋 Welcome to Tunisia's information assistant. I'm here to help you discover the beauty, history, and culture of Tunisia. Feel free to ask me anything about this wonderful North African country!
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="quick-questions" id="quickQuestions">
+    <p>
+      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
+      </svg> Quick questions:
+    </p>
+    <button class="quick-btn" onclick="sendQuickQuestion('What is Tunisia known for?')">What is Tunisia known for?</button>
+    <button class="quick-btn" onclick="sendQuickQuestion('What currency is used?')">What currency is used?</button>
+    <button class="quick-btn" onclick="sendQuickQuestion('Tell me about Tunisian food')">Tell me about Tunisian food</button>
+    <button class="quick-btn" onclick="sendQuickQuestion('What are the main tourist sites?')">What are the main tourist sites?</button>
+  </div>
+
+  <div class="chat-input-container">
+    <div class="chat-input-wrapper">
+      <input type="text" class="chat-input" id="chatInput" placeholder="Ask me anything about Tunisia..." />
+                <button class="chat-send-btn" id="chatSend">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/>
+                    </svg>
+                </button>
+    </div>
+    <p class="chat-footer-text">🇹🇳 Powered by AI</p>
+  </div>
+</div>
+
+<script src="gallery.js" ></script>
+<script src="map.js"></script>
+
+</body>
+</html>

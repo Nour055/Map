@@ -543,7 +543,7 @@ body {
   overflow: hidden;
 }
 
-.gi-header-image {
+.header-image {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto 2rem auto;
@@ -557,7 +557,7 @@ body {
   height: auto;
 }
 
-.gi-header-image img {
+.header-image img {
   width: 100%;
   height: auto;
   display: block;
