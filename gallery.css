@@ -118,26 +118,26 @@
     border: 2px solid #e8b3c4;
 }
 
-        .filter-label {
-            font-weight: 700;
-            color: #462c33;
-            font-size: 15px;
-            margin-right: 10px;
-            letter-spacing: 0.5px;
-        }
+.filter-label {
+    font-weight: 700;
+    color: #462c33;
+    font-size: 15px;
+    margin-right: 10px;
+    letter-spacing: 0.5px;
+}
 
-        .filter-btn {
-            padding: 10px 18px;
-            border-radius: 22px;
-            font-size: 14px;
-            font-weight: 600;
-            color: #462c33;
-            background: rgba(232, 179, 196, 0.25);
-            border: 1px solid rgba(194, 121, 139, 0.35);
-            box-shadow: 0 3px 10px rgba(194, 121, 139, 0.15);
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
+.filter-btn {
+    padding: 10px 18px;
+    border-radius: 22px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #462c33;
+    background: rgba(232, 179, 196, 0.25);
+    border: 1px solid rgba(194, 121, 139, 0.35);
+    box-shadow: 0 3px 10px rgba(194, 121, 139, 0.15);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
 
         .filter-btn:hover {
             background: #e8b3c4;
